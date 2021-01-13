@@ -55,8 +55,6 @@ for(let i = 0; i < hond.length; i++){
       worstHond.setAttribute("rotation", {x: 0, y: 90, z: 0})
       worstHond.setAttribute("position", {x: 0, y: 1.1, z: -3.25});
 
-      worstHond.setAttribute("animation", 'property: position; easing: linear; dur: 2000; to: 1.85 1 -1.5');
-
       scene.appendChild(worstHond);
       hold = null;
 
@@ -65,9 +63,9 @@ for(let i = 0; i < hond.length; i++){
 
 
 
-      setTimeout(hondLied = () => {
-
-
+      setTimeout(hondAnimatie = () => {
+        // hond.setAttribute("animation", 'property: position; easing: linear; dur: 2000; to: 1.85 0 -1.5');
+        // worstHond.setAttribute("animation", 'property: position; easing: linear; dur: 2000; to: 1.85 0 -1.5');
       },1500);
     }
   });
