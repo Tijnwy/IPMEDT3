@@ -19,6 +19,8 @@
 
     <a-entity position="0 0 0" environment="preset: forest"></a-entity>
 
+    <!-- <a-sky id="js--sky"></a-sky> -->
+
     <a-camera id="js--camera">
       <a-entity
         animation__click="property: scale; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1; startEvents: click"
@@ -45,7 +47,8 @@
       <a-box position="1.25 2 .9" width="1.7" height=".3" depth=".1" color="black"></a-box>
     </a-entity>
 
-    <a-entity class="clickable" rotation="-90 0 0" scale=".04 .04 .04" position="0 .1 -4" gltf-model="#hond-glb"></a-entity>
+    <a-entity class="clickable js--hond" rotation="-90 0 0" scale=".04 .04 .04" position="0 .1 -4" gltf-model="#hond-glb" animation='property: position; easing: linear; dur: 2000; to: 1.85 1 -1.5; disabled'></a-entity>
+    <!-- <a-sound position="0 .1 -4" src="sound/Hond Domingo Toreador live.mp3" autoplay="true" loop="true" preload="auto" volume=".5" maxDistance="2"></a-sound> -->
 
     <!-- Le worstjes & tafeltje -->
     <a-entity static-body position="-2 0 -5"> <!-- le tafel -->
@@ -56,13 +59,10 @@
     </a-entity>
 
     <a-entity> <!-- le worstjes -->
-      <a-box class="clickable" dynamic-body position="-2 2 -5" rotation="0 45 0" depth=".5" width=".1" height=".1" color="red"></a-box>
-      <a-box class="clickable" dynamic-body position="-2.1 2.2 -5" rotation="0 0 0" depth=".5" width=".1" height=".1" color="red"></a-box>
-      <a-box class="clickable" dynamic-body position="-2 1.8 -5.1" rotation="0 -90 0" depth=".5" width=".1" height=".1" color="red"></a-box>
+      <a-box class="clickable js--pickup" dynamic-body position="-2 2 -5" rotation="0 45 0" depth=".5" width=".1" height=".1" color="red"></a-box>
+      <a-box class="clickable js--pickup" dynamic-body position="-2.1 2.2 -5" rotation="0 0 0" depth=".5" width=".1" height=".1" color="red"></a-box>
+      <a-box class="clickable js--pickup" dynamic-body position="-2 1.8 -5.1" rotation="0 -90 0" depth=".5" width=".1" height=".1" color="red"></a-box>
     </a-entity>
-
-
-
 
     <!-- le toilettes -->
     <a-entity position="-8 0 -4">
