@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <a-scene id="js--scene">
+
+    <a-assets>
+      <a-asset-item id="hond-glb" src="img/hond.glb"></a-asset-item>
+      <a-asset-item id="toilet-glb" src="img/toilet.glb"></a-asset-item>
+    </a-assets>
+
+    <a-entity position="0 0 0" environment="preset: forest"></a-entity>
+
+    <a-camera id="js--camera">
+      <a-entity
+        animation__click="property: scale; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1; startEvents: click"
+        animation__fusing="property: scale; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1; startEvents: fusing"
+        animation__mouseleave="property: scale; easing: easeInCubic; dur: 500; to: 1 1 1; startEvents: mouseleave"
+        cursor="fuse: true; fuseTimeout: 2000"
+        material="color: black; shader: flat;"
+        geometry="primitive: ring; radiusInner: 0.001; radiusOuter: 0.002"
+        position="0 0 -.1"
+        raycaster="objects: .clickable;"
+      ></a-entity>
+    </a-camera>
+
+    <a-entity position="0 0 -5" scale=".8 .8 .8"> <!-- hondenhok -->
+      <a-box height=".1" width="2" depth="3" color="" src="img/wood.jpg" position="" rotation=""></a-box> <!-- floor -->
+      <a-box height="2" width=".1" depth="3" color="" src="img/wood.jpg" position="-1 0 0" rotation=""></a-box> <!-- muur links -->
+      <a-box height="2" width=".1" depth="3" color="" src="img/wood.jpg" position="1 0 0" rotation=""></a-box> <!-- muur rechts -->
+      <a-box height="2" width="2" depth=".1" color="" src="img/wood.jpg" position="0 0 -1.5" rotation=""></a-box> <!-- muur achter -->
+      <a-box height="2" width=".1" depth="3.3" color="red" position="-.5 1.5 0" rotation="0 0 -45"></a-box> <!-- dak links -->
+      <a-box height="2" width=".1" depth="3.3" color="red" position=".5 1.5 0" rotation="0 0 45"></a-box> <!-- dak rechts -->
+      <a-box height="1.5" width="1.5" depth=".09" color="" src="img/wood.jpg" position="0 1 -1.5" rotation="0 0 45"></a-box> <!-- muur achter driehoek -->
+
+      <a-text position=".5 2 1" width="1.5" value="Hier komt een iteractie met de hond, mogelijk iets met worstjes"></a-text>
+      <a-box position="1.25 2 .9" width="1.7" height=".3" depth=".1" color="black"></a-box>
+    </a-entity>
+
+    <a-entity class="clickable" rotation="-90 0 0" scale=".04 .04 .04" position="0 .1 -4" gltf-model="#hond-glb"></a-entity>
+
+
+    <!-- le toilettes -->
+    <a-entity position="-8 0 -4">
+      <a-box height=".1" width="6" depth="10" color="" src="img/tiles.jpg" position="" rotation=""></a-box> <!-- floor -->
+      <a-box height="6" width=".1" depth="10" color="" src="img/wood.jpg" position="-3 0 0" rotation=""></a-box> <!-- muur links -->
+      <a-box height="6" width=".1" depth="7" color="" src="img/wood.jpg" position="3 0 -2" rotation=""></a-box> <!-- muur rechts 1 -->
+      <a-box height="6" width=".1" depth="2" color="" src="img/wood.jpg" position="3 0 4" rotation=""></a-box> <!-- muur rechts 2 -->
+      <a-box height=".5" width=".1" depth="1.5" color="" src="img/wood.jpg" position="3 2.75 2.25" rotation=""></a-box> <!-- muur boven deur -->
+      <a-box height="6" width="6" depth=".1" color="" src="img/wood.jpg" position="0 0 -5" rotation=""></a-box> <!-- muur achter -->
+      <a-box height="6" width="6" depth=".1" color="" src="img/wood.jpg" position="0 0 5" rotation=""></a-box> <!-- muur voor -->
+      <a-box height=".1" width="6" depth="10" color="" src="" position="0 3 0" rotation=""></a-box> <!-- dak -->
+      <a-entity position="0 1 -4">
+        <a-entity class="clickable placeholder" rotation="-90 0 0" scale=".04 .04 .04" gltf-model="#toilet-glb"></a-entity>
+        <a-sound position="0 0 0" src="sound/Mevrouw Callas Habanera live.mp3" autoplay="true" loop="true" preload="auto" volume=".5"></a-sound>
+      </a-entity>
+      <a-text position="1 1.5 -4" width="1.5" value="Hier komt nog iets met klassieke muziek, maar die had ik nog niet op mijn laptop staan. Je kan ook de wc doorspoelen want het is voor kleuters"></a-text>
+    </a-entity>
+
+
+
+
+
+  </a-scene>
+  <script src="js/main.js"></script>
+</body>
+</html>
