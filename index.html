@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
   <title>Document</title>
 </head>
 <body>
@@ -46,6 +47,22 @@
 
     <a-entity class="clickable" rotation="-90 0 0" scale=".04 .04 .04" position="0 .1 -4" gltf-model="#hond-glb"></a-entity>
 
+    <!-- Le worstjes & tafeltje -->
+    <a-entity static-body position="-2 0 -5"> <!-- le tafel -->
+      <a-cylinder position="0 1 0" radius=".6" height=".05" src="img/wood.jpg"></a-cylinder>
+      <a-cylinder position="0 .5 0" radius=".05" height="1" src="img/wood.jpg"></a-cylinder>
+      <a-box position="0 0 0" rotation="0 45 0" depth=".5" width=".05" height=".05" src="img/wood.jpg"></a-box>
+      <a-box position="0 0 0" rotation="0 -45 0" depth=".5" width=".05" height=".05" src="img/wood.jpg"></a-box>
+    </a-entity>
+
+    <a-entity> <!-- le worstjes -->
+      <a-box class="clickable" dynamic-body position="-2 2 -5" rotation="0 45 0" depth=".5" width=".1" height=".1" color="red"></a-box>
+      <a-box class="clickable" dynamic-body position="-2.1 2.2 -5" rotation="0 0 0" depth=".5" width=".1" height=".1" color="red"></a-box>
+      <a-box class="clickable" dynamic-body position="-2 1.8 -5.1" rotation="0 -90 0" depth=".5" width=".1" height=".1" color="red"></a-box>
+    </a-entity>
+
+
+
 
     <!-- le toilettes -->
     <a-entity position="-8 0 -4">
@@ -59,9 +76,9 @@
       <a-box height=".1" width="6" depth="10" color="" src="" position="0 3 0" rotation=""></a-box> <!-- dak -->
       <a-entity position="0 1 -4">
         <a-entity class="clickable placeholder" rotation="-90 0 0" scale=".04 .04 .04" gltf-model="#toilet-glb"></a-entity>
-        <a-sound position="0 0 0" src="sound/Mevrouw Callas Habanera live.mp3" autoplay="true" loop="true" preload="auto" volume=".5"></a-sound>
+        <!-- <a-sound position="0 0 0" src="sound/Mevrouw Callas Habanera live.mp3" autoplay="true" loop="true" preload="auto" volume=".5" maxDistance="2"></a-sound> -->
       </a-entity>
-      <a-text position="1 1.5 -4" width="1.5" value="Hier komt nog iets met klassieke muziek, maar die had ik nog niet op mijn laptop staan. Je kan ook de wc doorspoelen want het is voor kleuters"></a-text>
+      <a-text position="1 1.5 -4" width="1.5" value=""></a-text>
     </a-entity>
 
 
