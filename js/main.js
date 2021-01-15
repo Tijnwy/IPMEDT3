@@ -28,7 +28,7 @@ let hold = null;
 for(let i = 0; i < pickups.length; i++){
   pickups[i].addEventListener('click', function(evt){
     if (hold == null) {
-      camera.innerHTML += '<a-box id="js--hold" position=".5 -.5 -1" rotation="0 45 0" depth=".5" width=".1" height=".1" color="red"></a-box>'
+      camera.innerHTML += '<a-entity id="js--hold" rotation="0 90 0" scale=".25 .25 .25" position=".5 -.3 -1" gltf-model="#worst-glb"></a-entity>'
       hold = "worst"
       this.remove();
       console.log(pickups);
@@ -45,13 +45,10 @@ for(let i = 0; i < hond.length; i++){
 
 
     if(hold == "worst") {
-      let worstHond = document.createElement("a-box");
+      let worstHond = document.createElement("a-entity");
       // worstHond.setAttribute("class", "js--pickup clickable");
-      // worstHond.setAttribute("gltf-model", "#X-wing-glb");
-      worstHond.setAttribute("depth", ".5")
-      worstHond.setAttribute("width", ".1")
-      worstHond.setAttribute("height", ".1")
-      worstHond.setAttribute("color", "red")
+      worstHond.setAttribute("gltf-model", "#worst-glb");
+      worstHond.setAttribute("scale", {x: 0.25, y: 0.25, z: 0.25})
       worstHond.setAttribute("rotation", {x: 0, y: 90, z: 0})
       worstHond.setAttribute("position", {x: 0, y: 1.1, z: -3.25});
 

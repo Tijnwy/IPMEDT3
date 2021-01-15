@@ -13,8 +13,10 @@
   <a-scene id="js--scene">
 
     <a-assets>
-      <a-asset-item id="hond-glb" src="img/hond.glb"></a-asset-item>
-      <a-asset-item id="toilet-glb" src="img/toilet.glb"></a-asset-item>
+      <a-asset-item id="hond-glb" src="models/hond.glb"></a-asset-item>
+      <a-asset-item id="toilet-glb" src="models/toilet.glb"></a-asset-item>
+      <a-asset-item id="worst-glb" src="models/worst.glb"></a-asset-item>
+      <a-asset-item id="waterbak-glb" src="models/waterbak.glb"></a-asset-item>
     </a-assets>
 
     <a-entity position="0 0 0" environment="preset: forest"></a-entity>
@@ -32,9 +34,6 @@
         position="0 0 -.1"
         raycaster="objects: .clickable;"
       ></a-entity>
-      <!-- <a-text position="-0.3 -0.2 -2" width="10" value="Tijn" color="purple"></a-text>
-      <a-text position="-0.3 -0.6 -2" width="10" value="Jarmo" color="purple"></a-text>
-      <a-text position="-0.3 0.2 -2" width="10" value="Timo" color="purple"></a-text> -->
     </a-camera>
 
     <a-entity position="0 0 -5" scale=".8 .8 .8"> <!-- hondenhok -->
@@ -46,8 +45,7 @@
       <a-box height="2" width=".1" depth="3.3" color="red" position=".5 1.5 0" rotation="0 0 45"></a-box> <!-- dak rechts -->
       <a-box height="1.5" width="1.5" depth=".09" color="" src="img/wood.jpg" position="0 1 -1.5" rotation="0 0 45"></a-box> <!-- muur achter driehoek -->
 
-      <!-- <a-text position="0 2 2" width="2.5" value="TIJN"></a-text> -->
-      <!-- <a-box position="1.25 2 .9" width="1.7" height=".3" depth=".1" color="black"></a-box> -->
+      <a-entity rotation="0 0 0" scale=".3 .3 .3" position="1 .1 2.5" gltf-model="#waterbak-glb"></a-entity>
     </a-entity>
 
     <a-entity class="clickable js--hond" rotation="-90 0 0" scale=".04 .04 .04" position="0 .1 -4" gltf-model="#hond-glb" animation='property: position; easing: linear; dur: 2000; to: 1.85 1 -1.5; disabled'></a-entity>
@@ -62,13 +60,14 @@
     </a-entity>
 
     <a-entity> <!-- le worstjes -->
-      <a-box class="clickable js--pickup" dynamic-body position="-2 2 -5" rotation="0 45 0" depth=".5" width=".1" height=".1" color="red"></a-box>
+      <!-- <a-box class="clickable js--pickup" dynamic-body position="-2 2 -5" rotation="0 45 0" depth=".5" width=".1" height=".1" color="red"></a-box>
       <a-box class="clickable js--pickup" dynamic-body position="-2.1 2.5 -5" rotation="0 0 0" depth=".5" width=".1" height=".1" color="red"></a-box>
-      <a-box class="clickable js--pickup" dynamic-body position="-2 1.5 -5.1" rotation="0 -90 0" depth=".5" width=".1" height=".1" color="red"></a-box>
+      <a-box class="clickable js--pickup" dynamic-body position="-2 1.5 -5.1" rotation="0 -90 0" depth=".5" width=".1" height=".1" color="red"></a-box> -->
+
+      <a-entity dynamic-body class="clickable js--pickup" rotation="0 90 0" scale=".25 .25 .25" position="-2 2 -5" gltf-model="#worst-glb"></a-entity>
+      <a-entity dynamic-body class="clickable js--pickup" rotation="0 0 0" scale=".25 .25 .25" position="-2.1 2.5 -5" gltf-model="#worst-glb"></a-entity>
+      <a-entity dynamic-body class="clickable js--pickup" rotation="90 0 0" scale=".25 .25 .25" position="-2 1.5 -5.1" gltf-model="#worst-glb"></a-entity>
     </a-entity>
-
-
-
 
     <!-- le toilettes -->
     <a-entity position="-8 0 -4">
@@ -87,11 +86,17 @@
       <a-text position="1 1.5 -4" width="1.5" value=""></a-text>
     </a-entity>
 
-
-
-
-
   </a-scene>
   <script src="js/main.js"></script>
 </body>
 </html>
+
+<!--
+TODO:
+  arm die opgepakte worst vast houdt
+  hond die weg blokkeerd tot hij gevoerd wordt
+  bord voor de worstjes
+  zelfgemaakte omgeving? (nu werkt a-sky niet)
+
+
+ -->
