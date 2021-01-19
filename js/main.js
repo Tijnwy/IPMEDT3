@@ -28,7 +28,9 @@ let hold = null;
 for(let i = 0; i < pickups.length; i++){
   pickups[i].addEventListener('click', function(evt){
     if (hold == null) {
-      camera.innerHTML += '<a-entity id="js--hold" rotation="0 90 0" scale=".25 .25 .25" position=".5 -.3 -1" gltf-model="#worst-glb"></a-entity>'
+      camera.innerHTML += '<a-entity class="js--hold" rotation="0 90 0" scale=".3 .3 .3" position=".5 -.3 -.9" gltf-model="#worst-glb"></a-entity>'
+      camera.innerHTML += '<a-box class="js--hold" width=".15" height=".6" depth=".15" rotation="-55 -10 10" position=".4 -.4 -.4" color="#FFD29A"></a-box>'
+      const holdItems = document.getElementsByClassName("js--hold");
       hold = "worst"
       this.remove();
       console.log(pickups);
@@ -55,7 +57,9 @@ for(let i = 0; i < hond.length; i++){
       scene.appendChild(worstHond);
       hold = null;
 
-      document.getElementById('js--hold').remove();
+      for(let i = 0; i < holdItems.length; i++){
+        holdItems.remove();
+      }
       console.log(pickups);
 
 

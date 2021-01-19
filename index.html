@@ -49,7 +49,7 @@
     </a-entity>
 
     <a-entity class="clickable js--hond" rotation="-90 0 0" scale=".04 .04 .04" position="0 .1 -4" gltf-model="#hond-glb" animation='property: position; easing: linear; dur: 2000; to: 1.85 1 -1.5; disabled'></a-entity>
-    <a-sound position="0 .1 -4" src="sound/Hond Domingo Toreador live.mp3" autoplay="true" loop="true" preload="auto" volume=".5" maxDistance="2"></a-sound>
+    <!-- <a-sound position="0 .1 -4" src="sound/Hond Domingo Toreador live.mp3" autoplay="true" loop="true" preload="auto" volume=".5" maxDistance="2"></a-sound> -->
 
     <!-- Le worstjes & tafeltje -->
     <a-entity static-body position="-2 0 -5"> <!-- le tafel -->
@@ -60,10 +60,6 @@
     </a-entity>
 
     <a-entity> <!-- le worstjes -->
-      <!-- <a-box class="clickable js--pickup" dynamic-body position="-2 2 -5" rotation="0 45 0" depth=".5" width=".1" height=".1" color="red"></a-box>
-      <a-box class="clickable js--pickup" dynamic-body position="-2.1 2.5 -5" rotation="0 0 0" depth=".5" width=".1" height=".1" color="red"></a-box>
-      <a-box class="clickable js--pickup" dynamic-body position="-2 1.5 -5.1" rotation="0 -90 0" depth=".5" width=".1" height=".1" color="red"></a-box> -->
-
       <a-entity dynamic-body class="clickable js--pickup" rotation="0 90 0" scale=".25 .25 .25" position="-2 2 -5" gltf-model="#worst-glb"></a-entity>
       <a-entity dynamic-body class="clickable js--pickup" rotation="0 0 0" scale=".25 .25 .25" position="-2.1 2.5 -5" gltf-model="#worst-glb"></a-entity>
       <a-entity dynamic-body class="clickable js--pickup" rotation="90 0 0" scale=".25 .25 .25" position="-2 1.5 -5.1" gltf-model="#worst-glb"></a-entity>
