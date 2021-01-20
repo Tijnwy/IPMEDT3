@@ -3,9 +3,9 @@ const camera = document.getElementById('js--camera');
 const sky = document.getElementById("js--sky");
 const hond = document.getElementsByClassName('js--hond');
 const pickups = document.getElementsByClassName('js--pickup');
+const bezemKast = document.getElementsByClassName('js--bezemKast');
 
 let placeholders = document.getElementsByClassName("placeholder");
-
 
 for(let i = 0; i < placeholders.length; i++){
   placeholders[i].addEventListener('click',
@@ -68,6 +68,13 @@ for(let i = 0; i < hond.length; i++){
         // worstHond.setAttribute("animation", 'property: position; easing: linear; dur: 2000; to: 1.85 0 -1.5');
       },1500);
     }
+  });
+}
+
+for (var i = 0; i < bezemKast.length; i++) {
+  bezemKast[i].addEventListener('click',
+  function(evt){
+    console.log("BezemKast!!!!");
   });
 }
 
