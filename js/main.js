@@ -74,9 +74,10 @@ for(let i = 0; i < hond.length; i++){
 for (var i = 0; i < bezemKast.length; i++) {
   bezemKast[i].addEventListener('click',
   function(evt){
-    console.log("BezemKast!!!!");
+    // Lucht
     sky.setAttribute("color", "#black");
-    console.log("Kleur aangepast!");
+
+
   });
 }
 
