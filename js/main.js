@@ -1,10 +1,13 @@
+// Id
 const scene = document.getElementById('js--scene');
 const camera = document.getElementById('js--camera');
 const sky = document.getElementById("js--sky");
+const klok = document.getElementById('js--klok');
+
+// Class
 const hond = document.getElementsByClassName('js--hond');
 const pickups = document.getElementsByClassName('js--pickup');
 const bezemKast = document.getElementsByClassName('js--bezemKast');
-const klok = document.getElementById('js--klok');
 
 let placeholders = document.getElementsByClassName("placeholder");
 
