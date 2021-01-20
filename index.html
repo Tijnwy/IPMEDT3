@@ -15,6 +15,10 @@
     <a-assets>
       <a-asset-item id="hond-glb" src="img/hond.glb"></a-asset-item>
       <a-asset-item id="toilet-glb" src="img/toilet.glb"></a-asset-item>
+      <a-asset-item id="KlokAvond-obj" src="models/KlokAvond.obj"></a-asset-item>
+      <a-asset-item id="KlokAvond-mtl" src="models/KlokAvond.mtl"></a-asset-item>
+      <a-asset-item id="KlokMiddag-obj" src="models/KlokMiddag.obj"></a-asset-item>
+      <a-asset-item id="KlokMiddag-mtl" src="models/KlokMiddag.mtl"></a-asset-item>
     </a-assets>
 
     <a-entity position="0 0 0" environment="preset: forest"></a-entity>
@@ -84,6 +88,7 @@
     <!-- Bezemkast -->
     <a-entity>
       <a-box class="clickable js--bezemKast" height="1" width="1" depth="1" color="blue" position="0 1 4"></a-box>
+      <a-obj-model src="#KlokMiddag-obj" mtl="#KlokMiddag-mtl" position="0 2 4"></a-obj-model>
     </a-entity>
 
   </a-scene>
