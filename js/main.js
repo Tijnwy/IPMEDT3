@@ -3,6 +3,9 @@ const camera = document.getElementById('js--camera');
 const sky = document.getElementById("js--sky");
 const hond = document.getElementsByClassName('js--hond');
 const pickups = document.getElementsByClassName('js--pickup');
+const holdItems = document.getElementsByClassName("js--hold");
+const deurAnimatie = document.getElementById("js--deur-animatie");
+const hondAnimatie = document.getElementById("js--hond-animatie");
 
 let placeholders = document.getElementsByClassName("placeholder");
 
@@ -42,9 +45,6 @@ console.log(hond)
 for(let i = 0; i < hond.length; i++){
   hond[i].addEventListener('click',
   function(evt){
-    console.log("brrr");
-
-
 
     if(hold == "worst") {
       let worstHond = document.createElement("a-entity");
@@ -52,22 +52,18 @@ for(let i = 0; i < hond.length; i++){
       worstHond.setAttribute("gltf-model", "#worst-glb");
       worstHond.setAttribute("scale", {x: 0.25, y: 0.25, z: 0.25})
       worstHond.setAttribute("rotation", {x: 0, y: 90, z: 0})
-      worstHond.setAttribute("position", {x: 0, y: 1.1, z: -3.25});
+      worstHond.setAttribute("position", {x: 0, y: 1.1, z: 1});
 
-      scene.appendChild(worstHond);
+      hondAnimatie.appendChild(worstHond);
       hold = null;
 
-      for(let i = 0; i < holdItems.length; i++){
-        holdItems.remove();
-      }
-      console.log(pickups);
+      document.getElementsByClassName("js--hold")[0].remove();
+      document.getElementsByClassName("js--hold")[0].remove();
 
-
-
-      setTimeout(hondAnimatie = () => {
-        // hond.setAttribute("animation", 'property: position; easing: linear; dur: 2000; to: 1.85 0 -1.5');
-        // worstHond.setAttribute("animation", 'property: position; easing: linear; dur: 2000; to: 1.85 0 -1.5');
-      },1500);
+      deurAnimatie.setAttribute("animation", {autoplay: true});
+      hondAnimatie.setAttribute("animation__1", {autoplay: true});
+      hondAnimatie.setAttribute("animation__2", {autoplay: true});
+      hondAnimatie.setAttribute("animation__3", {autoplay: true});
     }
   });
 }

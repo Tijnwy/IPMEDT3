@@ -48,8 +48,14 @@
       <a-entity rotation="0 0 0" scale=".3 .3 .3" position="1 .1 2.5" gltf-model="#waterbak-glb"></a-entity>
     </a-entity>
 
-    <a-entity class="clickable js--hond" rotation="-90 0 0" scale=".04 .04 .04" position="0 .1 -4" gltf-model="#hond-glb" animation='property: position; easing: linear; dur: 2000; to: 1.85 1 -1.5; disabled'></a-entity>
-    <!-- <a-sound position="0 .1 -4" src="sound/Hond Domingo Toreador live.mp3" autoplay="true" loop="true" preload="auto" volume=".5" maxDistance="2"></a-sound> -->
+    <!-- le Hond -->
+    <a-entity id="js--hond-animatie" position="-3 .1 -1.75" rotation="0 90 0" animation__1='property: position; easing: linear; dur: 2000; to: 0 0 -2; autoplay: false'
+                                                                              animation__2='property: rotation; easing: linear; dur: 500; to: 0 0 0; delay: 2000; autoplay: false'
+                                                                              animation__3='property: position; easing: linear; dur: 1000; from: 0 0 -2; to: 0 .1 -4; delay: 2500; autoplay: false'>
+      <a-entity class="clickable js--hond" rotation="-90 0 0" scale=".04 .04 .04" gltf-model="#hond-glb"></a-entity>
+      <!-- <a-sound position="0 .1 -4" src="sound/Hond Domingo Toreador live.mp3" autoplay="true" loop="true" preload="auto" volume=".5" maxDistance="2"></a-sound> -->
+      <!-- rotation="-90 0 0" position="0 .1 -4" -->
+    </a-entity>
 
     <!-- Le worstjes & tafeltje -->
     <a-entity static-body position="-2 0 -5"> <!-- le tafel -->
@@ -59,7 +65,8 @@
       <a-box position="0 0 0" rotation="0 -45 0" depth=".5" width=".05" height=".05" src="img/wood.jpg"></a-box>
     </a-entity>
 
-    <a-entity> <!-- le worstjes -->
+    <!-- le worstjes -->
+    <a-entity>
       <a-entity dynamic-body class="clickable js--pickup" rotation="0 90 0" scale=".25 .25 .25" position="-2 2 -5" gltf-model="#worst-glb"></a-entity>
       <a-entity dynamic-body class="clickable js--pickup" rotation="0 0 0" scale=".25 .25 .25" position="-2.1 2.5 -5" gltf-model="#worst-glb"></a-entity>
       <a-entity dynamic-body class="clickable js--pickup" rotation="90 0 0" scale=".25 .25 .25" position="-2 1.5 -5.1" gltf-model="#worst-glb"></a-entity>
@@ -80,6 +87,11 @@
         <!-- <a-sound position="0 0 0" src="sound/Mevrouw Callas Habanera live.mp3" autoplay="true" loop="true" preload="auto" volume=".5" maxDistance="2"></a-sound> -->
       </a-entity>
       <a-text position="1 1.5 -4" width="1.5" value=""></a-text>
+    </a-entity>
+
+    <!-- le toilettes deur -->
+    <a-entity id="js--deur-animatie" position="-5 0 -1" animation="property: rotation; from: 0 0 0; to: 0 75 0; dur: 1000; autoplay: false">
+      <a-box width=".1" height="5" depth="1.5" position="0 0 -.75" src="img/door.jpg"></a-box>
     </a-entity>
 
   </a-scene>
