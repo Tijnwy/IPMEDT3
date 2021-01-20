@@ -75,6 +75,8 @@ for (var i = 0; i < bezemKast.length; i++) {
   bezemKast[i].addEventListener('click',
   function(evt){
     console.log("BezemKast!!!!");
+    sky.setAttribute("color", "#black");
+    console.log("Kleur aangepast!");
   });
 }
 
