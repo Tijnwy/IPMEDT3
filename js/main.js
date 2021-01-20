@@ -4,6 +4,7 @@ const sky = document.getElementById("js--sky");
 const hond = document.getElementsByClassName('js--hond');
 const pickups = document.getElementsByClassName('js--pickup');
 const bezemKast = document.getElementsByClassName('js--bezemKast');
+const klok = document.getElementById('js--klok');
 
 let placeholders = document.getElementsByClassName("placeholder");
 
@@ -77,7 +78,9 @@ for (var i = 0; i < bezemKast.length; i++) {
     // Lucht
     sky.setAttribute("color", "#black");
 
-
+    // Klok
+    klok.setAttribute("src", "#KlokAvond-obj");
+    klok.setAttribute("mtl", "#KlokAvond-mtl");
   });
 }
 
