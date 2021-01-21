@@ -86,11 +86,13 @@ for (var i = 0; i < bezemKast.length; i++) {
       //console.log("Klok gaat naar avond");
       klok.setAttribute("src", "#KlokAvond-obj");
       klok.setAttribute("mtl", "#KlokAvond-mtl");
+      sky.setAttribute("src", "img/avondlucht.jpg");
     }
     else {
       //console.log("Klok is gaat naar middag");
       klok.setAttribute("src", "#KlokMiddag-obj");
       klok.setAttribute("mtl", "#KlokMiddag-mtl");
+      sky.setAttribute("src", "img/middaglucht.jpg");
     }
   });
 }
