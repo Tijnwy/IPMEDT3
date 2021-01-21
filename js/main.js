@@ -82,8 +82,16 @@ for (var i = 0; i < bezemKast.length; i++) {
     sky.setAttribute("color", "#black");
 
     // Klok
-    klok.setAttribute("src", "#KlokAvond-obj");
-    klok.setAttribute("mtl", "#KlokAvond-mtl");
+    if (klok.getAttribute("src") == "#KlokMiddag-obj") {
+      //console.log("Klok gaat naar avond");
+      klok.setAttribute("src", "#KlokAvond-obj");
+      klok.setAttribute("mtl", "#KlokAvond-mtl");
+    }
+    else {
+      //console.log("Klok is gaat naar middag");
+      klok.setAttribute("src", "#KlokMiddag-obj");
+      klok.setAttribute("mtl", "#KlokMiddag-mtl");
+    }
   });
 }
 
