@@ -52,7 +52,7 @@ for(let i = 0; i < hond.length; i++){
       worstHond.setAttribute("gltf-model", "#worst-glb");
       worstHond.setAttribute("scale", {x: 0.25, y: 0.25, z: 0.25})
       worstHond.setAttribute("rotation", {x: 0, y: 90, z: 0})
-      worstHond.setAttribute("position", {x: 0, y: 1.1, z: 1});
+      worstHond.setAttribute("position", {x: 0, y: 1, z: .75});
 
       hondAnimatie.appendChild(worstHond);
       hold = null;

@@ -24,27 +24,45 @@
 
       <a-asset-item id="boom2-obj" src="models/happylittletree2.obj"></a-asset-item>
       <a-asset-item id="boom2-mtl" src="models/happylittletree2.mtl"></a-asset-item>
+
+      <a-asset-item id="struik-obj" src="models/happylittleshrub.obj"></a-asset-item>
+      <a-asset-item id="struik-mtl" src="models/happylittleshrub.mtl"></a-asset-item>
+
+      <a-asset-item id="tentDriehoekGroen-obj" src="models/tentDriehoekGroen.obj"></a-asset-item>
+      <a-asset-item id="tentDriehoekGroen-mtl" src="models/tentDriehoekGroen.mtl"></a-asset-item>
+
+      <a-asset-item id="tentDriehoekBlauw-obj" src="models/tentDriehoekBlauw.obj"></a-asset-item>
+      <a-asset-item id="tentDriehoekBlauw-mtl" src="models/tentDriehoekBlauw.mtl"></a-asset-item>
+
+      <a-asset-item id="hekjeRecht-obj" src="models/hekjeRecht.obj"></a-asset-item>
+      <a-asset-item id="hekjeRecht-mtl" src="models/hekjeRecht.mtl"></a-asset-item>
+
+      <a-asset-item id="hekjeSchuin-obj" src="models/hekjeSchuin.obj"></a-asset-item>
+      <a-asset-item id="hekjeSchuin-mtl" src="models/hekjeSchuin.mtl"></a-asset-item>
     </a-assets>
 
     <!-- de environment wordt alleen maar gebruikt voor de ondergrond, de rest staat uit -->
-    <a-entity environment="skyType: none; fog: 0; groundTexture: walkernoise; groundColor: #93AA24; groundColor2: #987a2e"></a-entity>
+    <a-entity static-body environment="skyType: none; fog: 0; groundTexture: walkernoise; groundColor: #93AA24; groundColor2: #987a2e"></a-entity>
 
     <!-- de bomen voor decoratie -->
-    <a-entity position="5 2 -5" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
-    <a-entity position="3 2 -5" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
-    <a-entity position="2 2 -5" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
-    <a-entity position="7 2 -5" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
-    <a-entity position="7.5 2 -5" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
-    <a-entity position="0 2 -5" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
-    <a-entity position="0 2 -5" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="5 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="3 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="2 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="7 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="7.5 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="0 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="0 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
 
     <a-entity position="4 1.2 -1" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
     <a-entity position="6 1.2 -3" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
 
+    <a-entity position="4 0 -7" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
+    <a-entity position="6 0 -5" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
+
     <!-- dit is om het minder saai te maken -->
     <a-sky src="img/space.jpg"></a-sky>
 
-    <a-camera id="js--camera">
+    <a-camera id="js--camera" position="0 1.6 8">
       <a-entity
         animation__click="property: scale; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1; startEvents: click"
         animation__fusing="property: scale; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1; startEvents: fusing"
@@ -57,42 +75,46 @@
       ></a-entity>
     </a-camera>
 
-    <a-entity position="-3 0 -5" scale=".8 .8 .8"> <!-- hondenhok -->
+    <!-- Carmen's tent -->
+    <a-entity position="-3 0 6" rotation="0 45 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
+    <a-entity position="-1 0 6" rotation="0 -90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
+    <a-entity position="2.5 0 5" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeSchuin-obj; mtl: #hekjeSchuin-mtl"></a-entity>
+
+    <!-- hondenhok -->
+    <a-entity position="-3 0 -5" scale=".8 .8 .8">
       <a-box height=".1" width="2" depth="3" color="" src="img/wood.jpg" position="" rotation=""></a-box> <!-- floor -->
       <a-box height="2" width=".1" depth="3" color="" src="img/wood.jpg" position="-1 0 0" rotation=""></a-box> <!-- muur links -->
       <a-box height="2" width=".1" depth="3" color="" src="img/wood.jpg" position="1 0 0" rotation=""></a-box> <!-- muur rechts -->
       <a-box height="2" width="2" depth=".1" color="" src="img/wood.jpg" position="0 0 -1.5" rotation=""></a-box> <!-- muur achter -->
-      <a-box height="2" width=".1" depth="3.3" color="red" position="-.5 1.5 0" rotation="0 0 -45"></a-box> <!-- dak links -->
-      <a-box height="2" width=".1" depth="3.3" color="red" position=".5 1.5 0" rotation="0 0 45"></a-box> <!-- dak rechts -->
+      <a-box height="1.5" width=".1" depth="3.3" color="red" position="-.5 1.5 0" rotation="0 0 -45"></a-box> <!-- dak links -->
+      <a-box height="1.5" width=".1" depth="3.3" color="red" position=".5 1.5 0" rotation="0 0 45"></a-box> <!-- dak rechts -->
       <a-box height="1.5" width="1.5" depth=".09" color="" src="img/wood.jpg" position="0 1 -1.5" rotation="0 0 45"></a-box> <!-- muur achter driehoek -->
 
       <a-entity rotation="0 0 0" scale=".3 .3 .3" position="1 .1 2.5" gltf-model="#waterbak-glb"></a-entity>
     </a-entity>
 
     <!-- le Hond -->
-    <a-entity id="js--hond-animatie" position="-3 .1 -1.75" rotation="0 90 0" animation__1='property: position; easing: linear; dur: 2000; to: 0 0 -2; autoplay: false'
-                                                                              animation__2='property: rotation; easing: linear; dur: 500; to: 0 0 0; delay: 0; autoplay: false'
-                                                                              animation__3='property: position; easing: linear; dur: 1000; from: 0 0 -2; to: 0 .1 -4; delay: 0; autoplay: false'>
+    <a-entity id="js--hond-animatie" position="-3 0 -1.75" rotation="0 90 0" animation__1='property: position; easing: linear; dur: 1000; to: -3 0 -3; autoplay: false'
+                                                                              animation__2='property: rotation; easing: linear; dur: 1000; to: 0 0 0; delay: 0; autoplay: false'
+                                                                              animation__3='property: position; easing: linear; dur: 1000; from: -3 0 -3; to: -3 .1 -4; delay: 1000; autoplay: false'>
       <a-entity class="clickable js--hond" rotation="-90 0 0" scale=".04 .04 .04" gltf-model="#hond-glb"></a-entity>
-      <!-- <a-sound position="0 .1 -4" src="sound/Hond Domingo Toreador live.mp3" autoplay="true" loop="true" preload="auto" volume=".5" maxDistance="2"></a-sound> -->
+      <!-- <a-sound position="0 .1 -4" src="sound/Hond Domingo Toreador live.mp3" autoplay="true" loop="true" preload="auto" volume="5" maxDistance="2"></a-sound> -->
       <!-- rotation="-90 0 0" position="0 .1 -4" -->
     </a-entity>
 
-    <!-- Le tafeltje & le bord -->
-    <a-entity static-body position="-2 0 -5"> <!-- le tafel -->
+    <!-- Le tafeltje, le bord & le worstjes -->
+    <a-entity position="-1 0 -5">
       <a-cylinder position="0 1 0" radius=".6" height=".05" src="img/wood.jpg"></a-cylinder>
       <a-cylinder position="0 .5 0" radius=".05" height="1" src="img/wood.jpg"></a-cylinder>
       <a-box position="0 0 0" rotation="0 45 0" depth=".5" width=".05" height=".05" src="img/wood.jpg"></a-box>
       <a-box position="0 0 0" rotation="0 -45 0" depth=".5" width=".05" height=".05" src="img/wood.jpg"></a-box>
-      <a-entity static-body rotation="0 0 0" scale=".3 .3 .3" position="0 1.05 0" gltf-model="#bord-glb"></a-entity>
+      <a-entity rotation="0 0 0" scale=".3 .3 .3" position="0 1.05 0" gltf-model="#bord-glb"></a-entity>
+
+      <a-entity class="clickable js--pickup" rotation="0 0 0" scale=".2 .2 .2" position="0 1.1 0" gltf-model="#worst-glb"></a-entity>
+      <a-entity class="clickable js--pickup" rotation="0 0 0" scale=".2 .2 .2" position=".1 1.1 0" gltf-model="#worst-glb"></a-entity>
+      <a-entity class="clickable js--pickup" rotation="0 0 0" scale=".2 .2 .2" position="-.1 1.1 0" gltf-model="#worst-glb"></a-entity>
     </a-entity>
 
-    <!-- le worstjes -->
-    <a-entity>
-      <a-entity dynamic-body class="clickable js--pickup" rotation="0 0 0" scale=".2 .2 .2" position="-2 1.1 -5" gltf-model="#worst-glb"></a-entity>
-      <a-entity dynamic-body class="clickable js--pickup" rotation="0 0 0" scale=".2 .2 .2" position="-2.1 1.5 -5" gltf-model="#worst-glb"></a-entity>
-      <a-entity dynamic-body class="clickable js--pickup" rotation="0 0 0" scale=".2 .2 .2" position="-1.9 1.1 -5" gltf-model="#worst-glb"></a-entity>
-    </a-entity>
 
     <!-- le toilettes -->
     <a-entity position="-8 0 -4">
@@ -112,7 +134,7 @@
     </a-entity>
 
     <!-- le toilettes deur -->
-    <a-entity id="js--deur-animatie" position="-5 0 -1" animation="property: rotation; from: 0 0 0; to: 0 75 0; dur: 1000; autoplay: false">
+    <a-entity id="js--deur-animatie" position="-5 0 -1" animation="property: rotation; from: 0 0 0; to: 0 75 0; dur: 1000; delay: 1000; autoplay: false">
       <a-box width=".1" height="5" depth="1.5" position="0 0 -.75" src="img/door.jpg"></a-box>
     </a-entity>
 
