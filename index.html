@@ -39,25 +39,30 @@
 
       <a-asset-item id="hekjeSchuin-obj" src="models/hekjeSchuin.obj"></a-asset-item>
       <a-asset-item id="hekjeSchuin-mtl" src="models/hekjeSchuin.mtl"></a-asset-item>
+
+      <a-asset-item id="pavarottiPrototype-obj" src="models/pavarottiPrototype.obj"></a-asset-item>
+      <a-asset-item id="pavarottiPrototype-mtl" src="models/pavarottiPrototype.mtl"></a-asset-item>
     </a-assets>
 
     <!-- de environment wordt alleen maar gebruikt voor de ondergrond, de rest staat uit -->
     <a-entity static-body environment="skyType: none; fog: 0; groundTexture: walkernoise; groundColor: #93AA24; groundColor2: #987a2e"></a-entity>
 
+    <a-entity position="0 1.6 0" rotation="0 0 0" obj-model="obj: #pavarottiPrototype-obj; mtl: #pavarottiPrototype-mtl"></a-entity>
+
     <!-- de bomen voor decoratie -->
-    <a-entity position="5 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <!-- <a-entity position="5 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
     <a-entity position="3 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
     <a-entity position="2 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
     <a-entity position="7 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
     <a-entity position="7.5 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
-    <a-entity position="0 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="0 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity> -->
     <a-entity position="0 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
 
     <a-entity position="4 1.2 -1" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
-    <a-entity position="6 1.2 -3" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <!-- <a-entity position="6 1.2 -3" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity> -->
 
     <a-entity position="4 0 -7" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
-    <a-entity position="6 0 -5" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
+    <!-- <a-entity position="6 0 -5" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity> -->
 
     <!-- dit is om het minder saai te maken -->
     <a-sky src="img/space.jpg"></a-sky>
