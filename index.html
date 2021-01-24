@@ -45,6 +45,9 @@
 
       <a-asset-item id="pavarotti-obj" src="models/pavarotti.obj"></a-asset-item>
       <a-asset-item id="pavarotti-mtl" src="models/pavarotti.mtl"></a-asset-item>
+
+      <a-asset-item id="Tuinman-obj" src="models/Tuinman.obj"></a-asset-item>
+      <a-asset-item id="Tuinman-mtl" src="models/Tuinman.mtl"></a-asset-item>
     </a-assets>
 
     <!-- de environment wordt alleen maar gebruikt voor de ondergrond, de rest staat uit -->
@@ -54,14 +57,16 @@
 
     <a-entity position="0 -3 2" rotation="0 0 0" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl" animation="property: position; from: 0 -3 2; to: 0 .9 2; dur: 5000; delay: 15000;"></a-entity>
 
+    <a-entity position="2 -3 2" rotation="0 0 0" obj-model="obj: #Tuinman-obj; mtl: #Tuinman-mtl" animation="property: position; from: 2 -2.5 2; to: 2 1.4 2; dur: 5000; delay: 15000;"></a-entity>
+
     <!-- de bomen voor decoratie -->
     <a-entity position="5 2 5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
-    <a-entity position="6 2 7" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="6 1.2 7" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
     <a-entity position="4 2 4.5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
     <a-entity position="7 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
-    <a-entity position="-5 2 5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="-5 1.2 5" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
     <a-entity position="-8 2 3.5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
-    <a-entity position="0 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="0 2 -5" rotation="0 180 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
 
     <a-entity position="4 1.2 -1" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
     <a-entity position="5 1.2 -3" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
