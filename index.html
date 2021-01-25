@@ -128,8 +128,8 @@
       <a-entity position="-8 0 -4">
         <a-box height=".1" width="6" depth="10" color="" src="img/tiles.jpg" position="" rotation=""></a-box> <!-- floor -->
         <a-box height="6" width=".1" depth="10" color="" src="img/wood.jpg" position="-3 0 0" rotation=""></a-box> <!-- muur links -->
-        <a-box height="6" width=".1" depth="7" color="" src="img/wood.jpg" position="3 0 -2" rotation=""></a-box> <!-- muur rechts 1 -->
-        <a-box height="6" width=".1" depth="2" color="" src="img/wood.jpg" position="3 0 4" rotation=""></a-box> <!-- muur rechts 2 -->
+        <a-box class="clickable" height="6" width=".1" depth="7" color="" src="img/wood.jpg" position="3 0 -2" rotation=""></a-box> <!-- muur rechts 1 -->
+        <a-box class="clickable" height="6" width=".1" depth="2" color="" src="img/wood.jpg" position="3 0 4" rotation=""></a-box> <!-- muur rechts 2 -->
         <a-box height=".5" width=".1" depth="1.5" color="" src="img/wood.jpg" position="3 2.75 2.25" rotation=""></a-box> <!-- muur boven deur -->
         <a-box height="6" width="6" depth=".1" color="" src="img/wood.jpg" position="0 0 -5" rotation=""></a-box> <!-- muur achter -->
         <a-box height="6" width="6" depth=".1" color="" src="img/wood.jpg" position="0 0 5" rotation=""></a-box> <!-- muur voor -->
@@ -154,12 +154,14 @@
       </a-entity>
     </a-entity>
 
-
-
     <!-- decoratieve elementen -->
     <!-- tenten -->
     <a-entity position="-9 0 -2" rotation="0 45 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
     <a-entity position="-10 0 2" rotation="0 -250 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekBlauw-obj; mtl: #tentDriehoekBlauw-mtl"></a-entity>
+
+    <a-entity position="12 0 3" rotation="0 -125 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
+    <a-entity position="13 0 0" rotation="0 -90 0" scale="1.5 1.5 1.8" obj-model="obj: #tentDriehoekBlauw-obj; mtl: #tentDriehoekBlauw-mtl"></a-entity>
+    <a-entity position="11 0 -4" rotation="0 -40 0" scale="1 1 1.3" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
 
     <!-- bomen & struiken-->
     <a-entity position="7 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
@@ -168,14 +170,14 @@
     <a-entity position="6 0 -5" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
     <a-entity position="6 0 1" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
 
-    <a-entity position="5 2 5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
-    <a-entity position="5 1.2 -3" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="5.5 2 5" rotation="0 90 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
 
     <a-entity position="4 2 4.5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
     <a-entity position="4 1.2 -1" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
     <a-entity position="4 0 -7" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
 
     <a-entity position="-5 1.2 5" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="-5 1.4s -3" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
     <a-entity position="-5 2 -5" rotation="0 180 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
 
     <a-entity position="-6 0 -6" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
