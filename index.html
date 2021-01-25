@@ -7,7 +7,7 @@
   <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
   <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
-  <title>Document</title>
+  <title>Camping Pavarotti</title>
 </head>
 <body>
   <a-scene id="js--scene">
@@ -84,7 +84,7 @@
     <!-- dit is om het minder saai te maken -->
     <a-sky id="js--sky" src="img/MiddagLucht.jpg"></a-sky>
 
-    <a-camera id="js--camera" position="0 1.6 8">
+    <a-camera id="js--camera" position="0 1.6 15">
       <a-entity
         animation__click="property: scale; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1; startEvents: click"
         animation__fusing="property: scale; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1; startEvents: fusing"
@@ -98,13 +98,14 @@
     </a-camera>
 
     <!-- Carmen's tent -->
-    <a-entity position="-3 0 6" rotation="0 45 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
+    <a-entity position="-3 0 10" rotation="0 45 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
+
     <a-entity position="-1 0 6" rotation="0 -90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
     <a-entity position="2.5 0 5" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeSchuin-obj; mtl: #hekjeSchuin-mtl"></a-entity>
 
     <!-- hondenhok -->
     <a-entity position="-3 0 -5" scale=".8 .8 .8">
-      <a-box height=".1" width="2" depth="3" color="" src="img/wood.jpg" position="" rotation=""></a-box> <!-- floor -->
+      <a-box height=".1" width="2" depth="3" color="" src="img/wood.jpg" position="" rotation=""></a-box> <!-- vloer -->
       <a-box height="2" width=".1" depth="3" color="" src="img/wood.jpg" position="-1 0 0" rotation=""></a-box> <!-- muur links -->
       <a-box height="2" width=".1" depth="3" color="" src="img/wood.jpg" position="1 0 0" rotation=""></a-box> <!-- muur rechts -->
       <a-box height="2" width="2" depth=".1" color="" src="img/wood.jpg" position="0 0 -1.5" rotation=""></a-box> <!-- muur achter -->
@@ -120,8 +121,9 @@
                                                                               animation__2='property: rotation; easing: linear; dur: 1000; to: 0 0 0; delay: 0; autoplay: false'
                                                                               animation__3='property: position; easing: linear; dur: 1000; from: -3 0 -3; to: -3 .1 -4; delay: 1000; autoplay: false'>
       <a-entity class="clickable js--hond" rotation="-90 0 0" scale=".04 .04 .04" gltf-model="#hond-glb"></a-entity>
-      <a-sound position="0 .1 -4" src="sound/Hond Domingo Toreador live.mp3" autoplay="true" loop="true" preload="auto" volume="2" maxDistance="2"></a-sound>
-      <!-- rotation="-90 0 0" position="0 .1 -4" -->
+      <a-sound id="js--mp3-nietDoor" position="0 .1 -4" src="sound/jijKomtErNietDoor.mp3" autoplay="true" loop="true" preload="auto" volume="2" maxDistance="2"></a-sound>
+      <a-sound id="js--mp3-hmmHmm" position="0 .1 -4" src="sound/hmmHmm.mp3" autoplay="false" preload="auto" volume="4" maxDistance="2"></a-sound>
+      <!-- rotation="-90 0 0" position="0 .1 -4" -->s
     </a-entity>
 
     <!-- Le tafeltje, le bord & le worstjes -->

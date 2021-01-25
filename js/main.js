@@ -12,6 +12,9 @@ const bezemKast = document.getElementsByClassName('js--bezemKast');
 const deurAnimatie = document.getElementById("js--deur-animatie");
 const hondAnimatie = document.getElementById("js--hond-animatie");
 
+const jijKomtErNietDoor = document.getElementById("js--mp3-nietDoor");
+const hmmHmm = document.getElementById("js--mp3-hmmHmm");
+
 let placeholders = document.getElementsByClassName("placeholder");
 
 for(let i = 0; i < placeholders.length; i++){
@@ -64,10 +67,18 @@ for(let i = 0; i < hond.length; i++){
       document.getElementsByClassName("js--hold")[0].remove();
       document.getElementsByClassName("js--hold")[0].remove();
 
-      deurAnimatie.setAttribute("animation", {autoplay: true});
+
       hondAnimatie.setAttribute("animation__1", {autoplay: true});
       hondAnimatie.setAttribute("animation__2", {autoplay: true});
       hondAnimatie.setAttribute("animation__3", {autoplay: true});
+
+      jijKomtErNietDoor.components.sound.stopSound();
+      hmmHmm.components.sound.playSound();
+      console.log(hmmHmm);
+
+      setTimeout(function() {
+        deurAnimatie.setAttribute("animation", {autoplay: true});
+      }, 29500);
     }
   });
 }
