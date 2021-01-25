@@ -13,6 +13,13 @@
   <a-scene id="js--scene">
 
     <a-assets>
+      <a-asset-item id="KlokAvond-obj" src="models/KlokAvond.obj"></a-asset-item>
+      <a-asset-item id="KlokAvond-mtl" src="models/KlokAvond.mtl"></a-asset-item>
+      <a-asset-item id="KlokMiddag-obj" src="models/KlokMiddag.obj"></a-asset-item>
+      <a-asset-item id="KlokMiddag-mtl" src="models/KlokMiddag.mtl"></a-asset-item>
+      <a-asset-item id="Bezem-obj" src="models/Bezem.obj"></a-asset-item>
+      <a-asset-item id="Bezem-mtl" src="models/Bezem.mtl"></a-asset-item>
+
       <a-asset-item id="hond-glb" src="models/hond.glb"></a-asset-item>
       <a-asset-item id="toilet-glb" src="models/toilet.glb"></a-asset-item>
       <a-asset-item id="worst-glb" src="models/worst.glb"></a-asset-item>
@@ -75,7 +82,7 @@
     <!-- <a-entity position="6 0 -5" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity> -->
 
     <!-- dit is om het minder saai te maken -->
-    <a-sky src="img/space.jpg"></a-sky>
+    <a-sky id="js--sky" src="img/MiddagLucht.jpg"></a-sky>
 
     <a-camera id="js--camera" position="0 1.6 8">
       <a-entity
@@ -151,6 +158,13 @@
     <!-- le toilettes deur -->
     <a-entity id="js--deur-animatie" position="-5 0 -1" animation="property: rotation; from: 0 0 0; to: 0 75 0; dur: 1000; delay: 1000; autoplay: false">
       <a-box width=".1" height="5" depth="1.5" position="0 0 -.75" src="img/door.jpg"></a-box>
+    </a-entity>
+
+    <!-- Bezemkast -->
+    <a-entity position="-8 0 -4">
+      <a-box class="clickable js--bezemKast" height="4.5" width=".4" depth="1" color="blue" position="-3 0 0"></a-box>
+      <a-obj-model id="js--klok" src="#KlokMiddag-obj" mtl="#KlokMiddag-mtl" position="-2.95 2 1"></a-obj-model>
+      <a-obj-model id="js--bezem" src="#Bezem-obj" mtl="#Bezem-mtl" position="-2.90 -0.48 1"></a-obj-model>
     </a-entity>
 
   </a-scene>

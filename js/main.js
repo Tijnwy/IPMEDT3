@@ -8,6 +8,7 @@ const klok = document.getElementById('js--klok');
 const hond = document.getElementsByClassName('js--hond');
 const pickups = document.getElementsByClassName('js--pickup');
 const holdItems = document.getElementsByClassName("js--hold");
+const bezemKast = document.getElementsByClassName('js--bezemKast');
 const deurAnimatie = document.getElementById("js--deur-animatie");
 const hondAnimatie = document.getElementById("js--hond-animatie");
 
@@ -74,9 +75,6 @@ for(let i = 0; i < hond.length; i++){
 for (var i = 0; i < bezemKast.length; i++) {
   bezemKast[i].addEventListener('click',
   function(evt){
-    // Lucht
-    sky.setAttribute("color", "#black");
-
     // Klok
     if (klok.getAttribute("src") == "#KlokMiddag-obj") {
       //console.log("Klok gaat naar avond");
