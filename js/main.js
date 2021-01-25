@@ -7,7 +7,9 @@ const klok = document.getElementById('js--klok');
 // Class
 const hond = document.getElementsByClassName('js--hond');
 const pickups = document.getElementsByClassName('js--pickup');
-const bezemKast = document.getElementsByClassName('js--bezemKast');
+const holdItems = document.getElementsByClassName("js--hold");
+const deurAnimatie = document.getElementById("js--deur-animatie");
+const hondAnimatie = document.getElementById("js--hond-animatie");
 
 let placeholders = document.getElementsByClassName("placeholder");
 
@@ -32,7 +34,9 @@ let hold = null;
 for(let i = 0; i < pickups.length; i++){
   pickups[i].addEventListener('click', function(evt){
     if (hold == null) {
-      camera.innerHTML += '<a-box id="js--hold" position=".5 -.5 -1" rotation="0 45 0" depth=".5" width=".1" height=".1" color="red"></a-box>'
+      camera.innerHTML += '<a-entity class="js--hold" rotation="0 90 0" scale=".3 .3 .3" position=".5 -.3 -.9" gltf-model="#worst-glb"></a-entity>'
+      camera.innerHTML += '<a-box class="js--hold" width=".15" height=".6" depth=".15" rotation="-55 -10 10" position=".4 -.4 -.4" color="#FFD29A"></a-box>'
+      const holdItems = document.getElementsByClassName("js--hold");
       hold = "worst"
       this.remove();
       console.log(pickups);
@@ -44,33 +48,25 @@ console.log(hond)
 for(let i = 0; i < hond.length; i++){
   hond[i].addEventListener('click',
   function(evt){
-    console.log("brrr");
-
-
 
     if(hold == "worst") {
-      let worstHond = document.createElement("a-box");
+      let worstHond = document.createElement("a-entity");
       // worstHond.setAttribute("class", "js--pickup clickable");
-      // worstHond.setAttribute("gltf-model", "#X-wing-glb");
-      worstHond.setAttribute("depth", ".5")
-      worstHond.setAttribute("width", ".1")
-      worstHond.setAttribute("height", ".1")
-      worstHond.setAttribute("color", "red")
+      worstHond.setAttribute("gltf-model", "#worst-glb");
+      worstHond.setAttribute("scale", {x: 0.25, y: 0.25, z: 0.25})
       worstHond.setAttribute("rotation", {x: 0, y: 90, z: 0})
-      worstHond.setAttribute("position", {x: 0, y: 1.1, z: -3.25});
+      worstHond.setAttribute("position", {x: 0, y: 1, z: .75});
 
-      scene.appendChild(worstHond);
+      hondAnimatie.appendChild(worstHond);
       hold = null;
 
-      document.getElementById('js--hold').remove();
-      console.log(pickups);
+      document.getElementsByClassName("js--hold")[0].remove();
+      document.getElementsByClassName("js--hold")[0].remove();
 
-
-
-      setTimeout(hondAnimatie = () => {
-        // hond.setAttribute("animation", 'property: position; easing: linear; dur: 2000; to: 1.85 0 -1.5');
-        // worstHond.setAttribute("animation", 'property: position; easing: linear; dur: 2000; to: 1.85 0 -1.5');
-      },1500);
+      deurAnimatie.setAttribute("animation", {autoplay: true});
+      hondAnimatie.setAttribute("animation__1", {autoplay: true});
+      hondAnimatie.setAttribute("animation__2", {autoplay: true});
+      hondAnimatie.setAttribute("animation__3", {autoplay: true});
     }
   });
 }
