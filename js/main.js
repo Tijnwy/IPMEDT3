@@ -21,7 +21,7 @@ for(let i = 0; i < placeholders.length; i++){
   placeholders[i].addEventListener('click',
   function(evt){
 
-
+      // dit is vrij nutteloos
       let flush = document.createElement("a-cylinder");
       flush.setAttribute("color", "blue");
       flush.setAttribute("animation", "property: rotation; loop: true; to: 20 360 20; dur: 1000")
@@ -43,11 +43,9 @@ for(let i = 0; i < pickups.length; i++){
       const holdItems = document.getElementsByClassName("js--hold");
       hold = "worst"
       this.remove();
-      console.log(pickups);
     }
   })
 }
-console.log(hond)
 
 for(let i = 0; i < hond.length; i++){
   hond[i].addEventListener('click',
@@ -74,7 +72,6 @@ for(let i = 0; i < hond.length; i++){
 
       jijKomtErNietDoor.components.sound.stopSound();
       hmmHmm.components.sound.playSound();
-      console.log(hmmHmm);
 
       setTimeout(function() {
         deurAnimatie.setAttribute("animation", {autoplay: true});
