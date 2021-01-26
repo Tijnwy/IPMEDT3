@@ -11,6 +11,7 @@ const holdItems = document.getElementsByClassName("js--hold");
 const bezemKast = document.getElementsByClassName('js--bezemKast');
 const deurAnimatie = document.getElementById("js--deur-animatie");
 const hondAnimatie = document.getElementById("js--hond-animatie");
+const places = document.getElementsByClassName('js--place');
 
 const jijKomtErNietDoor = document.getElementById("js--mp3-nietDoor");
 const hmmHmm = document.getElementById("js--mp3-hmmHmm");
@@ -95,6 +96,22 @@ for (var i = 0; i < bezemKast.length; i++) {
       klok.setAttribute("mtl", "#KlokMiddag-mtl");
       sky.setAttribute("src", "img/middaglucht.jpg");
     }
+  });
+}
+
+function pythagoras(x1, z1, x2, z2){
+  return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(z1 - z2, 2))
+}
+
+// Lopen
+for (var i = 0; i < places.length; i++) {
+  places[i].addEventListener('click', function(evt) {
+    let att = document.createAttribute('animation');
+    let camera_position = camera.getAttribute('position');
+    let box_position = this.getAttribute('position');
+    let duration = pythagoras(box_position.x, box_position.z, camera_position.x, camera_position.z) * 333;
+    att.value = 'property: position; easing: linear; dur: ' + duration + '; to: ' + this.getAttribute('position').x + ' 1.6 ' + this.getAttribute('position').z;
+    camera.setAttribute('animation', att.value);
   });
 }
 
