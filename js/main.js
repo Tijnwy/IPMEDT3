@@ -30,7 +30,6 @@ for(let i = 0; i < placeholders.length; i++){
       flush.setAttribute("radius", ".2");
 
       scene.appendChild(flush);
-
   });
 }
 let hold = null;
