@@ -12,13 +12,16 @@ const bezemKast = document.getElementsByClassName('js--bezemKast');
 const deurAnimatie = document.getElementById("js--deur-animatie");
 const hondAnimatie = document.getElementById("js--hond-animatie");
 
+const jijKomtErNietDoor = document.getElementById("js--mp3-nietDoor");
+const hmmHmm = document.getElementById("js--mp3-hmmHmm");
+
 let placeholders = document.getElementsByClassName("placeholder");
 
 for(let i = 0; i < placeholders.length; i++){
   placeholders[i].addEventListener('click',
   function(evt){
 
-
+      // dit is vrij nutteloos
       let flush = document.createElement("a-cylinder");
       flush.setAttribute("color", "blue");
       flush.setAttribute("animation", "property: rotation; loop: true; to: 20 360 20; dur: 1000")
@@ -39,11 +42,9 @@ for(let i = 0; i < pickups.length; i++){
       const holdItems = document.getElementsByClassName("js--hold");
       hold = "worst"
       this.remove();
-      console.log(pickups);
     }
   })
 }
-console.log(hond)
 
 for(let i = 0; i < hond.length; i++){
   hond[i].addEventListener('click',
@@ -63,10 +64,17 @@ for(let i = 0; i < hond.length; i++){
       document.getElementsByClassName("js--hold")[0].remove();
       document.getElementsByClassName("js--hold")[0].remove();
 
-      deurAnimatie.setAttribute("animation", {autoplay: true});
+
       hondAnimatie.setAttribute("animation__1", {autoplay: true});
       hondAnimatie.setAttribute("animation__2", {autoplay: true});
       hondAnimatie.setAttribute("animation__3", {autoplay: true});
+
+      jijKomtErNietDoor.components.sound.stopSound();
+      hmmHmm.components.sound.playSound();
+
+      setTimeout(function() {
+        deurAnimatie.setAttribute("animation", {autoplay: true});
+      }, 29500);
     }
   });
 }
