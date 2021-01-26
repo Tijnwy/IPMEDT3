@@ -69,6 +69,7 @@
     <!-- dit is om het minder saai te maken -->
     <a-sky id="js--sky" src="img/MiddagLucht.jpg"></a-sky>
 
+    <!-- de camera -->
     <a-camera id="js--camera" position="0 1.6 15">
       <a-entity
         animation__click="property: scale; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1; startEvents: click"
@@ -86,7 +87,9 @@
 
     <!-- Carmen's tent -->
     <a-entity position="-3 0 10" rotation="0 45 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
-
+    <a-sound id="js--mp3-carmenInstrumentaal" position="-3 0 10" src="sound/carmen_Instrumentaal.mp3" autoplay="true" loop="true" preload="auto" volume="1.2" maxDistance="2"></a-sound>
+    <a-sound id="js--mp3-carmen1" position="-3 0 10" src="sound/carmen1.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
+    <a-sound id="js--mp3-carmen2" position="-3 0 10" src="sound/carmen2.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
 
     <!-- De tuinman -->
     <a-entity position="6 1.7 2" scale="1.5 1.5 1.5" rotation="0 180 0" obj-model="obj: #Tuinman-obj; mtl: #Tuinman-mtl"
@@ -193,7 +196,7 @@
     <a-entity position="4 0 -7" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
 
     <a-entity position="-5 1.2 5" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
-    <a-entity position="-5 1.4s -3" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="-5 1.4 -3" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
     <a-entity position="-5 2 -5" rotation="0 180 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
 
     <a-entity position="-6 0 -6" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
@@ -209,7 +212,8 @@
     <a-entity position="-1 0 6" rotation="0 -90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
 
     <!-- cola blikjes -->
-    <a-cylinder id="js--blikje-jan-sevilla" class="js--blikje clickable" color="red" position="5.5 .1w 1.5" radius=".1" height=".2"></a-cylinder>
+    <a-cylinder id="js--blikje-jan-sevilla" class="js--blikje clickable" color="red" position="5.5 .1 1.5" radius=".1" height=".2"></a-cylinder>
+    <a-cylinder id="js--blikje-carmen" class="js--blikje clickable" color="red" position="-2.2 .1 11.5" radius=".1" height=".2"></a-cylinder>
 
     <!-- Spheres om naar toe te kunnen lopen -->
     <a-sphere class="clickable js--place" color="black" position="0 5 14" radius="0.2"></a-sphere>
