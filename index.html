@@ -65,7 +65,10 @@
 
     <!-- <a-entity position="0 -3 2" rotation="0 0 0" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl" animation="property: position; from: 0 -3 2; to: 0 .9 2; dur: 5000; delay: 15000;"></a-entity> -->
 
-    <a-entity position="6 1.7 2" scale="1.5 1.5 1.5" rotation="0 180 0" obj-model="obj: #Tuinman-obj; mtl: #Tuinman-mtl"></a-entity>
+    <a-entity position="6 1.7 2" scale="1.5 1.5 1.5" rotation="0 180 0" obj-model="obj: #Tuinman-obj; mtl: #Tuinman-mtl"
+              animation__1="property: rotation; dur: 750; from: 0 180 -10; to: 0 180 10; loop: true; dir: alternate"
+              animation__2="property: position; dur: 1000; from: 6 1.7 2; to: 6 1.4 2; loop: true; dir: alternate">
+    </a-entity>
 
     <!-- dit is om het minder saai te maken -->
     <a-sky id="js--sky" src="img/MiddagLucht.jpg"></a-sky>
@@ -193,7 +196,7 @@
     <a-entity position="-1 0 6" rotation="0 -90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
 
     <!-- cola blikjes -->
-    <a-cylinder class="js--blikje" color="red" position="5.5 .1w 1.5" radius=".1" height=".2"></a-cylinder>
+    <a-cylinder class="js--blikje clickable" color="red" position="5.5 .1w 1.5" radius=".1" height=".2"></a-cylinder>
 
 
 
