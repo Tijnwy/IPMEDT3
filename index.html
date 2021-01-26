@@ -66,8 +66,6 @@
 
     <!-- <a-entity position="0 -3 2" rotation="0 0 0" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl" animation="property: position; from: 0 -3 2; to: 0 .9 2; dur: 5000; delay: 15000;"></a-entity> -->
 
-    <a-entity position="6 1.7 2" scale="1.5 1.5 1.5" rotation="0 180 0" obj-model="obj: #Tuinman-obj; mtl: #Tuinman-mtl"></a-entity>
-
     <!-- dit is om het minder saai te maken -->
     <a-sky id="js--sky" src="img/MiddagLucht.jpg"></a-sky>
 
@@ -84,8 +82,23 @@
       ></a-entity>
     </a-camera>
 
+    <a-image position="1 .5 14" src="img/CampingPavarotti.png" height="2" width="1"></a-image>
+
     <!-- Carmen's tent -->
     <a-entity position="-3 0 10" rotation="0 45 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
+
+
+    <!-- De tuinman -->
+    <a-entity position="6 1.7 2" scale="1.5 1.5 1.5" rotation="0 180 0" obj-model="obj: #Tuinman-obj; mtl: #Tuinman-mtl"
+              animation__1="property: rotation; dur: 750; from: 0 180 -10; to: 0 180 10; loop: true; dir: alternate"
+              animation__2="property: position; dur: 1000; from: 6 1.7 2; to: 6 1.4 2; loop: true; dir: alternate">
+    </a-entity>
+    <a-sound id="js--mp3-janSevillaInstrumentaal" position="6 1.6 2" src="sound/Jan_Sevilla_Instrumentaal.mp3" autoplay="true" loop="true" preload="auto" volume=".2" maxDistance="2"></a-sound>
+    <a-sound id="js--mp3-janSevilla1" position="6 1.6 2" src="sound/Jan_Sevilla1.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
+    <a-sound id="js--mp3-janSevilla2" position="6 1.6 2" src="sound/Jan_Sevilla2.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
+    <a-sound id="js--mp3-janSevilla3" position="6 1.6 2" src="sound/Jan_Sevilla3.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
+
+
 
     <a-entity rotation="0 -90 0" position="-3 0 -3">
       <!-- hondenhok -->
@@ -106,8 +119,8 @@
                                                                                 animation__2='property: rotation; easing: linear; dur: 1000; to: 0 0 0; delay: 0; autoplay: false'
                                                                                 animation__3='property: position; easing: linear; dur: 1000; from: -3 0 -3; to: -3 .1 -4; delay: 1000; autoplay: false'>
         <a-entity class="clickable js--hond" rotation="-90 0 0" scale=".04 .04 .04" gltf-model="#hond-glb"></a-entity>
-        <a-sound id="js--mp3-nietDoor" position="0 .1 -4" src="sound/jijKomtErNietDoor.mp3" autoplay="true" loop="true" preload="auto" volume="0" maxDistance="2"></a-sound>
-        <a-sound id="js--mp3-hmmHmm" position="0 .1 -4" src="sound/hmmHmm.mp3" autoplay="false" preload="auto" volume="4" maxDistance="2"></a-sound>
+        <a-sound id="js--mp3-domingo1" position="-1 .1 -6" src="sound/domingo1.mp3" autoplay="true" loop="true" preload="auto" volume="0" maxDistance="2"></a-sound>
+        <a-sound id="js--mp3-domingo2" position="1 .1 -6" src="sound/domingo2.mp3" autoplay="false" preload="auto" volume="4" maxDistance="2"></a-sound>
         <!-- rotation="-90 0 0" position="0 .1 -4" -->s
       </a-entity>
 
@@ -196,7 +209,7 @@
     <a-entity position="-1 0 6" rotation="0 -90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
 
     <!-- cola blikjes -->
-    <a-cylinder class="js--blikje" color="red" position="5.5 .1w 1.5" radius=".1" height=".2"></a-cylinder>
+    <a-cylinder id="js--blikje-jan-sevilla" class="js--blikje clickable" color="red" position="5.5 .1w 1.5" radius=".1" height=".2"></a-cylinder>
 
     <!-- Spheres om naar toe te kunnen lopen -->
     <a-sphere class="clickable js--place" color="black" position="0 5 14" radius="0.2"></a-sphere>
