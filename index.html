@@ -57,7 +57,6 @@
 
     <!-- de environment wordt alleen maar gebruikt voor de ondergrond, de rest staat uit -->
     <a-entity environment="grid:crosses; skyType: none; fog: 0; groundTexture: walkernoise; groundColor: #93AA24; groundColor2: #987a2e"></a-entity>
-    <a-box color="blue" position="0 0 0" scale=".5 .5 .5"></a-box>
 
     <!-- dit is eng -->
     <!-- <a-entity position="0 -30 -30" rotation="0 0 0" scale="20 20 20" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl"
@@ -66,8 +65,6 @@
     ></a-entity> -->
 
     <!-- <a-entity position="0 -3 2" rotation="0 0 0" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl" animation="property: position; from: 0 -3 2; to: 0 .9 2; dur: 5000; delay: 15000;"></a-entity> -->
-
-    <a-entity position="6 1.7 2" scale="1.5 1.5 1.5" rotation="0 180 0" obj-model="obj: #Tuinman-obj; mtl: #Tuinman-mtl"></a-entity>
 
     <!-- dit is om het minder saai te maken -->
     <a-sky id="js--sky" src="img/MiddagLucht.jpg"></a-sky>
@@ -85,8 +82,23 @@
       ></a-entity>
     </a-camera>
 
+    <a-image position="1 .5 14" src="img/CampingPavarotti.png" height="2" width="1"></a-image>
+
     <!-- Carmen's tent -->
     <a-entity position="-3 0 10" rotation="0 45 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
+
+
+    <!-- De tuinman -->
+    <a-entity position="6 1.7 2" scale="1.5 1.5 1.5" rotation="0 180 0" obj-model="obj: #Tuinman-obj; mtl: #Tuinman-mtl"
+              animation__1="property: rotation; dur: 750; from: 0 180 -10; to: 0 180 10; loop: true; dir: alternate"
+              animation__2="property: position; dur: 1000; from: 6 1.7 2; to: 6 1.4 2; loop: true; dir: alternate">
+    </a-entity>
+    <a-sound id="js--mp3-janSevillaInstrumentaal" position="6 1.6 2" src="sound/Jan_Sevilla_Instrumentaal.mp3" autoplay="true" loop="true" preload="auto" volume=".2" maxDistance="2"></a-sound>
+    <a-sound id="js--mp3-janSevilla1" position="6 1.6 2" src="sound/Jan_Sevilla1.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
+    <a-sound id="js--mp3-janSevilla2" position="6 1.6 2" src="sound/Jan_Sevilla2.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
+    <a-sound id="js--mp3-janSevilla3" position="6 1.6 2" src="sound/Jan_Sevilla3.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
+
+
 
     <a-entity rotation="0 -90 0" position="-3 0 -3">
       <!-- hondenhok -->
@@ -107,8 +119,8 @@
                                                                                 animation__2='property: rotation; easing: linear; dur: 1000; to: 0 0 0; delay: 0; autoplay: false'
                                                                                 animation__3='property: position; easing: linear; dur: 1000; from: -3 0 -3; to: -3 .1 -4; delay: 1000; autoplay: false'>
         <a-entity class="clickable js--hond" rotation="-90 0 0" scale=".04 .04 .04" gltf-model="#hond-glb"></a-entity>
-        <a-sound id="js--mp3-nietDoor" position="0 .1 -4" src="sound/jijKomtErNietDoor.mp3" autoplay="true" loop="true" preload="auto" volume="0" maxDistance="2"></a-sound>
-        <a-sound id="js--mp3-hmmHmm" position="0 .1 -4" src="sound/hmmHmm.mp3" autoplay="false" preload="auto" volume="4" maxDistance="2"></a-sound>
+        <a-sound id="js--mp3-domingo1" position="-1 .1 -6" src="sound/domingo1.mp3" autoplay="true" loop="true" preload="auto" volume="0" maxDistance="2"></a-sound>
+        <a-sound id="js--mp3-domingo2" position="1 .1 -6" src="sound/domingo2.mp3" autoplay="false" preload="auto" volume="4" maxDistance="2"></a-sound>
         <!-- rotation="-90 0 0" position="0 .1 -4" -->s
       </a-entity>
 
@@ -124,7 +136,6 @@
         <a-entity class="clickable js--pickup" rotation="0 0 0" scale=".2 .2 .2" position=".1 1.1 0" gltf-model="#worst-glb"></a-entity>
         <a-entity class="clickable js--pickup" rotation="0 0 0" scale=".2 .2 .2" position="-.1 1.1 0" gltf-model="#worst-glb"></a-entity>
       </a-entity>
-
 
       <!-- le toilettes -->
       <a-entity position="-8 0 -4">
@@ -145,7 +156,7 @@
 
       <!-- le toilettes deur -->
       <a-entity id="js--deur-animatie" position="-5 0 -1" animation="property: rotation; from: 0 0 0; to: 0 75 0; dur: 1000; delay: 1000; autoplay: false">
-        <a-box width=".1" height="5" depth="1.5" position="0 0 -.75" src="img/door.jpg"></a-box>
+        <a-box class="clickable" width=".1" height="5" depth="1.5" position="0 0 -.75" src="img/door.jpg"></a-box>
       </a-entity>
 
       <!-- Bezemkast -->
@@ -155,7 +166,9 @@
         <a-obj-model id="js--bezem" src="#Bezem-obj" mtl="#Bezem-mtl" position="-2.90 -0.48 1"></a-obj-model>
       </a-entity>
     </a-entity>
-    <a-obj-model src="#VerbodenZingenBord-obj" mtl="#VerbodenZingenBord-mtl" position="0 0 1"></a-obj-model>
+
+    <!-- Verboden te zingen bord -->
+    <a-obj-model src="#VerbodenZingenBord-obj" mtl="#VerbodenZingenBord-mtl" position="3 0 10" rotation="0 -90 0"></a-obj-model>
 
     <!-- decoratieve elementen -->
     <!-- tenten -->
@@ -195,13 +208,16 @@
     <a-entity position="3.5 0 5" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeSchuin-obj; mtl: #hekjeSchuin-mtl"></a-entity>
     <a-entity position="-1 0 6" rotation="0 -90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
 
-<!-- Le Gieter   -->
-    <a-entity position="5.5 .125 2" gltf-model="models/gieter.glb"></a-entity>
-
     <!-- cola blikjes -->
-    <a-entity position="5.5 .1 1.5" gltf-model="models/colablik.glb"></a-entity>
+    <a-cylinder id="js--blikje-jan-sevilla" class="js--blikje clickable" color="red" position="5.5 .1w 1.5" radius=".1" height=".2"></a-cylinder>
 
-
+    <!-- Spheres om naar toe te kunnen lopen -->
+    <a-sphere class="clickable js--place" color="black" position="0 5 14" radius="0.2"></a-sphere>
+    <a-sphere class="clickable js--place" color="black" position="0 5 2" radius="0.2"></a-sphere>
+    <a-sphere class="clickable js--place" color="black" position="-1.4 5 -4" radius="0.2"></a-sphere>
+    <a-sphere class="clickable js--place" color="black" position="-1 2.8 -11" radius="0.1"></a-sphere>
+    <a-sphere class="clickable js--place" color="black" position="2 2.8 -11" radius="0.1"></a-sphere>
+  </a-scene>
   <script src="js/main.js"></script>
 </body>
 </html>
