@@ -166,6 +166,13 @@ for (var i = 0; i < bezemKast.length; i++) {
   });
 }
 
+PAvarotti.addEventListener('click', function(evt) {
+  if (hold2 = "tissue") {
+    document.getElementsByClassName("js--hold2")[0].remove();
+    document.getElementsByClassName("js--hold2")[0].remove();
+  }
+});
+
 function pythagoras(x1, z1, x2, z2){
   return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(z1 - z2, 2))
 }
