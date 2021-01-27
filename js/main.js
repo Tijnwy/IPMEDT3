@@ -13,6 +13,7 @@ const deurAnimatie = document.getElementById("js--deur-animatie");
 const hondAnimatie = document.getElementById("js--hond-animatie");
 const places = document.getElementsByClassName('js--place');
 const PAvarotti = document.getElementById('js--pavarotti');
+const pickups2 = document.getElementsByClassName('js--pickup2');
 
 const domingo1 = document.getElementById("js--mp3-domingo1");
 const domingo2 = document.getElementById("js--mp3-domingo2");
@@ -129,6 +130,11 @@ for(let i = 0; i < hond.length; i++){
   });
 }
 
+function tissueOppakken(){
+
+}
+let hold2 = null;
+
 for (var i = 0; i < bezemKast.length; i++) {
   bezemKast[i].addEventListener('click',
   function(evt){
@@ -139,13 +145,23 @@ for (var i = 0; i < bezemKast.length; i++) {
       klok.setAttribute("mtl", "#KlokAvond-mtl");
       sky.setAttribute("src", "img/avondlucht.jpg");
       PAvarotti.setAttribute("visible", "true");
-    }
-    else {
+      if (hold2 == null) {
+        camera.innerHTML += '<a-entity class="js--hold2" rotation="0 90 0" scale="1.5 1.5 1.5" position=".5 -.3 -.9" gltf-model="#tissuedoos-glb"></a-entity>'
+        camera.innerHTML += '<a-box class="js--hold2" width=".15" height=".6" depth=".15" rotation="-55 -10 10" position=".4 -.4 -.4" color="#FFD29A"></a-box>'
+        const holdItems = document.getElementsByClassName("js--hold2");
+        hold2 = "tissue"
+      }
+    } else {
       //console.log("Klok gaat naar middag");
       klok.setAttribute("src", "#KlokMiddag-obj");
       klok.setAttribute("mtl", "#KlokMiddag-mtl");
       sky.setAttribute("src", "img/middaglucht.jpg");
       PAvarotti.setAttribute("visible", "false");
+      if (hold2 = "tissue") {
+        document.getElementsByClassName("js--hold2")[0].remove();
+        document.getElementsByClassName("js--hold2")[0].remove();
+        hold2 = null;
+      }
     }
   });
 }
