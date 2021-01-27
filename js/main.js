@@ -12,6 +12,7 @@ const bezemKast = document.getElementsByClassName('js--bezemKast');
 const deurAnimatie = document.getElementById("js--deur-animatie");
 const hondAnimatie = document.getElementById("js--hond-animatie");
 const places = document.getElementsByClassName('js--place');
+const PAvarotti = document.getElementById('js--pavarotti');
 
 const domingo1 = document.getElementById("js--mp3-domingo1");
 const domingo2 = document.getElementById("js--mp3-domingo2");
@@ -137,12 +138,14 @@ for (var i = 0; i < bezemKast.length; i++) {
       klok.setAttribute("src", "#KlokAvond-obj");
       klok.setAttribute("mtl", "#KlokAvond-mtl");
       sky.setAttribute("src", "img/avondlucht.jpg");
+      PAvarotti.setAttribute("visible", "true");
     }
     else {
-      //console.log("Klok is gaat naar middag");
+      //console.log("Klok gaat naar middag");
       klok.setAttribute("src", "#KlokMiddag-obj");
       klok.setAttribute("mtl", "#KlokMiddag-mtl");
       sky.setAttribute("src", "img/middaglucht.jpg");
+      PAvarotti.setAttribute("visible", "false");
     }
   });
 }
