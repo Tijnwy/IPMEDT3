@@ -13,6 +13,7 @@ const deurAnimatie = document.getElementById("js--deur-animatie");
 const hondAnimatie = document.getElementById("js--hond-animatie");
 const places = document.getElementsByClassName('js--place');
 const pavarotti = document.getElementById('js--pavarotti');
+const pavarottiVoetstuk =document.getElementById('js--pavarottiVoetstuk');
 const pickups2 = document.getElementsByClassName('js--pickup2');
 
 // blokkeer acties als er muziek speelt
@@ -34,6 +35,7 @@ const janSevilla3 = document.getElementById("js--mp3-janSevilla3");
 const janSevillaNoot1 = document.getElementById("js--janSevillaNoot1");
 const janSevillaNoot2 = document.getElementById("js--janSevillaNoot2");
 const janSevillaNoot3 = document.getElementById("js--janSevillaNoot3");
+const pavarottiLive = document.getElementById("js--mp3-PavarottiLive");
 
 const domingo1 = document.getElementById("js--mp3-domingo1");
 const domingo2 = document.getElementById("js--mp3-domingo2");
@@ -160,10 +162,6 @@ for(let i = 0; i < hond.length; i++){
     }
   });
 }
-
-function tissueOppakken(){
-
-}
 let hold2 = null;
 
 for (var i = 0; i < bezemKast.length; i++) {
@@ -197,10 +195,11 @@ for (var i = 0; i < bezemKast.length; i++) {
   });
 }
 
-pavarotti.addEventListener('click', function(evt) {
+pavarottiVoetstuk.addEventListener('click', function(evt) {
   if (hold2 = "tissue") {
     document.getElementsByClassName("js--hold2")[0].remove();
     document.getElementsByClassName("js--hold2")[0].remove();
+    pavarottiLive.components.sound.playSound();
   }
 });
 
