@@ -67,14 +67,7 @@
     <a-entity environment="grid:crosses; skyType: none; fog: 0; groundTexture: walkernoise; groundColor: #93AA24; groundColor2: #987a2e"></a-entity>
 
     <!-- meet box -->
-    <a-box position="0 0 0"></a-box>
-
-<<<<<<< HEAD
-    <!-- <a-entity position="0 -3 2" rotation="0 0 0" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl" animation="property: position; from: 0 -3 2; to: 0 1 2; dur: 5000; delay: 15000;"></a-entity>-->
-    <!-- <a-entity position="0 1 2" rotation="0 0 0" gltf-model="#pavarotti-glb"></a-entity> -->
-=======
-    <!-- <a-entity position="0 -3 2" rotation="0 0 0" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl" animation="property: position; from: 0 -3 2; to: 0 1 2; dur: 5000; delay: 15000;"></a-entity> -->
->>>>>>> development
+    <a-box class="clickable" id="js--pavarottiVoetstuk" position="0 0 0"></a-box>
 
     <!-- dit is om het minder saai te maken -->
     <a-sky id="js--sky" src="img/MiddagLucht.jpg"></a-sky>
@@ -112,7 +105,7 @@
     <a-sound id="js--mp3-janSevilla3" position="6 1.6 2" src="sound/Jan_Sevilla3.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
 
     <!-- Pa Varotti -->
-    <a-entity id="js--pavarotti" position="3 .7 2" rotation="0 180 0" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl"></a-entity>
+    <a-entity id="js--pavarotti" position="0 .7 0" rotation="0 180 0" visible="false" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl"></a-entity>
 
     <a-entity rotation="0 -90 0" position="-3 0 -3">
       <!-- hondenhok -->

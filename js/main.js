@@ -13,6 +13,7 @@ const deurAnimatie = document.getElementById("js--deur-animatie");
 const hondAnimatie = document.getElementById("js--hond-animatie");
 const places = document.getElementsByClassName('js--place');
 const pavarotti = document.getElementById('js--pavarotti');
+const pavarottiVoetstuk =document.getElementById('js--pavarottiVoetstuk');
 const pickups2 = document.getElementsByClassName('js--pickup2');
 
 const carmenBlikje = document.getElementById("js--blikje-carmen");
@@ -185,7 +186,7 @@ for (var i = 0; i < bezemKast.length; i++) {
   });
 }
 
-pavarotti.addEventListener('click', function(evt) {
+pavarottiVoetstuk.addEventListener('click', function(evt) {
   if (hold2 = "tissue") {
     document.getElementsByClassName("js--hold2")[0].remove();
     document.getElementsByClassName("js--hold2")[0].remove();
