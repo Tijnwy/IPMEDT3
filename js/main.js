@@ -161,10 +161,6 @@ for(let i = 0; i < hond.length; i++){
     }
   });
 }
-
-function tissueOppakken(){
-
-}
 let hold2 = null;
 
 for (var i = 0; i < bezemKast.length; i++) {
