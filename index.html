@@ -72,7 +72,6 @@
 
     <!-- de environment wordt alleen maar gebruikt voor de ondergrond, de rest staat uit -->
     <a-entity environment="grid:crosses; skyType: none; fog: 0; groundTexture: walkernoise; groundColor: #93AA24; groundColor2: #987a2e"></a-entity>
-    <a-box color="blue" position="0 0 0" scale=".5 .5 .5"></a-box>
 
     <!-- meet box -->
     <a-box class="clickable" id="js--pavarottiVoetstuk" position="0 0 0"></a-box>
@@ -82,31 +81,34 @@
 
     <!-- de camera -->
     <a-camera id="js--camera" position="7 1.6 16">
-        <a-entity
-                animation__click="property: scale; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1; startEvents: click"
-                animation__fusing="property: scale; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1; startEvents: fusing"
-                animation__mouseleave="property: scale; easing: easeInCubic; dur: 500; to: 1 1 1; startEvents: mouseleave"
-                cursor="fuse: true; fuseTimeout: 2000"
-                material="color: black; shader: flat;"
-                geometry="primitive: ring; radiusInner: 0.001; radiusOuter: 0.002"
-                position="0 0 -.1"
-                raycaster="objects: .clickable;"
-        ></a-entity>
+      <a-entity
+        animation__click="property: scale; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1; startEvents: click"
+        animation__fusing="property: scale; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1; startEvents: fusing"
+        animation__mouseleave="property: scale; easing: easeInCubic; dur: 500; to: 1 1 1; startEvents: mouseleave"
+        cursor="fuse: true; fuseTimeout: 2000"
+        material="color: black; shader: flat;"
+        geometry="primitive: ring; radiusInner: 0.001; radiusOuter: 0.002"
+        position="0 0 -.1"
+        raycaster="objects: .clickable;"
+      ></a-entity>
 
-        <a-image src="img/muzieknootRood.png" id="js--carmenNoot1" position="-.02 -.05 -.1" height=".01" width=".01"></a-image>
-        <a-image src="img/muzieknootRood.png" id="js--carmenNoot2" position="-.03 -.05 -.1" height=".01" width=".01"></a-image>
-        <a-image src="img/muzieknootRood.png" id="js--janSevillaNoot1" position="-.01 -.05 -.1" height=".01" width=".01"></a-image>
-        <a-image src="img/muzieknootRood.png" id="js--janSevillaNoot2" position="0 -.05 -.1" height=".01" width=".01"></a-image>
-        <a-image src="img/muzieknootRood.png" id="js--janSevillaNoot3" position=".01 -.05 -.1" height=".01" width=".01"></a-image>
-        <a-image src="img/muzieknootRood.png" id="js--domingoNoot1" position=".02 -.05 -.1" height=".01" width=".01"></a-image>
-        <a-image src="img/muzieknootRood.png" id="js--domingoNoot2" position=".03 -.05 -.1" height=".01" width=".01"></a-image>
+      <a-image src="img/muzieknootRood.png" id="js--carmenNoot1" position="-.02 -.05 -.1" height=".01" width=".01"></a-image>
+      <a-image src="img/muzieknootRood.png" id="js--carmenNoot2" position="-.03 -.05 -.1" height=".01" width=".01"></a-image>
+      <a-image src="img/muzieknootRood.png" id="js--janSevillaNoot1" position="-.01 -.05 -.1" height=".01" width=".01"></a-image>
+      <a-image src="img/muzieknootRood.png" id="js--janSevillaNoot2" position="0 -.05 -.1" height=".01" width=".01"></a-image>
+      <a-image src="img/muzieknootRood.png" id="js--janSevillaNoot3" position=".01 -.05 -.1" height=".01" width=".01"></a-image>
+      <a-image src="img/muzieknootRood.png" id="js--domingoNoot1" position=".02 -.05 -.1" height=".01" width=".01"></a-image>
+      <a-image src="img/muzieknootRood.png" id="js--domingoNoot2" position=".03 -.05 -.1" height=".01" width=".01"></a-image>
 
-        <a-sound id="js--mp3-janSevilla1" position="0 0 0" src="sound/Jan_Sevilla1.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
-        <a-sound id="js--mp3-janSevilla2" position="0 0 0" src="sound/Jan_Sevilla2.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
-        <a-sound id="js--mp3-janSevilla3" position="0 0 0" src="sound/Jan_Sevilla3.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+      <a-sound id="js--mp3-domingo1" position="0 0 0" src="sound/domingo1.mp3" autoplay="false" preload="auto" volume="2"></a-sound>
+      <a-sound id="js--mp3-domingo2" position="0 0 0" src="sound/domingo2.mp3" autoplay="false" preload="auto" volume="2"></a-sound>
 
-        <a-sound id="js--mp3-carmen1" position="-3 0 10" src="sound/carmen1.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
-        <a-sound id="js--mp3-carmen2" position="-3 0 10" src="sound/carmen2.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+      <a-sound id="js--mp3-janSevilla1" position="0 0 0" src="sound/Jan_Sevilla1.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+      <a-sound id="js--mp3-janSevilla2" position="0 0 0" src="sound/Jan_Sevilla2.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+      <a-sound id="js--mp3-janSevilla3" position="0 0 0" src="sound/Jan_Sevilla3.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+
+      <a-sound id="js--mp3-carmen1" position="0 0 0" src="sound/carmen1.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+      <a-sound id="js--mp3-carmen2" position="0 0 0" src="sound/carmen2.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
     </a-camera>
 
     <a-image position="1 .5 16" src="img/CampingPavarotti.png" height="2" width="1"></a-image>
@@ -143,9 +145,6 @@
                   animation__2='property: rotation; easing: linear; dur: 1000; to: 0 0 0; delay: 0; autoplay: false'
                   animation__3='property: position; easing: linear; dur: 1000; from: -3 0 -3; to: -3 .1 -4; delay: 1000; autoplay: false'>
             <a-entity class="clickable js--hond" rotation="-90 0 0" scale=".04 .04 .04" gltf-model="#hond-glb"></a-entity>
-            <!-- <a-sound id="js--mp3-domingo1" position="-1 .1 -6" src="sound/domingo1.mp3" autoplay="true" loop="true" preload="auto" volume="2"></a-sound> -->
-            <a-sound id="js--mp3-domingo2" position="1 .1 -6" src="sound/domingo2.mp3" autoplay="false" preload="auto" volume="4"></a-sound>
-            <!-- rotation="-90 0 0" position="0 .1 -4" -->
         </a-entity>
 
         <!-- Le tafeltje, le bord & le worstjes -->
@@ -173,7 +172,6 @@
             <a-box height=".1" width="6" depth="10" color="" src="" position="0 3 0" rotation=""></a-box> <!-- dak -->
             <a-entity position="0 0.5 -4">
                 <a-entity class="clickable placeholder" rotation="0 180 0" scale="1.5 1.5 1.5" gltf-model="#toilet-glb"></a-entity>
-                <!-- <a-sound position="0 0 0" src="sound/Mevrouw Callas Habanera live.mp3" autoplay="true" loop="true" preload="auto" volume=".5"></a-sound> -->
             </a-entity>
             <a-entity position="0 0.5 4.85">
                 <a-entity class="clickable" rotation="0 -90 0" scale="0.5 0.5 0.5" gltf-model="#wasbak-glb"></a-entity>
@@ -259,7 +257,7 @@
     <!-- Spheres om naar toe te kunnen lopen -->
     <a-sphere class="clickable js--place" color="pink" position="0 0 14" radius="0.2"></a-sphere>
     <a-sphere class="clickable js--place" color="pink" position="0 0 2" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="-1.4 0 -4" radius="0.2"></a-sphere>
+    <a-sphere class="clickable js--place" id="js--hondLocatie" color="pink" position="-1.4 0 -4" radius="0.2"></a-sphere>
     <a-sphere class="clickable js--place" color="pink" position="-1 0 -11" radius="0.2"></a-sphere>
     <a-sphere class="clickable js--place" color="pink" position="2 0 -11" radius="0.2"></a-sphere>
     <a-sphere class="clickable js--place" color="pink" position="7 0 16" radius="0.2"></a-sphere>
@@ -292,11 +290,12 @@
         <a-cylinder position="0 0 5" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
         <a-sphere position="0 4 5" src="img/leaves.jpg" radius="1.5"></a-sphere>
 
-        <a-cylinder position="-5 0 -10" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
-        <a-sphere position="-5 4 -10" src="img/leaves.jpg" radius="1.5"></a-sphere>
-</a-entity>
-</a-scene>
-<script src="js/main.js"></script>
+      <a-cylinder position="-5 0 -10" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
+      <a-sphere position="-5 4 -10" src="img/leaves.jpg" radius="1.5"></a-sphere>
+    </a-entity>
+
+  </a-scene>
+  <script src="js/main.js"></script>
 </body>
 </html>
 

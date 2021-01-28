@@ -11,6 +11,7 @@ const holdItems = document.getElementsByClassName("js--hold");
 const bezemKast = document.getElementsByClassName('js--bezemKast');
 const deurAnimatie = document.getElementById("js--deur-animatie");
 const hondAnimatie = document.getElementById("js--hond-animatie");
+const hondLocatie = document.getElementById("js--hondLocatie");
 const places = document.getElementsByClassName('js--place');
 const pavarotti = document.getElementById('js--pavarotti');
 const pavarottiVoetstuk =document.getElementById('js--pavarottiVoetstuk');
@@ -37,6 +38,8 @@ const pavarottiLive = document.getElementById("js--mp3-PavarottiLive");
 
 const domingo1 = document.getElementById("js--mp3-domingo1");
 const domingo2 = document.getElementById("js--mp3-domingo2");
+const domingoNoot1 = document.getElementById("js--domingoNoot1");
+const domingoNoot2 = document.getElementById("js--domingoNoot2");
 
 let placeholders = document.getElementsByClassName("placeholder");
 
@@ -123,7 +126,6 @@ for(let i = 0; i < hond.length; i++){
 
     if(hold == "worst") {
       let worstHond = document.createElement("a-entity");
-      // worstHond.setAttribute("class", "js--pickup clickable");
       worstHond.setAttribute("gltf-model", "#worst-glb");
       worstHond.setAttribute("scale", {x: 0.25, y: 0.25, z: 0.25})
       worstHond.setAttribute("rotation", {x: 0, y: 90, z: 0})
@@ -135,16 +137,22 @@ for(let i = 0; i < hond.length; i++){
       document.getElementsByClassName("js--hold")[0].remove();
       document.getElementsByClassName("js--hold")[0].remove();
 
-
       hondAnimatie.setAttribute("animation__1", {autoplay: true});
       hondAnimatie.setAttribute("animation__2", {autoplay: true});
       hondAnimatie.setAttribute("animation__3", {autoplay: true});
 
-      // domingo1.components.sound.stopSound();
+      pauseBool = 0;
       domingo2.components.sound.playSound();
+      domingoNoot2.setAttribute("src", "img/muzieknootGroen.png");
 
       setTimeout(function() {
         deurAnimatie.setAttribute("animation", {autoplay: true});
+        domingoNoot2.setAttribute("src", "img/muzieknootGroen.png");
+        janSevillaNoot2.setAttribute("src", "img/muzieknootGroen.png");        
+        for(let i = 0; i <= 20; i++) {
+          console.log("aaaaaaaah");
+        }
+        pauseBool = 1;
       }, 29500);
     }
   });
@@ -206,9 +214,14 @@ for (var i = 0; i < places.length; i++) {
         camera.setAttribute('animation', att.value);
       }
     });
-
 }
 
+hondLocatie.onclick = function() {
+  domingo1.components.sound.playSound();
+  setTimeout( function() {
+    domingoNoot1.setAttribute("src", "img/muzieknootGroen.png");
+  }, 1000);
+}
 
 
 
