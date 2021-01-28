@@ -72,9 +72,7 @@
     <a-box color="blue" position="0 0 0" scale=".5 .5 .5"></a-box>
 
     <!-- meet box -->
-    <a-box position="0 0 0"></a-box>
-
-    <!-- <a-entity position="0 -3 2" rotation="0 0 0" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl" animation="property: position; from: 0 -3 2; to: 0 1 2; dur: 5000; delay: 15000;"></a-entity> -->
+    <a-box class="clickable" id="js--pavarottiVoetstuk" position="0 0 0"></a-box>
 
     <!-- dit is om het minder saai te maken -->
     <a-sky id="js--sky" src="img/MiddagLucht.jpg"></a-sky>
@@ -120,7 +118,8 @@
     </a-entity>
 
     <!-- Pa Varotti -->
-    <a-entity class="clickable" id="js--pavarotti" position="3 .7 2" scale="1.5 1.5 1.5" rotation="0 180 0" visible="false" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl"></a-entity>
+    <a-entity id="js--pavarotti" position="0 .7 0" rotation="0 180 0" visible="false" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl"></a-entity>
+    <a-sound id="js--mp3-PavarottiLive" position="0 .7 0" src="sound/PavarottiLive.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
 
     <a-entity rotation="0 -90 0" position="-3 0 -3">
         <!-- hondenhok -->
@@ -273,19 +272,6 @@
     <a-entity id="js--blikje-carmen1" class="clickable" gltf-model="#colablik-glb" position="-2.2 .1 11.5"></a-entity>
     <a-entity id="js--blikje-carmen2" class="clickable" gltf-model="#colablik-glb" position="-2.2 .1 11"></a-entity>
 
-    <!-- Spheres om naar toe te kunnen lopen -->
-    <a-sphere class="clickable js--place" color="pink" position="0 0 14" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="0 0 2" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="-1.4 0 -4" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="-1 0 -11" radius="0.1"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="2 0 -11" radius="0.1"></a-sphere>
-
-    <a-sphere class="clickable js--place" color="pink" position="7 0 16" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="10 0 2" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="4 0 8" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="-6 0 3" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="-5 0 9" radius="0.2"></a-sphere>
-
     <!-- simpelere bomen voor verder weg -->
     <a-entity position="20 0 0">
         <a-cylinder position="0 0 0" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
@@ -305,10 +291,7 @@
 
         <a-cylinder position="-5 0 -10" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
         <a-sphere position="-5 4 -10" src="img/leaves.jpg" radius="1.5"></a-sphere>
-
-        <a-cylinder position="1 0 -2" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
-        <a-sphere position="1 4 -2" src="img/leaves.jpg" radius="1.5"></a-sphere>
-    </a-entity>
+</a-entity>
 </a-scene>
 <script src="js/main.js"></script>
 </body>
