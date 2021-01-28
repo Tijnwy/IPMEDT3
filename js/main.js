@@ -12,21 +12,22 @@ const bezemKast = document.getElementsByClassName('js--bezemKast');
 const deurAnimatie = document.getElementById("js--deur-animatie");
 const hondAnimatie = document.getElementById("js--hond-animatie");
 const places = document.getElementsByClassName('js--place');
-const PAvarotti = document.getElementById('js--pavarotti');
+const pavarotti = document.getElementById('js--pavarotti');
 const pickups2 = document.getElementsByClassName('js--pickup2');
 
 const carmenBlikje = document.getElementById("js--blikje-carmen");
 const carmenInstrumentaal = document.getElementById("js--mp3-carmenInstrumentaal");
 const carmen1 = document.getElementById("js--mp3-carmen1");
 const carmen2 = document.getElementById("js--mp3-carmen2");
-let carmenReady = 1;
 
-const janSevillaBlikje = document.getElementById("js--blikje-jan-sevilla");
+const janSevillaKlik1 = document.getElementById("js--blikje-jan-sevilla1");
+const janSevillaKlik2 = document.getElementById("js--blikje-jan-sevilla2");
+const janSevillaKlik3 = document.getElementById("js--blikje-jan-sevilla3");
 const janSevillaInstrumentaal = document.getElementById("js--mp3-janSevillaInstrumentaal");
 const janSevilla1 = document.getElementById("js--mp3-janSevilla1");
 const janSevilla2 = document.getElementById("js--mp3-janSevilla2");
 const janSevilla3 = document.getElementById("js--mp3-janSevilla3");
-let janSevillaReady = 1;
+let pauseBool = 1;
 
 // const domingoInstrumentaal = document.getElementById("js--mp3-domingo");
 const domingo1 = document.getElementById("js--mp3-domingo1");
@@ -60,41 +61,31 @@ carmenBlikje.onclick = function() {
   }
 }
 
-janSevillaBlikje.onclick = function() {
-  let randomNummer = Math.floor(Math.random() * 3 + 1);
-  janSevillaInstrumentaal.components.sound.pauseSound();
-  if(janSevillaReady == 1) {
-    console.log("Jan Sevilla nummer: " + randomNummer);
-    if(randomNummer == 1) {
-      janSevillaReady = 0;
-      janSevilla1.components.sound.playSound();
-      janSevilla2.components.sound.stopSound();
-      janSevilla3.components.sound.stopSound();
-      setTimeout(function() {
-        janSevillaInstrumentaal.components.sound.playSound();
-        janSevillaReady = 1;
-      }, 12500);
-    }
-    if(randomNummer == 2) {
-      janSevillaReady = 0;
-      janSevilla1.components.sound.stopSound();
-      janSevilla2.components.sound.playSound();
-      janSevilla3.components.sound.stopSound();
-      setTimeout(function() {
-        janSevillaInstrumentaal.components.sound.playSound();
-        janSevillaReady = 1;
-      }, 41500);
-    }
-    if(randomNummer == 3) {
-      janSevillaReady = 0;
-      janSevilla1.components.sound.stopSound();
-      janSevilla2.components.sound.stopSound();
-      janSevilla3.components.sound.playSound();
-      setTimeout(function() {
-        janSevillaInstrumentaal.components.sound.playSound();
-        janSevillaReady = 1;
-      }, 38500);
-    }
+janSevillaKlik1.onclick = function() {
+  if(pauseBool = 1) {
+  janSevilla1.components.sound.playSound();
+  pauseBool = 0;
+    setTimeout(function() {
+      pauseBool = 1;
+    }, 12500);
+  }
+}
+janSevillaKlik2.onclick = function() {
+  if(pauseBool = 1) {
+  janSevilla2.components.sound.playSound();
+  pauseBool = 0;
+    setTimeout(function() {
+      pauseBool = 1;
+    }, 12500);
+  }
+}
+janSevillaKlik3.onclick = function() {
+  if(pauseBool = 1) {
+  janSevilla3.components.sound.playSound();
+  pauseBool = 0;
+    setTimeout(function() {
+      pauseBool = 1;
+    }, 12500);
   }
 }
 
@@ -152,7 +143,7 @@ for(let i = 0; i < hond.length; i++){
       hondAnimatie.setAttribute("animation__2", {autoplay: true});
       hondAnimatie.setAttribute("animation__3", {autoplay: true});
 
-      domingo1.components.sound.stopSound();
+      // domingo1.components.sound.stopSound();
       domingo2.components.sound.playSound();
 
       setTimeout(function() {
@@ -172,7 +163,7 @@ for (var i = 0; i < bezemKast.length; i++) {
       klok.setAttribute("src", "#KlokAvond-obj");
       klok.setAttribute("mtl", "#KlokAvond-mtl");
       sky.setAttribute("src", "img/avondlucht.jpg");
-      PAvarotti.setAttribute("visible", "true");
+      pavarotti.setAttribute("visible", "true");
       if (hold2 == null) {
         camera.innerHTML += '<a-entity class="js--hold2" rotation="0 90 0" scale="1.5 1.5 1.5" position=".5 -.3 -.9" gltf-model="#tissuedoos-glb"></a-entity>'
         camera.innerHTML += '<a-box class="js--hold2" width=".15" height=".6" depth=".15" rotation="-55 -10 10" position=".4 -.4 -.4" color="#FFD29A"></a-box>'
@@ -184,7 +175,7 @@ for (var i = 0; i < bezemKast.length; i++) {
       klok.setAttribute("src", "#KlokMiddag-obj");
       klok.setAttribute("mtl", "#KlokMiddag-mtl");
       sky.setAttribute("src", "img/middaglucht.jpg");
-      PAvarotti.setAttribute("visible", "false");
+      pavarotti.setAttribute("visible", "false");
       if (hold2 = "tissue") {
         document.getElementsByClassName("js--hold2")[0].remove();
         document.getElementsByClassName("js--hold2")[0].remove();
@@ -194,7 +185,7 @@ for (var i = 0; i < bezemKast.length; i++) {
   });
 }
 
-PAvarotti.addEventListener('click', function(evt) {
+pavarotti.addEventListener('click', function(evt) {
   if (hold2 = "tissue") {
     document.getElementsByClassName("js--hold2")[0].remove();
     document.getElementsByClassName("js--hold2")[0].remove();
@@ -207,14 +198,16 @@ function pythagoras(x1, z1, x2, z2){
 
 // Lopen
 for (var i = 0; i < places.length; i++) {
-  places[i].addEventListener('click', function(evt) {
-    let att = document.createAttribute('animation');
-    let camera_position = camera.getAttribute('position');
-    let box_position = this.getAttribute('position');
-    let duration = pythagoras(box_position.x, box_position.z, camera_position.x, camera_position.z) * 333;
-    att.value = 'property: position; easing: linear; dur: ' + duration + '; to: ' + this.getAttribute('position').x + ' 1.6 ' + this.getAttribute('position').z;
-    camera.setAttribute('animation', att.value);
-  });
+  if(pauseBool = 1) {
+    places[i].addEventListener('click', function(evt) {
+      let att = document.createAttribute('animation');
+      let camera_position = camera.getAttribute('position');
+      let box_position = this.getAttribute('position');
+      let duration = pythagoras(box_position.x, box_position.z, camera_position.x, camera_position.z) * 333;
+      att.value = 'property: position; easing: linear; dur: ' + duration + '; to: ' + this.getAttribute('position').x + ' 1.6 ' + this.getAttribute('position').z;
+      camera.setAttribute('animation', att.value);
+    });
+  }
 }
 
 
