@@ -55,15 +55,28 @@
 
       <a-asset-item id="Tuinman-obj" src="models/Tuinman.obj"></a-asset-item>
       <a-asset-item id="Tuinman-mtl" src="models/Tuinman.mtl"></a-asset-item>
+
+      <a-asset-item id="schuttingRecht-obj" src="models/schuttingRecht.obj"></a-asset-item>
+      <a-asset-item id="schuttingRecht-mtl" src="models/schuttingRecht.mtl"></a-asset-item>
+
+      <a-asset-item id="schuttingSchuin-obj" src="models/schuttingSchuin.obj"></a-asset-item>
+      <a-asset-item id="schuttingSchuin-mtl" src="models/schuttingSchuin.mtl"></a-asset-item>
     </a-assets>
 
     <!-- de environment wordt alleen maar gebruikt voor de ondergrond, de rest staat uit -->
     <a-entity environment="grid:crosses; skyType: none; fog: 0; groundTexture: walkernoise; groundColor: #93AA24; groundColor2: #987a2e"></a-entity>
 
+    <!-- meet box -->
+    <a-box position="0 0 0"></a-box>
+
+    <a-entity position="0 -3 2" rotation="0 0 0" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl" animation="property: position; from: 0 -3 2; to: 0 1 2; dur: 5000; delay: 15000;"></a-entity>
+    <!-- <a-entity position="0 1 2" rotation="0 0 0" gltf-model="#pavarotti-glb"></a-entity> -->
+
     <!-- dit is om het minder saai te maken -->
     <a-sky id="js--sky" src="img/MiddagLucht.jpg"></a-sky>
 
-    <a-camera id="js--camera" position="0 1.6 15">
+    <!-- de camera -->
+    <a-camera id="js--camera" position="7 1.6 16">
       <a-entity
         animation__click="property: scale; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1; startEvents: click"
         animation__fusing="property: scale; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1; startEvents: fusing"
@@ -76,18 +89,20 @@
       ></a-entity>
     </a-camera>
 
-    <a-image position="1 .5 14" src="img/CampingPavarotti.png" height="2" width="1"></a-image>
+    <a-image position="1 .5 16" src="img/CampingPavarotti.png" height="2" width="1"></a-image>
 
     <!-- Carmen's tent -->
-    <a-entity position="-3 0 10" rotation="0 45 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
-
+    <a-entity position="9 0 14" rotation="0 -45 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
+    <!-- <a-sound id="js--mp3-carmenInstrumentaal" position="-3 0 10" src="sound/carmen_Instrumentaal.mp3" autoplay="true" loop="true" preload="auto" volume="1.2" maxDistance="2"></a-sound> -->
+    <a-sound id="js--mp3-carmen1" position="-3 0 10" src="sound/carmen1.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
+    <a-sound id="js--mp3-carmen2" position="-3 0 10" src="sound/carmen2.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
 
     <!-- De tuinman -->
-    <a-entity position="6 1.7 2" scale="1.5 1.5 1.5" rotation="0 180 0" obj-model="obj: #Tuinman-obj; mtl: #Tuinman-mtl"
+    <a-entity position="12 1.7 2" scale="1.5 1.5 1.5" rotation="0 180 0" obj-model="obj: #Tuinman-obj; mtl: #Tuinman-mtl"
               animation__1="property: rotation; dur: 750; from: 0 180 -10; to: 0 180 10; loop: true; dir: alternate"
-              animation__2="property: position; dur: 1000; from: 6 1.7 2; to: 6 1.4 2; loop: true; dir: alternate">
+              animation__2="property: position; dur: 1000; from: 12 1.7 2; to: 12 1.4 2; loop: true; dir: alternate">
     </a-entity>
-    <a-sound id="js--mp3-janSevillaInstrumentaal" position="6 1.6 2" src="sound/Jan_Sevilla_Instrumentaal.mp3" autoplay="true" loop="true" preload="auto" volume=".2" maxDistance="2"></a-sound>
+    <!-- <a-sound id="js--mp3-janSevillaInstrumentaal" position="6 1.6 2" src="sound/Jan_Sevilla_Instrumentaal.mp3" autoplay="true" loop="true" preload="auto" volume=".2" maxDistance="2"></a-sound> -->
     <a-sound id="js--mp3-janSevilla1" position="6 1.6 2" src="sound/Jan_Sevilla1.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
     <a-sound id="js--mp3-janSevilla2" position="6 1.6 2" src="sound/Jan_Sevilla2.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
     <a-sound id="js--mp3-janSevilla3" position="6 1.6 2" src="sound/Jan_Sevilla3.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
@@ -111,10 +126,10 @@
 
       <!-- le Hond -->
       <a-entity id="js--hond-animatie" position="-3 0 -1.75" rotation="0 90 0" animation__1='property: position; easing: linear; dur: 1000; to: -3 0 -3; autoplay: false'
-                                                                                animation__2='property: rotation; easing: linear; dur: 1000; to: 0 0 0; delay: 0; autoplay: false'
-                                                                                animation__3='property: position; easing: linear; dur: 1000; from: -3 0 -3; to: -3 .1 -4; delay: 1000; autoplay: false'>
+                                                                               animation__2='property: rotation; easing: linear; dur: 1000; to: 0 0 0; delay: 0; autoplay: false'
+                                                                               animation__3='property: position; easing: linear; dur: 1000; from: -3 0 -3; to: -3 .1 -4; delay: 1000; autoplay: false'>
         <a-entity class="clickable js--hond" rotation="-90 0 0" scale=".04 .04 .04" gltf-model="#hond-glb"></a-entity>
-        <a-sound id="js--mp3-domingo1" position="-1 .1 -6" src="sound/domingo1.mp3" autoplay="true" loop="true" preload="auto" volume="0" maxDistance="2"></a-sound>
+        <!-- <a-sound id="js--mp3-domingo1" position="-1 .1 -6" src="sound/domingo1.mp3" autoplay="true" loop="true" preload="auto" volume="2" maxDistance="2"></a-sound> -->
         <a-sound id="js--mp3-domingo2" position="1 .1 -6" src="sound/domingo2.mp3" autoplay="false" preload="auto" volume="4" maxDistance="2"></a-sound>
         <!-- rotation="-90 0 0" position="0 .1 -4" -->s
       </a-entity>
@@ -170,52 +185,126 @@
     <a-obj-model src="#VerbodenZingenBord-obj" mtl="#VerbodenZingenBord-mtl" position="3 0 10" rotation="0 -90 0"></a-obj-model>
 
     <!-- decoratieve elementen -->
+    <!-- Schutting -->
+    <a-entity position="-7 0 -10" rotation="0 0 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingRecht-obj; mtl: #schuttingRecht-mtl"></a-entity>
+    <a-entity position="-12 0 -10" rotation="0 0 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingSchuin-obj; mtl: #schuttingSchuin-mtl"></a-entity>
+    <a-entity position="-15 0 -7" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingRecht-obj; mtl: #schuttingRecht-mtl"></a-entity>
+    <a-entity position="-15 0 -2" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingRecht-obj; mtl: #schuttingRecht-mtl"></a-entity>
+    <a-entity position="-15 0 3" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingRecht-obj; mtl: #schuttingRecht-mtl"></a-entity>
+    <a-entity position="-15 0 8" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingSchuin-obj; mtl: #schuttingSchuin-mtl"></a-entity>
+    <a-entity position="-15 0 13" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingRecht-obj; mtl: #schuttingRecht-mtl"></a-entity>
+
     <!-- tenten -->
+    <a-entity position="-3 0 18" rotation="0 90 0" scale="2 2 2.3" obj-model="obj: #tentDriehoekBlauw-obj; mtl: #tentDriehoekBlauw-mtl"></a-entity>
+    <a-entity position="-3.25 0 16.5" rotation="0 0 0" scale="1.5 1.5 1.8" obj-model="obj: #tentDriehoekBlauw-obj; mtl: #tentDriehoekBlauw-mtl"></a-entity>
+
     <a-entity position="-9 0 -2" rotation="0 45 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
     <a-entity position="-10 0 2" rotation="0 -250 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekBlauw-obj; mtl: #tentDriehoekBlauw-mtl"></a-entity>
 
-    <a-entity position="12 0 3" rotation="0 -125 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
-    <a-entity position="13 0 0" rotation="0 -90 0" scale="1.5 1.5 1.8" obj-model="obj: #tentDriehoekBlauw-obj; mtl: #tentDriehoekBlauw-mtl"></a-entity>
-    <a-entity position="11 0 -4" rotation="0 -40 0" scale="1 1 1.3" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
+    <a-entity position="18 0 1" rotation="0 -125 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
+    <a-entity position="19 0 -2" rotation="0 -90 0" scale="1.5 1.5 1.8" obj-model="obj: #tentDriehoekBlauw-obj; mtl: #tentDriehoekBlauw-mtl"></a-entity>
+    <a-entity position="17 0 -6" rotation="0 -40 0" scale="1 1 1.3" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
 
     <!-- bomen & struiken-->
-    <a-entity position="7 2 -5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="7 2 -6" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
 
-    <a-entity position="6 1.2 7" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="13 1.2 8" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+
     <a-entity position="6 0 -5" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
-    <a-entity position="6 0 1" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
+    <a-entity position="12 0 1" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
 
-    <a-entity position="5.5 2 5" rotation="0 90 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="11 2 9" rotation="0 90 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
 
-    <a-entity position="4 2 4.5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
-    <a-entity position="4 1.2 -1" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="15 2 4.5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="5 1.2 -5" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+
     <a-entity position="4 0 -7" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
 
+    <a-entity position="0 1.2 6" rotation="0 -20 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="-1 2 7" rotation="0 130 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+
+    <!-- <a-entity position="-5 2 10" rotation="0 180 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity> -->
+
+
+    <!-- <a-entity position="-5 1.4 7" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="-5 2 6" rotation="0 180 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
     <a-entity position="-5 1.2 5" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
-    <a-entity position="-5 1.4s -3" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
-    <a-entity position="-5 2 -5" rotation="0 180 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="-5 1.2 4" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="-5 1.4 3" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="-5 2 2" rotation="0 180 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="-5 1.4 1" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="-5 2 0" rotation="0 180 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="-5 1.2 -1" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="-5 1.2 -2" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="-5 1.4 -3" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="-5 2 -4" rotation="0 180 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="-5 1.4 -5" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="-5 2 -6" rotation="0 180 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="-5 1.2 -7" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="-5 1.2 -8" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
 
-    <a-entity position="-6 0 -6" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
+    <a-entity position="-5 2 -10" rotation="0 180 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity> -->
 
-    <a-entity position="-7 1.2 -7" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
 
-    <a-entity position="-8 2 3.5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+
+    <a-entity position="-5 0 -9" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
+
+    <a-entity position="-7 1.2 -12" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+
+
+    <!-- <a-entity position="-8 2 3.5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity> -->
+
+    <a-entity position="-9 2 -11" rotation="0 180 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+
+    <a-entity position="-15 2 -10" rotation="0 30 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="-15 1.2 16" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
 
     <!-- hekjes -->
-    <a-entity position="-4 0 -5" rotation="0 -90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
+    <!-- <a-entity position="-15 0 -3" rotation="0 -90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity> -->
     <a-entity position="3 0 -3" rotation="0 180 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
-    <a-entity position="3.5 0 5" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeSchuin-obj; mtl: #hekjeSchuin-mtl"></a-entity>
-    <a-entity position="-1 0 6" rotation="0 -90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
+    <!-- <a-entity position="8.5 0 5" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeSchuin-obj; mtl: #hekjeSchuin-mtl"></a-entity> -->
+    <a-entity position=".5 0 7" rotation="0 210 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
+    <a-entity position="-2 0 6" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
 
     <!-- cola blikjes -->
-    <a-cylinder id="js--blikje-jan-sevilla" class="js--blikje clickable" color="red" position="5.5 .1w 1.5" radius=".1" height=".2"></a-cylinder>
+    <a-cylinder id="js--blikje-jan-sevilla" class="js--blikje clickable" color="red" position="11.5 .1 1.5" radius=".1" height=".2"></a-cylinder>
+    <a-cylinder id="js--blikje-carmen" class="js--blikje clickable" color="red" position="-2.2 .1 11.5" radius=".1" height=".2"></a-cylinder>
 
     <!-- Spheres om naar toe te kunnen lopen -->
-    <a-sphere class="clickable js--place" color="black" position="0 5 14" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="black" position="0 5 2" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="black" position="-1.4 5 -4" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="black" position="-1 2.8 -11" radius="0.1"></a-sphere>
-    <a-sphere class="clickable js--place" color="black" position="2 2.8 -11" radius="0.1"></a-sphere>
+    <a-sphere class="clickable js--place" color="black" position="0 0 14" radius="0.2"></a-sphere>
+    <a-sphere class="clickable js--place" color="black" position="0 0 2" radius="0.2"></a-sphere>
+    <a-sphere class="clickable js--place" color="black" position="-1.4 0 -4" radius="0.2"></a-sphere>
+    <a-sphere class="clickable js--place" color="black" position="-1 0 -11" radius="0.1"></a-sphere>
+    <a-sphere class="clickable js--place" color="black" position="2 0 -11" radius="0.1"></a-sphere>
+
+    <a-sphere class="clickable js--place" color="black" position="7 0 16" radius="0.2"></a-sphere>
+    <!-- <a-sphere class="clickable js--place" color="black" position="-8 0 13" radius="0.2"></a-sphere> -->
+    <a-sphere class="clickable js--place" color="black" position="10 0 2" radius="0.2"></a-sphere>
+    <a-sphere class="clickable js--place" color="black" position="4 0 8" radius="0.2"></a-sphere>
+    <a-sphere class="clickable js--place" color="black" position="-6 0 3" radius="0.2"></a-sphere>
+    <a-sphere class="clickable js--place" color="black" position="-5 0 9" radius="0.2"></a-sphere>
+
+    <!-- simpelere bomen voor verder weg -->
+    <a-entity position="20 0 0">
+      <a-cylinder position="0 0 0" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
+      <a-sphere position="0 4 0" src="img/leaves.jpg" radius="1.5"></a-sphere>
+
+      <a-cylinder position="1 0 -2" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
+      <a-sphere position="1 4 -2" src="img/leaves.jpg" radius="1.5"></a-sphere>
+
+      <a-cylinder position="-1 0 1" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
+      <a-sphere position="-1 4 1" src="img/leaves.jpg" radius="1.5"></a-sphere>
+
+      <a-cylinder position="-3 0 -8" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
+      <a-sphere position="-3 4 -8" src="img/leaves.jpg" radius="1.5"></a-sphere>
+
+      <a-cylinder position="0 0 5" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
+      <a-sphere position="0 4 5" src="img/leaves.jpg" radius="1.5"></a-sphere>
+
+      <a-cylinder position="-5 0 -10" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
+      <a-sphere position="-5 4 -10" src="img/leaves.jpg" radius="1.5"></a-sphere>
+    </a-entity>
+
   </a-scene>
   <script src="js/main.js"></script>
 </body>
@@ -224,7 +313,6 @@
 <!--
 TODO:
   meer bomen en struiken
-  loopmanier
-  cola
-  meer muziek
+  collectible muziek
+  mooiere loopdingen (stenen?)
  -->

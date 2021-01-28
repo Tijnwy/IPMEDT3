@@ -15,52 +15,84 @@ const places = document.getElementsByClassName('js--place');
 const PAvarotti = document.getElementById('js--pavarotti');
 const pickups2 = document.getElementsByClassName('js--pickup2');
 
-const domingo1 = document.getElementById("js--mp3-domingo1");
-const domingo2 = document.getElementById("js--mp3-domingo2");
+const carmenBlikje = document.getElementById("js--blikje-carmen");
+const carmenInstrumentaal = document.getElementById("js--mp3-carmenInstrumentaal");
+const carmen1 = document.getElementById("js--mp3-carmen1");
+const carmen2 = document.getElementById("js--mp3-carmen2");
+let carmenReady = 1;
 
 const janSevillaBlikje = document.getElementById("js--blikje-jan-sevilla");
 const janSevillaInstrumentaal = document.getElementById("js--mp3-janSevillaInstrumentaal");
 const janSevilla1 = document.getElementById("js--mp3-janSevilla1");
 const janSevilla2 = document.getElementById("js--mp3-janSevilla2");
 const janSevilla3 = document.getElementById("js--mp3-janSevilla3");
-let ready = 1;
+let janSevillaReady = 1;
+
+// const domingoInstrumentaal = document.getElementById("js--mp3-domingo");
+const domingo1 = document.getElementById("js--mp3-domingo1");
+const domingo2 = document.getElementById("js--mp3-domingo2");
 
 let placeholders = document.getElementsByClassName("placeholder");
 
+carmenBlikje.onclick = function() {
+  let randomNummer = Math.floor(Math.random() * 2 + 1);
+  carmenInstrumentaal.components.sound.pauseSound();
+  if(carmenReady == 1) {
+    console.log("Carmen nummer: " + randomNummer);
+    if(randomNummer == 1) {
+      carmenReady = 0;
+      carmen1.components.sound.playSound();
+      carmen2.components.sound.stopSound();
+      setTimeout(function() {
+        carmenInstrumentaal.components.sound.playSound();
+        carmenReady = 1;
+      }, 55500);
+    }
+    if(randomNummer == 2) {
+      carmenReady = 0;
+      carmen1.components.sound.stopSound();
+      carmen2.components.sound.playSound();
+      setTimeout(function() {
+        carmenInstrumentaal.components.sound.playSound();
+        carmenReady = 1;
+      }, 22500);
+    }
+  }
+}
 
 janSevillaBlikje.onclick = function() {
   let randomNummer = Math.floor(Math.random() * 3 + 1);
   janSevillaInstrumentaal.components.sound.pauseSound();
-  if(ready == 1) {
+  if(janSevillaReady == 1) {
     console.log("Jan Sevilla nummer: " + randomNummer);
     if(randomNummer == 1) {
-      ready = 0;
+      janSevillaReady = 0;
       janSevilla1.components.sound.playSound();
       janSevilla2.components.sound.stopSound();
       janSevilla3.components.sound.stopSound();
       setTimeout(function() {
         janSevillaInstrumentaal.components.sound.playSound();
-        ready = 1;
+        janSevillaReady = 1;
       }, 12500);
     }
     if(randomNummer == 2) {
-      ready = 0;
+      janSevillaReady = 0;
       janSevilla1.components.sound.stopSound();
       janSevilla2.components.sound.playSound();
       janSevilla3.components.sound.stopSound();
       setTimeout(function() {
         janSevillaInstrumentaal.components.sound.playSound();
-        ready = 1;
+        janSevillaReady = 1;
       }, 41500);
     }
     if(randomNummer == 3) {
-      ready = 0;
+      janSevillaReady = 0;
       janSevilla1.components.sound.stopSound();
       janSevilla2.components.sound.stopSound();
       janSevilla3.components.sound.playSound();
       setTimeout(function() {
         janSevillaInstrumentaal.components.sound.playSound();
-        ready = 1;
+        janSevillaReady = 1;
       }, 38500);
     }
   }
