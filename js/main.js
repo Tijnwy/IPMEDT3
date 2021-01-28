@@ -15,77 +15,85 @@ const places = document.getElementsByClassName('js--place');
 const pavarotti = document.getElementById('js--pavarotti');
 const pickups2 = document.getElementsByClassName('js--pickup2');
 
-const carmenBlikje = document.getElementById("js--blikje-carmen");
-const carmenInstrumentaal = document.getElementById("js--mp3-carmenInstrumentaal");
+// blokkeer acties als er muziek speelt
+let pauseBool = 1;
+
+const carmenKlik1 = document.getElementById("js--blikje-carmen1");
+const carmenKlik2 = document.getElementById("js--blikje-carmen2");
 const carmen1 = document.getElementById("js--mp3-carmen1");
 const carmen2 = document.getElementById("js--mp3-carmen2");
+const carmenNoot1 = document.getElementById("js--carmenNoot1");
+const carmenNoot2 = document.getElementById("js--carmenNoot2");
 
 const janSevillaKlik1 = document.getElementById("js--blikje-jan-sevilla1");
 const janSevillaKlik2 = document.getElementById("js--blikje-jan-sevilla2");
 const janSevillaKlik3 = document.getElementById("js--blikje-jan-sevilla3");
-const janSevillaInstrumentaal = document.getElementById("js--mp3-janSevillaInstrumentaal");
 const janSevilla1 = document.getElementById("js--mp3-janSevilla1");
 const janSevilla2 = document.getElementById("js--mp3-janSevilla2");
 const janSevilla3 = document.getElementById("js--mp3-janSevilla3");
-let pauseBool = 1;
+const janSevillaNoot1 = document.getElementById("js--janSevillaNoot1");
+const janSevillaNoot2 = document.getElementById("js--janSevillaNoot2");
+const janSevillaNoot3 = document.getElementById("js--janSevillaNoot3");
 
-// const domingoInstrumentaal = document.getElementById("js--mp3-domingo");
 const domingo1 = document.getElementById("js--mp3-domingo1");
 const domingo2 = document.getElementById("js--mp3-domingo2");
 
 let placeholders = document.getElementsByClassName("placeholder");
 
-carmenBlikje.onclick = function() {
-  let randomNummer = Math.floor(Math.random() * 2 + 1);
-  carmenInstrumentaal.components.sound.pauseSound();
-  if(carmenReady == 1) {
-    console.log("Carmen nummer: " + randomNummer);
-    if(randomNummer == 1) {
-      carmenReady = 0;
-      carmen1.components.sound.playSound();
-      carmen2.components.sound.stopSound();
-      setTimeout(function() {
-        carmenInstrumentaal.components.sound.playSound();
-        carmenReady = 1;
-      }, 55500);
-    }
-    if(randomNummer == 2) {
-      carmenReady = 0;
-      carmen1.components.sound.stopSound();
-      carmen2.components.sound.playSound();
-      setTimeout(function() {
-        carmenInstrumentaal.components.sound.playSound();
-        carmenReady = 1;
-      }, 22500);
-    }
+carmenKlik1.onclick = function() {
+  if(pauseBool == 1) {
+    carmen1.components.sound.playSound();
+    pauseBool = 0;
+    carmenKlik1.remove();
+    setTimeout(function() {
+      pauseBool = 1;
+      carmenNoot1.setAttribute("src", "img/muzieknootGroen.png");
+    }, 55500);
+  }
+}
+carmenKlik2.onclick = function() {
+  if(pauseBool == 1) {
+    carmen2.components.sound.playSound();
+    pauseBool = 0;
+    carmenKlik2.remove();
+    setTimeout(function() {
+      pauseBool = 1;
+      carmenNoot2.setAttribute("src", "img/muzieknootGroen.png");
+    }, 22500);
   }
 }
 
 janSevillaKlik1.onclick = function() {
-  if(pauseBool = 1) {
-  janSevilla1.components.sound.playSound();
-  pauseBool = 0;
+  if(pauseBool == 1) {
+    janSevilla1.components.sound.playSound();
+    pauseBool = 0;
+    janSevillaKlik1.remove();
+    janSevillaNoot1.setAttribute("src", "img/muzieknootGroen.png");
     setTimeout(function() {
       pauseBool = 1;
     }, 12500);
   }
 }
 janSevillaKlik2.onclick = function() {
-  if(pauseBool = 1) {
-  janSevilla2.components.sound.playSound();
-  pauseBool = 0;
+  if(pauseBool == 1) {
+    janSevilla2.components.sound.playSound();
+    pauseBool = 0;
+    janSevillaKlik2.remove();
+    janSevillaNoot2.setAttribute("src", "img/muzieknootGroen.png");
     setTimeout(function() {
       pauseBool = 1;
-    }, 12500);
+    }, 41500);
   }
 }
 janSevillaKlik3.onclick = function() {
-  if(pauseBool = 1) {
-  janSevilla3.components.sound.playSound();
-  pauseBool = 0;
+  if(pauseBool == 1) {
+    janSevilla3.components.sound.playSound();
+    pauseBool = 0;
+    janSevillaKlik3.remove();
+    janSevillaNoot3.setAttribute("src", "img/muzieknootGroen.png");
     setTimeout(function() {
       pauseBool = 1;
-    }, 12500);
+    }, 38500);
   }
 }
 
@@ -202,16 +210,17 @@ function pythagoras(x1, z1, x2, z2){
 
 // Lopen
 for (var i = 0; i < places.length; i++) {
-  if(pauseBool = 1) {
     places[i].addEventListener('click', function(evt) {
-      let att = document.createAttribute('animation');
-      let camera_position = camera.getAttribute('position');
-      let box_position = this.getAttribute('position');
-      let duration = pythagoras(box_position.x, box_position.z, camera_position.x, camera_position.z) * 333;
-      att.value = 'property: position; easing: linear; dur: ' + duration + '; to: ' + this.getAttribute('position').x + ' 1.6 ' + this.getAttribute('position').z;
-      camera.setAttribute('animation', att.value);
+      if(pauseBool == 1) {
+        let att = document.createAttribute('animation');
+        let camera_position = camera.getAttribute('position');
+        let box_position = this.getAttribute('position');
+        let duration = pythagoras(box_position.x, box_position.z, camera_position.x, camera_position.z) * 333;
+        att.value = 'property: position; easing: linear; dur: ' + duration + '; to: ' + this.getAttribute('position').x + ' 1.6 ' + this.getAttribute('position').z;
+        camera.setAttribute('animation', att.value);
+      }
     });
-  }
+
 }
 
 
