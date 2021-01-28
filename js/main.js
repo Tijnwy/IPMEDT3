@@ -28,6 +28,7 @@ const janSevillaInstrumentaal = document.getElementById("js--mp3-janSevillaInstr
 const janSevilla1 = document.getElementById("js--mp3-janSevilla1");
 const janSevilla2 = document.getElementById("js--mp3-janSevilla2");
 const janSevilla3 = document.getElementById("js--mp3-janSevilla3");
+const pavarottiLive = document.getElementById("js--mp3-PavarottiLive");
 let pauseBool = 1;
 
 // const domingoInstrumentaal = document.getElementById("js--mp3-domingo");
@@ -190,6 +191,7 @@ pavarottiVoetstuk.addEventListener('click', function(evt) {
   if (hold2 = "tissue") {
     document.getElementsByClassName("js--hold2")[0].remove();
     document.getElementsByClassName("js--hold2")[0].remove();
+    pavarottiLive.components.sound.playSound();
   }
 });
 
