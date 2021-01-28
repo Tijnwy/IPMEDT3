@@ -12,15 +12,7 @@
 <a-scene id="js--scene">
 
     <a-assets>
-        <a-asset-item id="KlokAvond-obj" src="models/KlokAvond.obj"></a-asset-item>
-        <a-asset-item id="KlokAvond-mtl" src="models/KlokAvond.mtl"></a-asset-item>
-        <a-asset-item id="KlokMiddag-obj" src="models/KlokMiddag.obj"></a-asset-item>
-        <a-asset-item id="KlokMiddag-mtl" src="models/KlokMiddag.mtl"></a-asset-item>
-        <a-asset-item id="Bezem-obj" src="models/Bezem.obj"></a-asset-item>
-        <a-asset-item id="Bezem-mtl" src="models/Bezem.mtl"></a-asset-item>
-        <a-asset-item id="VerbodenZingenBord-obj" src="models/VerbodenZingenBord.obj"></a-asset-item>
-        <a-asset-item id="VerbodenZingenBord-mtl" src="models/VerbodenZingenBord.mtl"></a-asset-item>
-
+        <!--GLB files-->
         <a-asset-item id="hond-glb" src="models/hond.glb"></a-asset-item>
         <a-asset-item id="toilet-glb" src="models/toilet.glb"></a-asset-item>
         <a-asset-item id="worst-glb" src="models/worst.glb"></a-asset-item>
@@ -32,6 +24,17 @@
         <a-asset-item id="colablik-glb" src="models/colablik.glb"></a-asset-item>
         <a-asset-item id="gieter-glb" src="models/gieter.glb"></a-asset-item>
 
+        <a-asset-item id="KlokAvond-obj" src="models/KlokAvond.obj"></a-asset-item>
+        <a-asset-item id="KlokAvond-mtl" src="models/KlokAvond.mtl"></a-asset-item>
+
+        <a-asset-item id="KlokMiddag-obj" src="models/KlokMiddag.obj"></a-asset-item>
+        <a-asset-item id="KlokMiddag-mtl" src="models/KlokMiddag.mtl"></a-asset-item>
+
+        <a-asset-item id="Bezem-obj" src="models/Bezem.obj"></a-asset-item>
+        <a-asset-item id="Bezem-mtl" src="models/Bezem.mtl"></a-asset-item>
+
+        <a-asset-item id="VerbodenZingenBord-obj" src="models/VerbodenZingenBord.obj"></a-asset-item>
+        <a-asset-item id="VerbodenZingenBord-mtl" src="models/VerbodenZingenBord.mtl"></a-asset-item>
 
         <a-asset-item id="boom-obj" src="models/happylittletree.obj"></a-asset-item>
         <a-asset-item id="boom-mtl" src="models/happylittletree.mtl"></a-asset-item>
@@ -143,7 +146,7 @@
             <a-entity class="clickable js--hond" rotation="-90 0 0" scale=".04 .04 .04" gltf-model="#hond-glb"></a-entity>
             <!-- <a-sound id="js--mp3-domingo1" position="-1 .1 -6" src="sound/domingo1.mp3" autoplay="true" loop="true" preload="auto" volume="2"></a-sound> -->
             <a-sound id="js--mp3-domingo2" position="1 .1 -6" src="sound/domingo2.mp3" autoplay="false" preload="auto" volume="4"></a-sound>
-            <!-- rotation="-90 0 0" position="0 .1 -4" -->s
+            <!-- rotation="-90 0 0" position="0 .1 -4" -->
         </a-entity>
 
         <!-- Le tafeltje, le bord & le worstjes -->
@@ -268,7 +271,7 @@
     <a-sphere class="clickable js--place" color="pink" position="-5 0 9" radius="0.2"></a-sphere>
 
     <!-- interactables-->
-    <a-entity id="js--blikje-jan-sevilla1" class="clickable" gltf-model="#colablik-glb" position="11.5 .1 1"></a-entity>
+    <a-entity id="js--blikje-jan-sevilla1" class="clickable" gltf-model="#colablik-glb" position="11.5 .1 1" scale="4 4 4"></a-entity>
     <a-entity id="js--blikje-jan-sevilla2" class="clickable" gltf-model="#gieter-glb" position="11.5 .2 2" scale="2 2 2"></a-entity>
     <a-entity id="js--blikje-carmen1" class="clickable" gltf-model="#colablik-glb" position="-2.2 .1 11.5"></a-entity>
     <a-entity id="js--blikje-carmen2" class="clickable" gltf-model="#colablik-glb" position="-2.2 .1 11"></a-entity>
