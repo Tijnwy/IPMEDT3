@@ -11,6 +11,7 @@ const holdItems = document.getElementsByClassName("js--hold");
 const bezemKast = document.getElementsByClassName('js--bezemKast');
 const deurAnimatie = document.getElementById("js--deur-animatie");
 const hondAnimatie = document.getElementById("js--hond-animatie");
+const hondLocatie = document.getElementById("js--hondLocatie");
 const places = document.getElementsByClassName('js--place');
 const pavarotti = document.getElementById('js--pavarotti');
 const pickups2 = document.getElementsByClassName('js--pickup2');
@@ -153,6 +154,7 @@ for(let i = 0; i < hond.length; i++){
 
       // domingo1.components.sound.stopSound();
       domingo2.components.sound.playSound();
+      domingoNoot2.setAttribute("src", "img/muzieknootGroen.png");
 
       setTimeout(function() {
         deurAnimatie.setAttribute("animation", {autoplay: true});
@@ -220,9 +222,14 @@ for (var i = 0; i < places.length; i++) {
         camera.setAttribute('animation', att.value);
       }
     });
-
 }
 
+hondLocatie.onclick = function() {
+  domingo1.components.sound.playSound();
+  setTimeout( function() {
+    domingoNoot1.setAttribute("src", "img/muzieknootGroen.png");
+  }, 1000);   
+}
 
 
 
