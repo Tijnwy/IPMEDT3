@@ -27,10 +27,8 @@ const carmenNoot2 = document.getElementById("js--carmenNoot2");
 
 const janSevillaKlik1 = document.getElementById("js--blikje-jan-sevilla1");
 const janSevillaKlik2 = document.getElementById("js--blikje-jan-sevilla2");
-const janSevillaKlik3 = document.getElementById("js--blikje-jan-sevilla3");
 const janSevilla1 = document.getElementById("js--mp3-janSevilla1");
 const janSevilla2 = document.getElementById("js--mp3-janSevilla2");
-const janSevilla3 = document.getElementById("js--mp3-janSevilla3");
 const janSevillaNoot1 = document.getElementById("js--janSevillaNoot1");
 const janSevillaNoot2 = document.getElementById("js--janSevillaNoot2");
 const janSevillaNoot3 = document.getElementById("js--janSevillaNoot3");
@@ -83,17 +81,6 @@ janSevillaKlik2.onclick = function() {
     setTimeout(function() {
       pauseBool = 1;
     }, 41500);
-  }
-}
-janSevillaKlik3.onclick = function() {
-  if(pauseBool == 1) {
-    janSevilla3.components.sound.playSound();
-    pauseBool = 0;
-    janSevillaKlik3.remove();
-    janSevillaNoot3.setAttribute("src", "img/muzieknootGroen.png");
-    setTimeout(function() {
-      pauseBool = 1;
-    }, 38500);
   }
 }
 
