@@ -15,6 +15,7 @@ const hondAnimatie = document.getElementById("js--hond-animatie");
 const places = document.getElementsByClassName('js--place');
 const pavarotti = document.getElementById('js--pavarotti');
 const pavarottiVoetstuk =document.getElementById('js--pavarottiVoetstuk');
+const pavarottiCirkel = document.getElementById('js--pavarottiCirkel')
 const pickups2 = document.getElementsByClassName('js--pickup2');
 
 // blokkeer acties als er muziek speelt
@@ -36,6 +37,8 @@ const janSevilla3 = document.getElementById("js--mp3-janSevilla3");
 const janSevillaNoot1 = document.getElementById("js--janSevillaNoot1");
 const janSevillaNoot2 = document.getElementById("js--janSevillaNoot2");
 const janSevillaNoot3 = document.getElementById("js--janSevillaNoot3");
+
+const pavarottiNoot = document.getElementById("js--pavarottiNoot");
 const pavarottiLive = document.getElementById("js--mp3-PavarottiLive");
 
 const domingoLocatie = document.getElementById("js--domingoLocatie");
@@ -119,7 +122,6 @@ janSevillaKlik3.onclick = function() {
     janSevillaNoot3.setAttribute("src", "img/muzieknootOranje.png");
     janSevilla3.components.sound.playSound();
     pauseBool = 0;
-    janSevillaKlik3.remove();
     setTimeout(function() {
       pauseBool = 1;
       janSevillaNoot3.setAttribute("src", "img/muzieknootGroen.png");
@@ -154,22 +156,6 @@ callasKlik2.onclick = function() {
       }, 21500);
     }
   }
-}
-
-for(let i = 0; i < placeholders.length; i++){
-  placeholders[i].addEventListener('click',
-  function(evt){
-
-      // dit is vrij nutteloos
-      let flush = document.createElement("a-cylinder");
-      flush.setAttribute("color", "blue");
-      flush.setAttribute("animation", "property: rotation; loop: true; to: 20 360 20; dur: 1000")
-      flush.setAttribute("position", "-8.2 .65 -8");
-      flush.setAttribute("height", ".05");
-      flush.setAttribute("radius", ".2");
-
-      scene.appendChild(flush);
-  });
 }
 let hold = null;
 
@@ -230,6 +216,7 @@ for (var i = 0; i < bezemKast.length; i++) {
       sky.setAttribute("src", "img/avondlucht.jpg");
       pavarotti.setAttribute("visible", "true");
       pavarottiVoetstuk.setAttribute("visible", "true");
+      pavarottiCirkel.setAttribute('visible', 'true')
       if (hold2 == null) {
         cameraPlaceholder.innerHTML += '<a-entity class="js--hold2" rotation="0 90 0" scale="1.5 1.5 1.5" position=".5 -.3 -.9" gltf-model="#tissuedoos-glb"></a-entity>'
         cameraPlaceholder.innerHTML += '<a-box class="js--hold2" width=".15" height=".6" depth=".15" rotation="-55 -10 10" position=".4 -.4 -.4" color="#FFD29A"></a-box>'
@@ -242,6 +229,7 @@ for (var i = 0; i < bezemKast.length; i++) {
       sky.setAttribute("src", "img/middaglucht.jpg");
       pavarotti.setAttribute("visible", "false");
       pavarottiVoetstuk.setAttribute("visible", "false");
+      pavarottiCirkel.setAttribute("visible", "false");
       if (hold2 = "tissue") {
         document.getElementsByClassName("js--hold2")[0].remove();
         document.getElementsByClassName("js--hold2")[0].remove();
@@ -255,7 +243,16 @@ pavarottiVoetstuk.addEventListener('click', function(evt) {
   if (hold2 = "tissue") {
     document.getElementsByClassName("js--hold2")[0].remove();
     document.getElementsByClassName("js--hold2")[0].remove();
-    pavarottiLive.components.sound.playSound();
+
+    if(pauseBool == 1) {
+      pavarottiNoot.setAttribute("src", "img/muzieknootOranje.png");
+      pavarottiLive.components.sound.playSound();
+      pauseBool = 0;
+      setTimeout(function() {
+        pauseBool = 1;
+        pavarottiNoot.setAttribute("src", "img/muzieknootGroen.png")
+      }, 44500);
+    }
   }
 });
 
