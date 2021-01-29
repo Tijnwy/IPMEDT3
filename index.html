@@ -24,6 +24,7 @@
         <a-asset-item id="colablik-glb" src="models/colablik.glb"></a-asset-item>
         <a-asset-item id="gieter-glb" src="models/gieter.glb"></a-asset-item>
         <a-asset-item id="koffer-glb" src="models/koffer_carmen.glb"></a-asset-item>
+        <a-asset-item id="steen-glb" src="models/steen.glb"></a-asset-item>
 
         <a-asset-item id="KlokAvond-obj" src="models/KlokAvond.obj"></a-asset-item>
         <a-asset-item id="KlokAvond-mtl" src="models/KlokAvond.mtl"></a-asset-item>
@@ -108,7 +109,7 @@
       <a-sound id="js--mp3-carmen1" position="0 0 0" src="sound/carmen1.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
       <a-sound id="js--mp3-carmen2" position="0 0 0" src="sound/carmen2.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
 
-      <a-sound id="js--intro--voice" position="0 0 0" src="sound/voiceLines/intro.mp3" autoplay="true" loop="false" preload="auto" volume="2"></a-sound>
+<!--      <a-sound id="js&#45;&#45;intro&#45;&#45;voice" position="0 0 0" src="sound/voiceLines/intro.mp3" autoplay="true" loop="false" preload="auto" volume="2"></a-sound>-->
       <a-sound id="js--hond--voice" position="0 0 0" src="sound/voiceLines/hond.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
       <a-sound id="js--pavarotti--voice" position="0 0 0" src="sound/voiceLines/pavarotti.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
     </a-camera>
@@ -260,17 +261,17 @@
 
 
     <!-- Spheres om naar toe te kunnen lopen -->
-    <a-sphere class="clickable js--place" color="pink" position="0 0 14" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="0 0 2" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" id="js--hondLocatie" color="pink" position="-1.4 0 -4" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="-1 0 -11" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="2 0 -11" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="7 0 16" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="-8 0 13" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="10 0 2" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="4 0 8" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="-6 0 3" radius="0.2"></a-sphere>
-    <a-sphere class="clickable js--place" color="pink" position="-5 0 9" radius="0.2"></a-sphere>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="0 0 14"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="0 0 2"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" id="js--hondLocatie" position="-1.4 0 -4"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="-1 0 -11"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="2 0 -11"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="7 0 16"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="-8 0 13"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="10 0 2"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="4 0 8"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="-6 0 3"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="-5 0 9"></a-entity>
 
     <!-- interactables-->
     <a-entity id="js--blikje-jan-sevilla1" class="clickable" gltf-model="#colablik-glb" position="11.5 .1 1" scale="2 2 2"></a-entity>
