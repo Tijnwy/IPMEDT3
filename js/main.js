@@ -148,7 +148,7 @@ for(let i = 0; i < hond.length; i++){
       setTimeout(function() {
         deurAnimatie.setAttribute("animation", {autoplay: true});
         domingoNoot2.setAttribute("src", "img/muzieknootGroen.png");
-        janSevillaNoot2.setAttribute("src", "img/muzieknootGroen.png");        
+        janSevillaNoot2.setAttribute("src", "img/muzieknootGroen.png");
         for(let i = 0; i <= 20; i++) {
           console.log("aaaaaaaah");
         }
@@ -169,6 +169,7 @@ for (var i = 0; i < bezemKast.length; i++) {
       klok.setAttribute("mtl", "#KlokAvond-mtl");
       sky.setAttribute("src", "img/avondlucht.jpg");
       pavarotti.setAttribute("visible", "true");
+      pavarottiVoetstuk.setAttribute("visible", "true");
       if (hold2 == null) {
         camera.innerHTML += '<a-entity class="js--hold2" rotation="0 90 0" scale="1.5 1.5 1.5" position=".5 -.3 -.9" gltf-model="#tissuedoos-glb"></a-entity>'
         camera.innerHTML += '<a-box class="js--hold2" width=".15" height=".6" depth=".15" rotation="-55 -10 10" position=".4 -.4 -.4" color="#FFD29A"></a-box>'
@@ -181,6 +182,7 @@ for (var i = 0; i < bezemKast.length; i++) {
       klok.setAttribute("mtl", "#KlokMiddag-mtl");
       sky.setAttribute("src", "img/middaglucht.jpg");
       pavarotti.setAttribute("visible", "false");
+      pavarottiVoetstuk.setAttribute("visible", "false");
       if (hold2 = "tissue") {
         document.getElementsByClassName("js--hold2")[0].remove();
         document.getElementsByClassName("js--hold2")[0].remove();
