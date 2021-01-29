@@ -212,6 +212,7 @@ for (var i = 0; i < places.length; i++) {
         let duration = pythagoras(box_position.x, box_position.z, camera_position.x, camera_position.z) * 333;
         att.value = 'property: position; easing: linear; dur: ' + duration + '; to: ' + this.getAttribute('position').x + ' 1.6 ' + this.getAttribute('position').z;
         camera.setAttribute('animation', att.value);
+        console.log(camera_position);
       }
     });
 }
@@ -222,45 +223,3 @@ hondLocatie.onclick = function() {
     domingoNoot1.setAttribute("src", "img/muzieknootGroen.png");
   }, 1000);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const getSpace = () => {
-//   const BASE_URL = "https://api.nasa.gov/planetary/apod?api_key=eU3v1G9kaCpQH3UOo0ccjACf6kkgb0ogRBjdECN3";
-//
-//   fetch(BASE_URL) // + spacePhoto
-//   .then((data) => {
-//     return data.json();
-//   })
-//   .then( (response) => {
-//     sky.setAttribute("src", response.hdurl);
-//     console.log(response)
-//     console.log(sky)
-//   })
-// }
-// getSpace()
-
-// https://api.nasa.gov/planetary/apod?api_key=eU3v1G9kaCpQH3UOo0ccjACf6kkgb0ogRBjdECN3
