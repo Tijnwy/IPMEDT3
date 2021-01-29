@@ -23,6 +23,7 @@
         <a-asset-item id="bezemkast-glb" src="models/bezemkast.glb"></a-asset-item>
         <a-asset-item id="colablik-glb" src="models/colablik.glb"></a-asset-item>
         <a-asset-item id="gieter-glb" src="models/gieter.glb"></a-asset-item>
+        <a-asset-item id="koffer-glb" src="models/koffer_carmen.glb"></a-asset-item>
 
         <a-asset-item id="KlokAvond-obj" src="models/KlokAvond.obj"></a-asset-item>
         <a-asset-item id="KlokAvond-mtl" src="models/KlokAvond.mtl"></a-asset-item>
@@ -73,9 +74,6 @@
     <!-- de environment wordt alleen maar gebruikt voor de ondergrond, de rest staat uit -->
     <a-entity environment="grid:crosses; skyType: none; fog: 0; groundTexture: walkernoise; groundColor: #93AA24; groundColor2: #987a2e"></a-entity>
 
-    <!-- meet box -->
-    <a-box class="clickable" id="js--pavarottiVoetstuk" position="0 0 0"></a-box>
-
     <!-- dit is om het minder saai te maken -->
     <a-sky id="js--sky" src="img/MiddagLucht.jpg"></a-sky>
 
@@ -111,7 +109,8 @@
       <a-sound id="js--mp3-carmen2" position="0 0 0" src="sound/carmen2.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
     </a-camera>
 
-    <a-image position="1 .5 16" src="img/CampingPavarotti.png" height="2" width="1"></a-image>
+    <!--poster-->
+    <a-image position="3 1.6 -13.9" src="img/CampingPavarotti.png" height="2" width="1"></a-image>
 
     <!-- Carmen's tent -->
     <a-entity position="9 0 14" rotation="0 -45 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
@@ -125,6 +124,8 @@
     <!-- Pa Varotti -->
     <a-entity id="js--pavarotti" position="0 .7 0" rotation="0 180 0" visible="false" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl"></a-entity>
     <a-sound id="js--mp3-PavarottiLive" position="0 .7 0" src="sound/PavarottiLive.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
+    <!-- meet box -->
+    <a-box class="clickable" id="js--pavarottiVoetstuk" position="0 0 0"></a-box>
 
     <a-entity rotation="0 -90 0" position="-3 0 -3">
         <!-- hondenhok -->
@@ -162,13 +163,13 @@
 
         <!-- le toilettes -->
         <a-entity position="-8 0 -4">
-            <a-box height=".1" width="6" depth="10" color="" src="img/tiles.jpg" position="" rotation=""></a-box> <!-- floor -->
-            <a-box height="6" width=".1" depth="10" color="" src="img/wood.jpg" position="-3 0 0" rotation=""></a-box> <!-- muur links -->
-            <a-box class="clickable" height="6" width=".1" depth="7" color="" src="img/wood.jpg" position="3 0 -2" rotation=""></a-box> <!-- muur rechts 1 -->
-            <a-box class="clickable" height="6" width=".1" depth="2" color="" src="img/wood.jpg" position="3 0 4" rotation=""></a-box> <!-- muur rechts 2 -->
+            <a-box height=".2" width="6" depth="10" color="" src="img/tiles.jpg" position="" rotation=""></a-box> <!-- floor -->
+            <a-box height="3" width=".1" depth="10" color="" src="img/wood.jpg" position="-3 1.5 0" rotation=""></a-box> <!-- muur achter -->
+            <a-box class="clickable" height="3" width=".1" depth="6.5" color="" src="img/wood.jpg" position="3 1.5 -1.75" rotation=""></a-box> <!-- muur voor, rechts-->
+            <a-box class="clickable" height="3" width=".1" depth="2" color="" src="img/wood.jpg" position="3 1.5 4" rotation=""></a-box> <!-- muur voor, links-->
             <a-box height=".5" width=".1" depth="1.5" color="" src="img/wood.jpg" position="3 2.75 2.25" rotation=""></a-box> <!-- muur boven deur -->
-            <a-box height="6" width="6" depth=".1" color="" src="img/wood.jpg" position="0 0 -5" rotation=""></a-box> <!-- muur achter -->
-            <a-box height="6" width="6" depth=".1" color="" src="img/wood.jpg" position="0 0 5" rotation=""></a-box> <!-- muur voor -->
+            <a-box height="3" width="6" depth=".1" color="" src="img/wood.jpg" position="0 1.5 -5" rotation=""></a-box> <!-- muur rechts -->
+            <a-box height="3" width="6" depth=".1" color="" src="img/wood.jpg" position="0 1.5 5" rotation=""></a-box> <!-- muur links -->
             <a-box height=".1" width="6" depth="10" color="" src="" position="0 3 0" rotation=""></a-box> <!-- dak -->
             <a-entity position="0 0.5 -4">
                 <a-entity class="clickable placeholder" rotation="0 180 0" scale="1.5 1.5 1.5" gltf-model="#toilet-glb"></a-entity>
@@ -186,10 +187,10 @@
 
         <!-- Bezemkast -->
         <a-entity position="-8 0 -4">
-            <a-obj-model class="clickable js--bezemKast" gltf-model="#bezemkast-glb" position="-3 0 0"></a-obj-model>
+            <a-entity class="clickable js--bezemKast" gltf-model="#bezemkast-glb" position="-2.845 1.25 0" scale="1.25 1.25 1.25"></a-entity>
             <a-obj-model id="js--klok" src="#KlokMiddag-obj" mtl="#KlokMiddag-mtl" position="-2.95 2 1"></a-obj-model>
-            <a-obj-model id="js--bezem" src="#Bezem-obj" mtl="#Bezem-mtl" position="-2.90 -0.48 1"></a-obj-model>
-            <a-obj-model class="js--tissuedoos js--pickup2" gltf-model="#tissuedoos-glb" position="-2 -4 3"></a-obj-model>
+            <a-obj-model id="js--bezem" src="#Bezem-obj" mtl="#Bezem-mtl" position="-2.90 -0.47 1"></a-obj-model>
+            <a-entity class="js--tissuedoos js--pickup2" gltf-model="#tissuedoos-glb" position="-2 -4 3"></a-entity>
         </a-entity>
     </a-entity>
 
@@ -270,8 +271,8 @@
     <!-- interactables-->
     <a-entity id="js--blikje-jan-sevilla1" class="clickable" gltf-model="#colablik-glb" position="11.5 .1 1" scale="4 4 4"></a-entity>
     <a-entity id="js--blikje-jan-sevilla2" class="clickable" gltf-model="#gieter-glb" position="11.5 .2 2" scale="2 2 2"></a-entity>
-    <a-entity id="js--blikje-carmen1" class="clickable" gltf-model="#colablik-glb" position="-2.2 .1 11.5"></a-entity>
-    <a-entity id="js--blikje-carmen2" class="clickable" gltf-model="#colablik-glb" position="-2.2 .1 11"></a-entity>
+    <a-entity id="js--blikje-carmen1" class="clickable" gltf-model="#koffer-glb" position="-2.2 .2 14"></a-entity>
+    <a-entity id="js--blikje-carmen2" class="clickable" gltf-model="#colablik-glb" position="-2.2 .2 11.5" scale 2></a-entity>
 
     <!-- simpelere bomen voor verder weg -->
     <a-entity position="20 0 0">
