@@ -19,7 +19,7 @@ const pavarottiCirkel = document.getElementById('js--pavarottiCirkel')
 const pickups2 = document.getElementsByClassName('js--pickup2');
 
 // blokkeer acties als er muziek speelt
-let pauseBool = 1;
+let pauseBool = 0;
 
 const carmenKlik1 = document.getElementById("js--blikje-carmen1");
 const carmenKlik2 = document.getElementById("js--blikje-carmen2");
@@ -66,7 +66,7 @@ const hondVoice = document.getElementById("js--hond--voice");
 const pavarottiVoice = document.getElementById("js--pavarotti--voice");
 const eindeVoice = document.getElementById('js--einde--voice');
 
-let placeholders = document.getElementsByClassName("placeholder");
+setTimeout(function() { pauseBool = 1; }, 25000);
 
 carmenKlik1.onclick = function() {
   if(pauseBool == 1) {
