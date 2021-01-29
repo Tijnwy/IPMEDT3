@@ -41,6 +41,10 @@ const domingo2 = document.getElementById("js--mp3-domingo2");
 const domingoNoot1 = document.getElementById("js--domingoNoot1");
 const domingoNoot2 = document.getElementById("js--domingoNoot2");
 
+const introVoice = document.getElementById("js--intro--voice");
+const hondVoice = document.getElementById("js--hond--voice");
+const pavarottiVoice = document.getElementById("js--pavarotti--voice");
+
 let placeholders = document.getElementsByClassName("placeholder");
 
 carmenKlik1.onclick = function() {
@@ -176,7 +180,6 @@ for (var i = 0; i < bezemKast.length; i++) {
         hold2 = "tissue"
       }
     } else {
-      //console.log("Klok gaat naar middag");
       klok.setAttribute("src", "#KlokMiddag-obj");
       klok.setAttribute("mtl", "#KlokMiddag-mtl");
       sky.setAttribute("src", "img/middaglucht.jpg");
