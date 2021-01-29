@@ -278,7 +278,7 @@ for (var i = 0; i < places.length; i++) {
 }
 
 domingoLocatie.onclick = function() {
-  if(domingoBool == 1) {
+  if(domingoBool == 1 && pauseBool == 1) {
     domingoBool = 0;
     pauseBool = 0;
     domingoNoot1.setAttribute("src", "img/muzieknootOranje.png");
