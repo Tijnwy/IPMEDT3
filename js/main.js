@@ -64,6 +64,7 @@ let callas2bool = 1;
 const introVoice = document.getElementById("js--intro--voice");
 const hondVoice = document.getElementById("js--hond--voice");
 const pavarottiVoice = document.getElementById("js--pavarotti--voice");
+const eindeVoice = document.getElementById('js--einde--voice');
 
 let placeholders = document.getElementsByClassName("placeholder");
 
@@ -215,8 +216,9 @@ for (var i = 0; i < bezemKast.length; i++) {
       klok.setAttribute("mtl", "#KlokAvond-mtl");
       sky.setAttribute("src", "img/avondlucht.jpg");
       pavarotti.setAttribute("visible", "true");
-      pavarottiVoetstuk.setAttribute("visible", "true");
-      pavarottiCirkel.setAttribute('visible', 'true')
+      pavarottiVoetstuk.setAttribute("position", "0 0 0")
+      pavarottiCirkel.setAttribute('visible', 'true');
+      pavarottiVoice.components.sound.playSound();
       if (hold2 == null) {
         cameraPlaceholder.innerHTML += '<a-entity class="js--hold2" rotation="0 90 0" scale="1.5 1.5 1.5" position=".5 -.3 -.9" gltf-model="#tissuedoos-glb"></a-entity>'
         cameraPlaceholder.innerHTML += '<a-box class="js--hold2" width=".15" height=".6" depth=".15" rotation="-55 -10 10" position=".4 -.4 -.4" color="#FFD29A"></a-box>'
@@ -228,7 +230,7 @@ for (var i = 0; i < bezemKast.length; i++) {
       klok.setAttribute("mtl", "#KlokMiddag-mtl");
       sky.setAttribute("src", "img/middaglucht.jpg");
       pavarotti.setAttribute("visible", "false");
-      pavarottiVoetstuk.setAttribute("visible", "false");
+      pavarottiVoetstuk.setAttribute("position", "0 -4 0")
       pavarottiCirkel.setAttribute("visible", "false");
       if (hold2 = "tissue") {
         document.getElementsByClassName("js--hold2")[0].remove();
@@ -251,6 +253,7 @@ pavarottiVoetstuk.addEventListener('click', function(evt) {
       setTimeout(function() {
         pauseBool = 1;
         pavarottiNoot.setAttribute("src", "img/muzieknootGroen.png")
+        eindeVoice.components.sound.playSound();
       }, 44500);
     }
   }
@@ -283,6 +286,7 @@ domingoLocatie.onclick = function() {
     setTimeout( function() {
       domingoNoot1.setAttribute("src", "img/muzieknootGroen.png");
       pauseBool = 1;
+      hondVoice.components.sound.playSound();
     }, 7500);
   }
 }

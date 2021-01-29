@@ -128,9 +128,10 @@
 
         <a-sound id="js--mp3-PavarottiLive" position="0 0 0" src="sound/PavarottiLive.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
 
-        <!--      <a-sound id="js--intro--voice" position="0 0 0" src="sound/voiceLines/intro.mp3" autoplay="true" loop="false" preload="auto" volume="2"></a-sound>-->
+        <a-sound id="js--intro--voice" position="0 0 0" src="sound/voiceLines/intro.mp3" autoplay="true" loop="false" preload="auto" volume="2"></a-sound>
         <a-sound id="js--hond--voice" position="0 0 0" src="sound/voiceLines/hond.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
         <a-sound id="js--pavarotti--voice" position="0 0 0" src="sound/voiceLines/pavarotti.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+        <a-sound id="js--einde--voice" position="0 0 0" src="sound/voiceLines/einde.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
 
         <a-sound id="js--mp3-callas1" position="0 0 0" src="sound/callas1.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
         <a-sound id="js--mp3-callas2" position="0 0 0" src="sound/callas2.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
@@ -149,8 +150,9 @@
     <a-box position="12 1.2 2" id="js--jan-sevilla-box" class="clickable" height="1.5" width=".8" depth=".8" material="opacity: 0"></a-box>
 
     <!-- Pa Varotti -->
-    <a-entity id="js--pavarotti" position="0 1.3 0" scale="1.5 1.5 1.5" rotation="0 180 0" visible="false" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl"></a-entity>
-    <a-box class="clickable" id="js--pavarottiVoetstuk" height="2" position="0 0 0" material="opacity: 0" visible="false"></a-box>
+    <a-entity id="js--pavarotti" position="0 1 0" scale="1.5 1.5 1.5" rotation="0 180 0" visible="false" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl">
+        <a-box class="clickable" id="js--pavarottiVoetstuk" height="2" position="0 -4 0" material="opacity: 0"></a-box>
+    </a-entity>
     <a-cylinder id="js--pavarottiCirkel" position="0 .01 0" radius=".3" height=".01" color="blue" visible="false"></a-cylinder>
 
     <a-entity rotation="0 -90 0" position="-3 0 -3">
@@ -226,6 +228,9 @@
         <a-text position="-5.1 2.4 -8.6" rotation="0 -90 0" scale="0.5 0.5 0.5" value="Jarmo Haasnoot, Tijn van der Weijden & Timo van den Berg"></a-text>
         <a-text position="-5.1 2 -8.6" rotation="0 -90 0" scale="0.5 0.5 0.5" value="In samenwerking met Hogeschool Leiden"></a-text>
         <a-text position="-5.1 1.6 -8.6" rotation="0 -90 0" scale="0.5 0.5 0.5" value="In opdracht van Mark Van Vliet"></a-text>
+        <a-text position="-5.1 1.6 -6.6" rotation="0 -90 0" scale="0.5 0.5 0.5" value="Stichting de Vos met negen staarten"></a-text>
+        <a-image position="-5.1 1 -6.1" rotation="0 -90 0" src="img/logo-Vos.png" height="1" width="1"></a-image>
+
     </a-entity>
 
     <!-- Verboden te zingen bord -->
