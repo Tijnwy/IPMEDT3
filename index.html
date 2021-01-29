@@ -69,6 +69,15 @@
 
         <a-asset-item id="schuttingSchuin-obj" src="models/schuttingSchuin.obj"></a-asset-item>
         <a-asset-item id="schuttingSchuin-mtl" src="models/schuttingSchuin.mtl"></a-asset-item>
+
+        <a-asset-item id="beamer-obj" src="models/Beamer.obj"></a-asset-item>
+        <a-asset-item id="beamer-mtl" src="models/Beamer.mtl"></a-asset-item>
+
+        <a-asset-item id="beamerScherm-obj" src="models/BeamerScherm.obj"></a-asset-item>
+        <a-asset-item id="beamerScherm-mtl" src="models/BeamerScherm.mtl"></a-asset-item>
+
+        <a-asset-item id="tafel-obj" src="models/Tafeltje.obj"></a-asset-item>
+        <a-asset-item id="tafel-mtl" src="models/Tafeltje.mtl"></a-asset-item>
     </a-assets>
 
     <!-- de environment wordt alleen maar gebruikt voor de ondergrond, de rest staat uit -->
@@ -296,8 +305,10 @@
     </a-entity>
 
     <!-- API Sectie -->
-    <a-sphere class="clickable" reloader color="red" position="-8 0.5 15" radius="0.3"></a-sphere>
-    <a-image hond position="-8 2 20" scale="5 5 5"></a-image>
+    <a-obj-model class="clickable" reloader src="#beamer-obj" mtl="#beamer-mtl" position="-8 0.8 15" rotation="0 180 0" scale="1.5 1.5 1.5"></a-obj-model>
+    <a-obj-model src="#tafel-obj" mtl="#tafel-mtl" position="-8 0 15" scale="1.5 1.5 1.5"></a-obj-model>
+    <a-obj-model src="#beamerScherm-obj" mtl="#beamerScherm-mtl" position="-8 0 17.05" rotation="0 90 0"></a-obj-model>
+    <a-image hond position="-8 1.8 17" scale="1.3 1.3 1.3"></a-image>
   </a-scene>
   <script src="js/main.js"></script>
 </body>
