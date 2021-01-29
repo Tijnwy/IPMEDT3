@@ -1,89 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-  <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
-  <title>Camping Pavarotti</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="js/nieuweHond.js"></script>
+    <title>Camping Pavarotti</title>
 </head>
 <body>
-  <a-scene id="js--scene">
+<a-scene id="js--scene">
 
     <a-assets>
-      <a-asset-item id="hond-glb" src="img/hond.glb"></a-asset-item>
-      <a-asset-item id="toilet-glb" src="img/toilet.glb"></a-asset-item>
+        <!--GLB files-->
+        <a-asset-item id="hond-glb" src="models/hond.glb"></a-asset-item>
+        <a-asset-item id="toilet-glb" src="models/toilet.glb"></a-asset-item>
+        <a-asset-item id="worst-glb" src="models/worst.glb"></a-asset-item>
+        <a-asset-item id="waterbak-glb" src="models/waterbak.glb"></a-asset-item>
+        <a-asset-item id="bord-glb" src="models/bord.glb"></a-asset-item>
+        <a-asset-item id="wasbak-glb" src="models/wasbak.glb"></a-asset-item>
+        <a-asset-item id="tissuedoos-glb" src="models/tissuedoos.glb"></a-asset-item>
+        <a-asset-item id="bezemkast-glb" src="models/bezemkast.glb"></a-asset-item>
+        <a-asset-item id="colablik-glb" src="models/colablik.glb"></a-asset-item>
+        <a-asset-item id="gieter-glb" src="models/gieter.glb"></a-asset-item>
+        <a-asset-item id="koffer-glb" src="models/koffer_carmen.glb"></a-asset-item>
+        <a-asset-item id="steen-glb" src="models/steen.glb"></a-asset-item>
+
+        <a-asset-item id="KlokAvond-obj" src="models/KlokAvond.obj"></a-asset-item>
+        <a-asset-item id="KlokAvond-mtl" src="models/KlokAvond.mtl"></a-asset-item>
+
+        <a-asset-item id="KlokMiddag-obj" src="models/KlokMiddag.obj"></a-asset-item>
+        <a-asset-item id="KlokMiddag-mtl" src="models/KlokMiddag.mtl"></a-asset-item>
+
+        <a-asset-item id="Bezem-obj" src="models/Bezem.obj"></a-asset-item>
+        <a-asset-item id="Bezem-mtl" src="models/Bezem.mtl"></a-asset-item>
+
+        <a-asset-item id="VerbodenZingenBord-obj" src="models/VerbodenZingenBord.obj"></a-asset-item>
+        <a-asset-item id="VerbodenZingenBord-mtl" src="models/VerbodenZingenBord.mtl"></a-asset-item>
+
+        <a-asset-item id="boom-obj" src="models/happylittletree.obj"></a-asset-item>
+        <a-asset-item id="boom-mtl" src="models/happylittletree.mtl"></a-asset-item>
+
+        <a-asset-item id="boom2-obj" src="models/happylittletree2.obj"></a-asset-item>
+        <a-asset-item id="boom2-mtl" src="models/happylittletree2.mtl"></a-asset-item>
+
+        <a-asset-item id="struik-obj" src="models/happylittleshrub.obj"></a-asset-item>
+        <a-asset-item id="struik-mtl" src="models/happylittleshrub.mtl"></a-asset-item>
+
+        <a-asset-item id="tentDriehoekGroen-obj" src="models/tentDriehoekGroen.obj"></a-asset-item>
+        <a-asset-item id="tentDriehoekGroen-mtl" src="models/tentDriehoekGroen.mtl"></a-asset-item>
+
+        <a-asset-item id="tentDriehoekBlauw-obj" src="models/tentDriehoekBlauw.obj"></a-asset-item>
+        <a-asset-item id="tentDriehoekBlauw-mtl" src="models/tentDriehoekBlauw.mtl"></a-asset-item>
+
+        <a-asset-item id="hekjeRecht-obj" src="models/hekjeRecht.obj"></a-asset-item>
+        <a-asset-item id="hekjeRecht-mtl" src="models/hekjeRecht.mtl"></a-asset-item>
+
+        <a-asset-item id="hekjeSchuin-obj" src="models/hekjeSchuin.obj"></a-asset-item>
+        <a-asset-item id="hekjeSchuin-mtl" src="models/hekjeSchuin.mtl"></a-asset-item>
+
+        <a-asset-item id="pavarotti-obj" src="models/pavarotti.obj"></a-asset-item>
+        <a-asset-item id="pavarotti-mtl" src="models/pavarotti.mtl"></a-asset-item>
+
+        <a-asset-item id="Tuinman-obj" src="models/Tuinman.obj"></a-asset-item>
+        <a-asset-item id="Tuinman-mtl" src="models/Tuinman.mtl"></a-asset-item>
+
+        <a-asset-item id="schuttingRecht-obj" src="models/schuttingRecht.obj"></a-asset-item>
+        <a-asset-item id="schuttingRecht-mtl" src="models/schuttingRecht.mtl"></a-asset-item>
+
+        <a-asset-item id="schuttingSchuin-obj" src="models/schuttingSchuin.obj"></a-asset-item>
+        <a-asset-item id="schuttingSchuin-mtl" src="models/schuttingSchuin.mtl"></a-asset-item>
+
+        <a-asset-item id="beamer-obj" src="models/Beamer.obj"></a-asset-item>
+        <a-asset-item id="beamer-mtl" src="models/Beamer.mtl"></a-asset-item>
+
+        <a-asset-item id="beamerScherm-obj" src="models/BeamerScherm.obj"></a-asset-item>
+        <a-asset-item id="beamerScherm-mtl" src="models/BeamerScherm.mtl"></a-asset-item>
+
+        <a-asset-item id="tafel-obj" src="models/Tafeltje.obj"></a-asset-item>
+        <a-asset-item id="tafel-mtl" src="models/Tafeltje.mtl"></a-asset-item>
     </a-assets>
 
-    <a-entity position="0 0 0" environment="preset: forest"></a-entity>
+    <!-- de environment wordt alleen maar gebruikt voor de ondergrond, de rest staat uit -->
+    <a-entity environment="skyType: none; fog: 0; groundTexture: walkernoise; groundColor: #93AA24; groundColor2: #987a2e"></a-entity>
 
-    <!-- <a-sky id="js--sky"></a-sky> -->
+    <!-- dit is om het minder saai te maken -->
+    <a-sky id="js--sky" src="img/MiddagLucht.jpg"></a-sky>
 
-    <a-camera id="js--camera">
-      <a-entity
-        animation__click="property: scale; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1; startEvents: click"
-        animation__fusing="property: scale; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1; startEvents: fusing"
-        animation__mouseleave="property: scale; easing: easeInCubic; dur: 500; to: 1 1 1; startEvents: mouseleave"
-        cursor="fuse: true; fuseTimeout: 2000"
-        material="color: black; shader: flat;"
-        geometry="primitive: ring; radiusInner: 0.001; radiusOuter: 0.002"
-        position="0 0 -.1"
-        raycaster="objects: .clickable;"
-      ></a-entity>
+    <!-- de camera -->
+    <a-camera id="js--camera" position="7 1.6 16">
+        <a-entity
+                animation__click="property: scale; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1; startEvents: click"
+                animation__fusing="property: scale; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1; startEvents: fusing"
+                animation__mouseleave="property: scale; easing: easeInCubic; dur: 500; to: 1 1 1; startEvents: mouseleave"
+                cursor="fuse: true; fuseTimeout: 2000"
+                material="color: black; shader: flat;"
+                geometry="primitive: ring; radiusInner: 0.001; radiusOuter: 0.002"
+                position="0 0 -.1"
+                raycaster="objects: .clickable;"
+        ></a-entity>
+        <a-entity id="js--camera-placeholder"></a-entity>
+        <a-image src="img/muzieknootRood.png" id="js--carmenNoot1" position="-.05 -.05 -.1" height=".01" width=".01"></a-image>
+        <a-image src="img/muzieknootRood.png" id="js--carmenNoot2" position="-.04 -.05 -.1" height=".01" width=".01"></a-image>
+        <a-image src="img/muzieknootRood.png" id="js--janSevillaNoot1" position="-.03 -.05 -.1" height=".01" width=".01"></a-image>
+        <a-image src="img/muzieknootRood.png" id="js--janSevillaNoot2" position="-.02 -.05 -.1" height=".01" width=".01"></a-image>
+        <a-image src="img/muzieknootRood.png" id="js--janSevillaNoot3" position="-.01 -.05 -.1" height=".01" width=".01"></a-image>
+        <a-image src="img/muzieknootRood.png" id="js--domingoNoot1" position="0 -.05 -.1" height=".01" width=".01"></a-image>
+        <a-image src="img/muzieknootRood.png" id="js--domingoNoot2" position=".01 -.05 -.1" height=".01" width=".01"></a-image>
+        <a-image src="img/muzieknootRood.png" id="js--callasNoot1" position=".02 -.05 -.1" height=".01" width=".01"></a-image>
+        <a-image src="img/muzieknootRood.png" id="js--callasNoot2" position=".03 -.05 -.1" height=".01" width=".01"></a-image>
+        <a-image src="img/muzieknootRood.png" id="js--callasNoot3" position=".04 -.05 -.1" height=".01" width=".01"></a-image>
+        <a-image src="img/muzieknootRood.png" id="js--pavarottiNoot" position=".05 -.05 -.1" height=".01" width=".01"></a-image>
+
+        <a-sound id="js--mp3-domingo1" position="0 0 0" src="sound/domingo1.mp3" autoplay="false" preload="auto" volume="2"></a-sound>
+        <a-sound id="js--mp3-domingo2" position="0 0 0" src="sound/domingo2.mp3" autoplay="false" preload="auto" volume="4"></a-sound>
+
+        <a-sound id="js--mp3-janSevilla1" position="0 0 0" src="sound/Jan_Sevilla1.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+        <a-sound id="js--mp3-janSevilla2" position="0 0 0" src="sound/Jan_Sevilla2.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+        <a-sound id="js--mp3-janSevilla3" position="0 0 0" src="sound/Jan_Sevilla3.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+
+        <a-sound id="js--mp3-carmen1" position="0 0 0" src="sound/carmen1.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+        <a-sound id="js--mp3-carmen2" position="0 0 0" src="sound/carmen2.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+
+        <a-sound id="js--mp3-PavarottiLive" position="0 0 0" src="sound/PavarottiLive.mp3" autoplay="false" loop="false" preload="auto" volume="3" maxDistance="2"></a-sound>
+
+        <a-sound id="js--intro--voice" position="0 0 0" src="sound/voiceLines/intro.mp3" autoplay="true" loop="false" preload="auto" volume="2"></a-sound>
+        <a-sound id="js--hond--voice" position="0 0 0" src="sound/voiceLines/hond.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+        <a-sound id="js--pavarotti--voice" position="0 0 0" src="sound/voiceLines/pavarotti.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+        <a-sound id="js--einde--voice" position="0 0 0" src="sound/voiceLines/einde.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+
+        <a-sound id="js--mp3-callas1" position="0 0 0" src="sound/callas1.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+        <a-sound id="js--mp3-callas2" position="0 0 0" src="sound/callas2.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+        <a-sound id="js--mp3-callas3" position="0 0 0" src="sound/callas3.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
     </a-camera>
 
-    <a-entity position="0 0 -5" scale=".8 .8 .8"> <!-- hondenhok -->
-      <a-box height=".1" width="2" depth="3" color="" src="img/wood.jpg" position="" rotation=""></a-box> <!-- floor -->
-      <a-box height="2" width=".1" depth="3" color="" src="img/wood.jpg" position="-1 0 0" rotation=""></a-box> <!-- muur links -->
-      <a-box height="2" width=".1" depth="3" color="" src="img/wood.jpg" position="1 0 0" rotation=""></a-box> <!-- muur rechts -->
-      <a-box height="2" width="2" depth=".1" color="" src="img/wood.jpg" position="0 0 -1.5" rotation=""></a-box> <!-- muur achter -->
-      <a-box height="2" width=".1" depth="3.3" color="red" position="-.5 1.5 0" rotation="0 0 -45"></a-box> <!-- dak links -->
-      <a-box height="2" width=".1" depth="3.3" color="red" position=".5 1.5 0" rotation="0 0 45"></a-box> <!-- dak rechts -->
-      <a-box height="1.5" width="1.5" depth=".09" color="" src="img/wood.jpg" position="0 1 -1.5" rotation="0 0 45"></a-box> <!-- muur achter driehoek -->
+    <!-- Carmen's tent -->
+    <a-entity position="9 0 14" rotation="0 -45 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
 
-      <a-text position=".5 2 1" width="1.5" value="Hier komt een iteractie met de hond, mogelijk iets met worstjes"></a-text>
-      <a-box position="1.25 2 .9" width="1.7" height=".3" depth=".1" color="black"></a-box>
+    <!-- De tuinman -->
+    <a-entity position="12 1.7 2" scale="1.5 1.5 1.5" rotation="0 180 0" obj-model="obj: #Tuinman-obj; mtl: #Tuinman-mtl"
+              animation__1="property: rotation; dur: 750; from: 0 180 -10; to: 0 180 10; loop: true; dir: alternate"
+              animation__2="property: position; dur: 1000; from: 12 1.7 2; to: 12 1.4 2; loop: true; dir: alternate">
+    </a-entity>
+    <a-cylinder position="12 .01 2" radius=".3" height=".01" color="blue"></a-cylinder>
+    <a-box position="12 1.2 2" id="js--jan-sevilla-box" class="clickable" height="1.5" width=".8" depth=".8" material="opacity: 0"></a-box>
+
+    <!-- Pa Varotti -->
+    <a-entity id="js--pavarotti" position="0 1 0" scale="1.5 1.5 1.5" rotation="0 180 0" visible="false" obj-model="obj: #pavarotti-obj; mtl: #pavarotti-mtl">
+        <a-box class="clickable" id="js--pavarottiVoetstuk" height="2" position="0 -4 0" material="opacity: 0"></a-box>
+    </a-entity>
+    <a-cylinder id="js--pavarottiCirkel" position="0 .01 0" radius=".3" height=".01" color="blue" visible="false"></a-cylinder>
+
+    <a-entity rotation="0 -90 0" position="-3 0 -3">
+        <!-- hondenhok -->
+        <a-entity position="-3 0 -5" scale=".8 .8 .8">
+            <a-box height=".1" width="2" depth="3" color="" src="img/wood.jpg" position="" rotation=""></a-box> <!-- vloer -->
+            <a-box height="2" width=".1" depth="3" color="" src="img/wood.jpg" position="-1 0 0" rotation=""></a-box> <!-- muur links -->
+            <a-box height="2" width=".1" depth="3" color="" src="img/wood.jpg" position="1 0 0" rotation=""></a-box> <!-- muur rechts -->
+            <a-box height="2" width="2" depth=".1" color="" src="img/wood.jpg" position="0 0 -1.5" rotation=""></a-box> <!-- muur achter -->
+            <a-box height="1.5" width=".1" depth="3.3" color="red" position="-.5 1.5 0" rotation="0 0 -45"></a-box> <!-- dak links -->
+            <a-box height="1.5" width=".1" depth="3.3" color="red" position=".5 1.5 0" rotation="0 0 45"></a-box> <!-- dak rechts -->
+            <a-box height="1.5" width="1.5" depth=".09" color="" src="img/wood.jpg" position="0 1 -1.5" rotation="0 0 45"></a-box> <!-- muur achter driehoek -->
+
+            <a-entity rotation="0 0 0" scale=".3 .3 .3" position="1 .1 2.5" gltf-model="#waterbak-glb"></a-entity>
+        </a-entity>
+
+        <!-- le Hond -->
+        <a-entity id="js--hond-animatie" position="-3 0 -1.75" rotation="0 90 0" animation__1='property: position; easing: linear; dur: 1000; to: -3 0 -3; autoplay: false'
+                  animation__2='property: rotation; easing: linear; dur: 1000; to: 0 0 0; delay: 0; autoplay: false'
+                  animation__3='property: position; easing: linear; dur: 1000; from: -3 0 -3; to: -3 .1 -4; delay: 1000; autoplay: false'>
+            <a-entity class="clickable js--hond" rotation="-90 0 0" scale=".04 .04 .04" gltf-model="#hond-glb"></a-entity>
+        </a-entity>
+
+        <!-- Le tafeltje, le bord & le worstjes -->
+        <a-entity position="-1 0 -5">
+            <a-cylinder position="0 0.01 0" radius=".3" height=".01" color="blue"></a-cylinder>
+            <a-cylinder position="0 1 0" radius=".6" height=".05" src="img/wood.jpg"></a-cylinder>
+            <a-cylinder position="0 .5 0" radius=".05" height="1" src="img/wood.jpg"></a-cylinder>
+            <a-box position="0 0 0" rotation="0 45 0" depth=".5" width=".05" height=".05" src="img/wood.jpg"></a-box>
+            <a-box position="0 0 0" rotation="0 -45 0" depth=".5" width=".05" height=".05" src="img/wood.jpg"></a-box>
+            <a-entity rotation="0 0 0" scale=".3 .3 .3" position="0 1.05 0" gltf-model="#bord-glb"></a-entity>
+
+            <a-entity class="clickable js--pickup" rotation="0 0 0" scale=".2 .2 .2" position="0 1.1 0" gltf-model="#worst-glb"></a-entity>
+            <a-entity class="clickable js--pickup" rotation="0 0 0" scale=".2 .2 .2" position=".1 1.1 0" gltf-model="#worst-glb"></a-entity>
+            <a-entity class="clickable js--pickup" rotation="0 0 0" scale=".2 .2 .2" position="-.1 1.1 0" gltf-model="#worst-glb"></a-entity>
+        </a-entity>
+
+        <!-- le toilettes -->
+        <a-entity position="-8 0 -4">
+            <a-box height=".2" width="6" depth="10" color="" src="img/tiles.jpg" position="" rotation=""></a-box> <!-- vloer -->
+            <a-box height="3" width=".1" depth="10" color="" src="img/wood.jpg" position="-3 1.5 0" rotation=""></a-box> <!-- muur achter -->
+            <a-box class="clickable" height="3" width=".1" depth="6.5" color="" src="img/wood.jpg" position="3 1.5 -1.75" rotation=""></a-box> <!-- muur voor, rechts-->
+            <a-box class="clickable" height="3" width=".1" depth="2" color="" src="img/wood.jpg" position="3 1.5 4" rotation=""></a-box> <!-- muur voor, links-->
+            <a-box height=".5" width=".1" depth="1.5" color="" src="img/wood.jpg" position="3 2.75 2.25" rotation=""></a-box> <!-- muur boven deur -->
+            <a-box height="3" width="6" depth=".1" color="" src="img/wood.jpg" position="0 1.5 -5" rotation=""></a-box> <!-- muur rechts -->
+            <a-box height="3" width="6" depth=".1" color="" src="img/wood.jpg" position="0 1.5 5" rotation=""></a-box> <!-- muur links -->
+            <a-box height=".1" width="6" depth="10" color="" src="" position="0 3 0" rotation=""></a-box> <!-- dak -->
+            <a-entity class="clickable placeholder" id="js--toilet" rotation="0 180 0" scale="1.5 1.5 1.5" gltf-model="#toilet-glb" position="0 0.5 -4"></a-entity> <!-- toilet -->
+            <a-cylinder position="0 0.1 -4" radius=".3" height=".01" color="blue"></a-cylinder>
+            <a-entity class="clickable" id="js--wasbak" rotation="0 -90 0" scale="0.5 0.5 0.5" gltf-model="#wasbak-glb" position="0 0.5 4.85"></a-entity> <!-- wasbak -->
+            <a-cylinder position="0 0.1 4.83" radius=".2" height=".01" color="blue"></a-cylinder>
+            <a-text position="1 1.5 -4" width="1.5" value=""></a-text>
+        </a-entity>
+
+        <!-- le toilettes deur -->
+        <a-entity id="js--deur-animatie" position="-5 1.25 -1" animation="property: rotation; from: 0 0 0; to: 0 75 0; dur: 1000; delay: 1000; autoplay: false">
+            <a-box class="clickable" width=".1" height="2.5" depth="1.5" position="0 0 -.75" src="img/door.jpg"></a-box>
+        </a-entity>
+
+        <!-- Bezemkast -->
+        <a-entity position="-8 0 -4">
+            <a-entity class="clickable js--bezemKast" gltf-model="#bezemkast-glb" position="-2.845 1.25 0" scale="1.25 1.25 1.25"></a-entity>
+            <a-cylinder position="-2.845 0.1 0" radius="0.8" height=".01" color="blue"></a-cylinder>
+            <a-obj-model id="js--klok" src="#KlokMiddag-obj" mtl="#KlokMiddag-mtl" position="-2.95 2 1"></a-obj-model>
+            <a-obj-model id="js--bezem" src="#Bezem-obj" mtl="#Bezem-mtl" position="-2.90 -0.4 1"></a-obj-model>
+            <a-entity class="js--tissuedoos js--pickup2" gltf-model="#tissuedoos-glb" position="-2 -4 3"></a-entity>
+        </a-entity>
+
+        <!-- Tekst in WC hok -->
+        <a-image position="-5.8 1.5 -8.9" src="img/CampingPavarotti.png" height="2" width="1.5" ></a-image>
+        <a-image position="-5.1 1 -8.1" rotation="0 -90 0" src="img/logoHogeschoolLeiden.png" height="1" width="1" ></a-image>
+        <a-text position="-5.1 2.8 -8.6" rotation="0 -90 0" scale="0.5 0.5 0.5" value="Dit product is gemaakt door:"></a-text>
+        <a-text position="-5.1 2.4 -8.6" rotation="0 -90 0" scale="0.5 0.5 0.5" value="Jarmo Haasnoot, Tijn van der Weijden & Timo van den Berg"></a-text>
+        <a-text position="-5.1 2 -8.6" rotation="0 -90 0" scale="0.5 0.5 0.5" value="In samenwerking met Hogeschool Leiden"></a-text>
+        <a-text position="-5.1 1.6 -8.6" rotation="0 -90 0" scale="0.5 0.5 0.5" value="In opdracht van Mark Van Vliet"></a-text>
+        <a-text position="-5.1 1.6 -6.6" rotation="0 -90 0" scale="0.5 0.5 0.5" value="Stichting de Vos met negen staarten"></a-text>
+        <a-image position="-5.1 1 -6.1" rotation="0 -90 0" src="img/logo-Vos.png" height="1" width="1"></a-image>
+
     </a-entity>
 
-    <a-entity class="clickable js--hond" rotation="-90 0 0" scale=".04 .04 .04" position="0 .1 -4" gltf-model="#hond-glb" animation='property: position; easing: linear; dur: 2000; to: 1.85 1 -1.5; disabled'></a-entity>
-    <!-- <a-sound position="0 .1 -4" src="sound/Hond Domingo Toreador live.mp3" autoplay="true" loop="true" preload="auto" volume=".5" maxDistance="2"></a-sound> -->
+    <!-- Verboden te zingen bord -->
+    <a-obj-model src="#VerbodenZingenBord-obj" mtl="#VerbodenZingenBord-mtl" position="1 0 10" rotation="0 -90 0"></a-obj-model>
 
-    <!-- Le worstjes & tafeltje -->
-    <a-entity static-body position="-2 0 -5"> <!-- le tafel -->
-      <a-cylinder position="0 1 0" radius=".6" height=".05" src="img/wood.jpg"></a-cylinder>
-      <a-cylinder position="0 .5 0" radius=".05" height="1" src="img/wood.jpg"></a-cylinder>
-      <a-box position="0 0 0" rotation="0 45 0" depth=".5" width=".05" height=".05" src="img/wood.jpg"></a-box>
-      <a-box position="0 0 0" rotation="0 -45 0" depth=".5" width=".05" height=".05" src="img/wood.jpg"></a-box>
+    <!-- Schutting -->
+    <a-entity position="-7 0 -10" rotation="0 0 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingRecht-obj; mtl: #schuttingRecht-mtl"></a-entity>
+    <a-entity position="-12 0 -10" rotation="0 0 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingSchuin-obj; mtl: #schuttingSchuin-mtl"></a-entity>
+    <a-entity position="-15 0 -7" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingRecht-obj; mtl: #schuttingRecht-mtl"></a-entity>
+    <a-entity position="-15 0 -2" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingRecht-obj; mtl: #schuttingRecht-mtl"></a-entity>
+    <a-entity position="-15 0 3" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingRecht-obj; mtl: #schuttingRecht-mtl"></a-entity>
+    <a-entity position="-15 0 8" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingSchuin-obj; mtl: #schuttingSchuin-mtl"></a-entity>
+    <a-entity position="-15 0 13" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingRecht-obj; mtl: #schuttingRecht-mtl"></a-entity>
+
+    <!-- tenten -->
+    <a-entity position="-3 0 18" rotation="0 90 0" scale="2 2 2.3" obj-model="obj: #tentDriehoekBlauw-obj; mtl: #tentDriehoekBlauw-mtl"></a-entity>
+    <a-entity position="-3.25 0 16.5" rotation="0 0 0" scale="1.5 1.5 1.8" obj-model="obj: #tentDriehoekBlauw-obj; mtl: #tentDriehoekBlauw-mtl"></a-entity>
+
+    <a-entity position="-9 0 -2" rotation="0 45 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
+    <a-entity position="-10 0 2" rotation="0 -250 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekBlauw-obj; mtl: #tentDriehoekBlauw-mtl"></a-entity>
+
+    <a-entity position="18 0 1" rotation="0 -125 0" scale="1.2 1.2 1.5" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
+    <a-entity position="19 0 -2" rotation="0 -90 0" scale="1.5 1.5 1.8" obj-model="obj: #tentDriehoekBlauw-obj; mtl: #tentDriehoekBlauw-mtl"></a-entity>
+    <a-entity position="17 0 -6" rotation="0 -40 0" scale="1 1 1.3" obj-model="obj: #tentDriehoekGroen-obj; mtl: #tentDriehoekGroen-mtl"></a-entity>
+
+    <!-- bomen & struiken-->
+    <a-entity position="7 2 -6" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+
+    <a-entity position="13 1.2 8" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+
+    <a-entity position="6 0 -5" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
+
+    <a-entity class="clickable js--place" id="js--blikje-jan-sevilla1" position="12 0 1" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
+    <a-cylinder position="12 0.01 1" radius=".3" height=".01" color="blue"></a-cylinder>
+
+    <a-entity position="11 2 9" rotation="0 90 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+
+    <a-entity position="15 2 4.5" rotation="0 0 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="5 1.2 -5" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+
+    <a-entity position="4 0 -7" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
+
+    <a-entity position="0 1.2 6" rotation="0 -20 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+    <a-entity position="-1 2 7" rotation="0 130 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+
+    <a-entity position="-5 0 -9" obj-model="obj: #struik-obj; mtl: #struik-mtl"></a-entity>
+
+    <a-entity position="-7 1.2 -12" rotation="0 90 0" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+
+    <a-entity position="-9 2 -11" rotation="0 180 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+
+    <a-entity position="-15 2 -10" rotation="0 30 0" obj-model="obj: #boom-obj; mtl: #boom-mtl"></a-entity>
+    <a-entity position="-15 1.2 16" obj-model="obj: #boom2-obj; mtl: #boom2-mtl"></a-entity>
+
+    <!-- hekjes -->
+    <!-- <a-entity position="-15 0 -3" rotation="0 -90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity> -->
+    <a-entity position="3 0 -3" rotation="0 180 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
+    <!-- <a-entity position="8.5 0 5" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeSchuin-obj; mtl: #hekjeSchuin-mtl"></a-entity> -->
+    <a-entity position=".5 0 7" rotation="0 210 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
+    <a-entity position="-2 0 6" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
+    <!-- <a-entity position="8.5 0 5" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeSchuin-obj; mtl: #hekjeSchuin-mtl"></a-entity> -->
+    <a-entity position=".5 0 7" rotation="0 210 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
+    <a-entity position="-2 0 6" rotation="0 90 0" scale="1.2 1.2 1.5" obj-model="obj: #hekjeRecht-obj; mtl: #hekjeRecht-mtl"></a-entity>
+
+
+    <!-- Spheres om naar toe te kunnen lopen -->
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="0 0 14"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="0 0 2"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" id="js--domingoLocatie" position="-1.4 0 -4"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="-1 0 -11"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" id="js--callasLocatie" position="2 0 -11"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="7 0 16"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="-8 0 13"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="10 0 2"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="4 0 8"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="-6 0 3"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="-5 0 9"></a-entity>
+
+    <!-- interactables-->
+    <a-entity id="js--blikje-jan-sevilla2" class="clickable" gltf-model="#gieter-glb" position="11.5 .2 0.5" scale="2 2 2"></a-entity>
+    <a-cylinder position="11.5 .01 0.5" radius=".4" height=".01" color="blue"></a-cylinder>
+    <a-entity id="js--blikje-carmen1" class="clickable" gltf-model="#koffer-glb" position="-2.2 .125 14" rotation="0 90 0"></a-entity>
+    <a-cylinder position="-2.2 .01 14" radius=".3" height=".01" color="blue"></a-cylinder>
+    <a-entity id="js--blikje-carmen2" class="clickable" gltf-model="#colablik-glb" position="-2.2 .1 11.5" scale="2 2 2"></a-entity>
+    <a-cylinder position="-2.2 .01 11.5" radius=".3" height=".01" color="blue"></a-cylinder>
+
+    <!-- simpelere bomen voor verder weg -->
+    <a-entity position="20 0 0">
+        <a-cylinder position="0 0 0" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
+        <a-sphere position="0 4 0" src="img/leaves.jpg" radius="1.5"></a-sphere>
+
+        <a-cylinder position="1 0 -2" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
+        <a-sphere position="1 4 -2" src="img/leaves.jpg" radius="1.5"></a-sphere>
+
+        <a-cylinder position="-1 0 1" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
+        <a-sphere position="-1 4 1" src="img/leaves.jpg" radius="1.5"></a-sphere>
+
+        <a-cylinder position="-3 0 -8" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
+        <a-sphere position="-3 4 -8" src="img/leaves.jpg" radius="1.5"></a-sphere>
+
+        <a-cylinder position="0 0 5" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
+        <a-sphere position="0 4 5" src="img/leaves.jpg" radius="1.5"></a-sphere>
+
+        <a-cylinder position="-5 0 -10" src="img/bark.jpg" radius=".2" height="6"></a-cylinder>
+        <a-sphere position="-5 4 -10" src="img/leaves.jpg" radius="1.5"></a-sphere>
     </a-entity>
 
-    <a-entity> <!-- le worstjes -->
-      <a-box class="clickable js--pickup" dynamic-body position="-2 2 -5" rotation="0 45 0" depth=".5" width=".1" height=".1" color="red"></a-box>
-      <a-box class="clickable js--pickup" dynamic-body position="-2.1 2.2 -5" rotation="0 0 0" depth=".5" width=".1" height=".1" color="red"></a-box>
-      <a-box class="clickable js--pickup" dynamic-body position="-2 1.8 -5.1" rotation="0 -90 0" depth=".5" width=".1" height=".1" color="red"></a-box>
-    </a-entity>
-
-    <!-- le toilettes -->
-    <a-entity position="-8 0 -4">
-      <a-box height=".1" width="6" depth="10" color="" src="img/tiles.jpg" position="" rotation=""></a-box> <!-- floor -->
-      <a-box height="6" width=".1" depth="10" color="" src="img/wood.jpg" position="-3 0 0" rotation=""></a-box> <!-- muur links -->
-      <a-box height="6" width=".1" depth="7" color="" src="img/wood.jpg" position="3 0 -2" rotation=""></a-box> <!-- muur rechts 1 -->
-      <a-box height="6" width=".1" depth="2" color="" src="img/wood.jpg" position="3 0 4" rotation=""></a-box> <!-- muur rechts 2 -->
-      <a-box height=".5" width=".1" depth="1.5" color="" src="img/wood.jpg" position="3 2.75 2.25" rotation=""></a-box> <!-- muur boven deur -->
-      <a-box height="6" width="6" depth=".1" color="" src="img/wood.jpg" position="0 0 -5" rotation=""></a-box> <!-- muur achter -->
-      <a-box height="6" width="6" depth=".1" color="" src="img/wood.jpg" position="0 0 5" rotation=""></a-box> <!-- muur voor -->
-      <a-box height=".1" width="6" depth="10" color="" src="" position="0 3 0" rotation=""></a-box> <!-- dak -->
-      <a-entity position="0 1 -4">
-        <a-entity class="clickable placeholder" rotation="-90 0 0" scale=".04 .04 .04" gltf-model="#toilet-glb"></a-entity>
-        <!-- <a-sound position="0 0 0" src="sound/Mevrouw Callas Habanera live.mp3" autoplay="true" loop="true" preload="auto" volume=".5" maxDistance="2"></a-sound> -->
-      </a-entity>
-      <a-text position="1 1.5 -4" width="1.5" value=""></a-text>
-    </a-entity>
-
-
-
-  </a-scene>
-  <script src="js/main.js"></script>
+    <!-- API Sectie -->
+    <a-obj-model class="clickable" reloader src="#beamer-obj" mtl="#beamer-mtl" position="-8 0.8 15" rotation="0 180 0" scale="1.5 1.5 1.5"></a-obj-model>
+    <a-obj-model src="#tafel-obj" mtl="#tafel-mtl" position="-8 0 15" scale="1.5 1.5 1.5"></a-obj-model>
+    <a-obj-model src="#beamerScherm-obj" mtl="#beamerScherm-mtl" position="-8 0 17.05" rotation="0 90 0"></a-obj-model>
+    <a-image hond position="-8 1.8 17" scale="1.3 1.3 1.3"></a-image>
+</a-scene>
+<script src="js/main.js"></script>
 </body>
 </html>
