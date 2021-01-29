@@ -29,11 +29,13 @@ const carmenNoot2 = document.getElementById("js--carmenNoot2");
 
 const janSevillaKlik1 = document.getElementById("js--blikje-jan-sevilla1");
 const janSevillaKlik2 = document.getElementById("js--blikje-jan-sevilla2");
+const janSevillaKlik3 = document.getElementById("js--jan-sevilla-box");
 const janSevilla1 = document.getElementById("js--mp3-janSevilla1");
 const janSevilla2 = document.getElementById("js--mp3-janSevilla2");
+const janSevilla3 = document.getElementById("js--mp3-janSevilla3");
 const janSevillaNoot1 = document.getElementById("js--janSevillaNoot1");
 const janSevillaNoot2 = document.getElementById("js--janSevillaNoot2");
-// const janSevillaNoot3 = document.getElementById("js--janSevillaNoot3");
+const janSevillaNoot3 = document.getElementById("js--janSevillaNoot3");
 const pavarottiLive = document.getElementById("js--mp3-PavarottiLive");
 
 const domingoLocatie = document.getElementById("js--domingoLocatie");
@@ -67,7 +69,7 @@ carmenKlik1.onclick = function() {
     setTimeout(function() {
       pauseBool = 1;
       carmenNoot1.setAttribute("src", "img/muzieknootGroen.png");
-    }, 55500);
+    }, 27500);
   }
 }
 carmenKlik2.onclick = function() {
@@ -92,7 +94,7 @@ janSevillaKlik1.onclick = function() {
     setTimeout(function() {
       pauseBool = 1;
       janSevillaNoot1.setAttribute("src", "img/muzieknootGroen.png");
-    }, 12500);
+    }, 14500);
   }
 }
 janSevillaKlik2.onclick = function() {
@@ -104,33 +106,20 @@ janSevillaKlik2.onclick = function() {
     setTimeout(function() {
       pauseBool = 1;
       janSevillaNoot2.setAttribute("src", "img/muzieknootGroen.png");
-    }, 41500);
+    }, 25500);
   }
 }
 
-domingoLocatie.onclick = function() {
-  if(domingoBool == 1) {
-    domingoBool = 0;
+janSevillaKlik3.onclick = function() {
+  if(pauseBool == 1) {
+    janSevillaNoot3.setAttribute("src", "img/muzieknootOranje.png");
+    janSevilla3.components.sound.playSound();
     pauseBool = 0;
-    domingoNoot1.setAttribute("src", "img/muzieknootOranje.png");
-    domingo1.components.sound.playSound();
-    setTimeout( function() {
-      domingoNoot1.setAttribute("src", "img/muzieknootGroen.png");
+    janSevillaKlik3.remove();
+    setTimeout(function() {
       pauseBool = 1;
-    }, 7500);
-  }
-}
-
-callasLocatie.onclick = function() {
-  if(callasBool == 1) {
-    callasBool = 0;
-    pauseBool = 0;
-    callasNoot3.setAttribute("src", "img/muzieknootOranje.png");
-    callas3.components.sound.playSound();
-    setTimeout( function() {
-      callasNoot3.setAttribute("src", "img/muzieknootGroen.png");
-      pauseBool = 1;
-    }, 14500);
+      janSevillaNoot3.setAttribute("src", "img/muzieknootGroen.png");
+    }, 11500);
   }
 }
 
@@ -283,7 +272,31 @@ for (var i = 0; i < places.length; i++) {
     });
 }
 
+domingoLocatie.onclick = function() {
+  if(domingoBool == 1) {
+    domingoBool = 0;
+    pauseBool = 0;
+    domingoNoot1.setAttribute("src", "img/muzieknootOranje.png");
+    domingo1.components.sound.playSound();
+    setTimeout( function() {
+      domingoNoot1.setAttribute("src", "img/muzieknootGroen.png");
+      pauseBool = 1;
+    }, 7500);
+  }
+}
 
+callasLocatie.onclick = function() {
+  if(callasBool == 1) {
+    callasBool = 0;
+    pauseBool = 0;
+    callasNoot3.setAttribute("src", "img/muzieknootOranje.png");
+    callas3.components.sound.playSound();
+    setTimeout( function() {
+      callasNoot3.setAttribute("src", "img/muzieknootGroen.png");
+      pauseBool = 1;
+    }, 14500);
+  }
+}
 
 
 
