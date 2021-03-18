@@ -13,10 +13,15 @@ const bezemKast = document.getElementsByClassName('js--bezemKast');
 const deurAnimatie = document.getElementById("js--deur-animatie");
 const hondAnimatie = document.getElementById("js--hond-animatie");
 const places = document.getElementsByClassName('js--place');
+
 const pavarotti = document.getElementById('js--pavarotti');
 const pavarottiVoetstuk =document.getElementById('js--pavarottiVoetstuk');
 const pavarottiCirkel = document.getElementById('js--pavarottiCirkel')
 const pickups2 = document.getElementsByClassName('js--pickup2');
+
+const nietZingen = document.getElementById("js--pavarottiNietZingen");
+let nietZingenbool = 1;
+const nietZingenVoice = document.getElementById("js--nietZingen--voice");
 
 // blokkeer acties als er muziek speelt
 let pauseBool = 0;
@@ -291,6 +296,13 @@ domingoLocatie.onclick = function() {
   }
 }
 
+nietZingen.onclick = function() {
+  if(nietZingenbool == 1) {
+    nietZingenbool = 0;
+    nietZingenVoice.components.sound.playSound();
+  }
+}
+
 callasLocatie.onclick = function() {
   if(callasBool == 1) {
     callasBool = 0;
@@ -303,3 +315,5 @@ callasLocatie.onclick = function() {
     }, 14500);
   }
 }
+
+

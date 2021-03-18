@@ -129,6 +129,7 @@
         <a-sound id="js--hond--voice" position="0 0 0" src="sound/voiceLines/hond.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
         <a-sound id="js--pavarotti--voice" position="0 0 0" src="sound/voiceLines/pavarotti.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
         <a-sound id="js--einde--voice" position="0 0 0" src="sound/voiceLines/einde.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
+        <a-sound id="js--nietZingen--voice" position="0 0 0" src="sound/voiceLines/nietZingen.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
 
         <a-sound id="js--mp3-callas1" position="0 0 0" src="sound/callas1.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
         <a-sound id="js--mp3-callas2" position="0 0 0" src="sound/callas2.mp3" autoplay="false" loop="false" preload="auto" volume="2"></a-sound>
@@ -231,7 +232,7 @@
     </a-entity>
 
     <!-- Verboden te zingen bord -->
-    <a-obj-model src="#VerbodenZingenBord-obj" mtl="#VerbodenZingenBord-mtl" position="1 0 10" rotation="0 -90 0"></a-obj-model>
+    <a-obj-model src="#pavarotti-obj" mtl="#pavarotti-mtl" position="3 1 10" rotation="0 0 0"></a-obj-model>
 
     <!-- Schutting -->
     <a-entity position="-7 0 -10" rotation="0 0 0" scale="1.2 1.2 1.5" obj-model="obj: #schuttingRecht-obj; mtl: #schuttingRecht-mtl"></a-entity>
@@ -302,7 +303,7 @@
     <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="7 0 16"></a-entity>
     <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="-8 0 13"></a-entity>
     <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="10 0 2"></a-entity>
-    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="4 0 8"></a-entity>
+    <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" id="js--pavarottiNietZingen" position="4 0 8"></a-entity>
     <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="-6 0 3"></a-entity>
     <a-entity gltf-model="#steen-glb" scale="0.2 0.2 0.2" class="clickable js--place" position="-5 0 9"></a-entity>
 
